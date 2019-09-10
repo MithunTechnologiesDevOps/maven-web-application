@@ -71,12 +71,17 @@ stage('DeploytoTomcat'){
    }
 }
  stage('EmailNotification'){
-    mail bcc: '', body: '''Build Done
-
-Regards,
-Mithun Technologies
-9980923226''', cc: 'devopstrainingblr@gmail.com', from: '', replyTo: '', subject: 'Build Notification', to: 'devopstrainingblr@gmail.com' 
-     
+    mail to: 'devopstrainingblr@gmail.com',
+         bcc: 'devopstrainingblr@gmail.com', 
+         cc: 'devopstrainingblr@gmail.com', 
+         from: 'devopstrainingblr@gmail.com', 
+         replyTo: 'devopstrainingblr@gmail.com', 
+         subject: 'Build Notification'
+         body: '''Build Done, Please check the build log for more details..
+         
+                  Regards,
+                  Mithun Technologies,
+                  9980923226'''
  }
  
  stage("SlackNotification"){
