@@ -24,6 +24,7 @@ node
 
  }
  
+ /*
  stage('Build'){
  sh "${mavenHome}/bin/mvn clean package"
  }  
@@ -43,6 +44,7 @@ stage('DeployAppIntoTomcat'){
 	
  }
 }
+*/
 
 stage('EmailNotification'){
  emailext body: '''Build is over!!
