@@ -1,4 +1,4 @@
-node{
+node('paytm-node'){
 //node('master'){
 
   //http://JenkinsServerIPAddress:8080/pipeline-syntax/globals#currentBuild
@@ -61,7 +61,7 @@ node{
      
      sh "cp $WORKSPACE/target/*.war /opt/apache-tomcat-9.0.16/webapps/"
  }
- */
+ 
 
 stage('DeploytoTomcat'){
 
@@ -70,6 +70,7 @@ stage('DeploytoTomcat'){
      sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.235.70.188:/opt/apache-tomcat-9.0.22/webapps/maven-web-application.war"
    }
 }
+*/
  stage('EmailNotification'){
     mail to: 'devopstrainingblr@gmail.com',
          bcc: 'devopstrainingblr@gmail.com', 
