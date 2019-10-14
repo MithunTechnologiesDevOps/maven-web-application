@@ -1,5 +1,5 @@
 node('paytm-node'){
-//node('mithun'){
+//node('mithunsoftwaresolutionsnode'){
 
   //http://JenkinsServerIPAddress:8080/pipeline-syntax/globals#currentBuild
   //Getting the  env  global varibale values
