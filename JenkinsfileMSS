@@ -1,5 +1,5 @@
 node('paytm-node'){
-//node('master'){
+//node('mithun'){
 
   //http://JenkinsServerIPAddress:8080/pipeline-syntax/globals#currentBuild
   //Getting the  env  global varibale values
