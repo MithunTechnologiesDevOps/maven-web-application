@@ -30,12 +30,13 @@ node('paytm-node'){
   }
   */
  
+ /* 
  stage('Build')
  {
   sh  "${mavenHome}/bin/mvn clean package"
  }
 
- /* 
+ 
  stage('Testing')
    {
     if(isUnix()){
