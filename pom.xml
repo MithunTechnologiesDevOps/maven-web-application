@@ -5,7 +5,7 @@
 	<groupId>com.mt</groupId>
 	<artifactId>maven-web-application</artifactId>
 	<packaging>war</packaging>
-	<version>0.0.1</version>
+	<version>0.0.1-SNAPSHOT</version>
 	
 	<name>maven-web-application</name>
 
@@ -98,13 +98,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://15.206.94.140:8081/repository/paytm-release/</url>
+	      <url>http://15.206.94.140:8081/repository/paytm-release</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://15.206.94.140:8081/repository/paytm-snapshot/</url>
+	      <url>http://15.206.94.140:8081/repository/paytm-snapshot</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
