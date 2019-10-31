@@ -1,8 +1,8 @@
 node
 {
  
-  echo "GitHub BranhName ${env.BRANCH_NAME}"
-  echo "Jenkins Job Number ${env.BUILD_NUMBER}"
+  //echo "GitHub BranhName ${env.BRANCH_NAME}"
+  //echo "Jenkins Job Number ${env.BUILD_NUMBER}"
   echo "Jenkins Node Name ${env.NODE_NAME}"
   
   echo "Jenkins Home ${env.JENKINS_HOME}"
@@ -22,6 +22,7 @@ node
  git branch: 'development', credentialsId: 'e14ded32-a4da-421c-99b2-9f417175e8b3', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git'   
  }
  
+ /*
  stage('Build')
  {
   sh "${mavenHome}/bin/mvn clean package"
@@ -43,6 +44,7 @@ node
   sh  "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.126.84.105:/opt/apache-tomcat-9.0.27/webapps/maven-web-application.war"
  }
  }
+ */
  
  stage('SendEmailNotification')
  {
