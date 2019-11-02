@@ -5,9 +5,9 @@
 	<groupId>com.mt</groupId>
 	<artifactId>maven-web-application</artifactId>
 	<packaging>war</packaging>
-	<version>0.0.1-SNAPSHOT</version>
+	<version></version>
 	
-	<name>maven-web-application</name>
+	<name>krishna-fb-project</name>
 
 	<description>Maven Web Project for Java Project</description>
 
@@ -21,7 +21,7 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<sonar.host.url>http://35.154.37.197:9000/</sonar.host.url>
+		<sonar.host.url>http://52.66.251.189:9000/</sonar.host.url>
 		<sonar.login>ea65b3c237aad8efb8b7df2f2b7d206c6f789e10</sonar.login>
 		<!-- <sonar.password>admin</sonar.password> -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -98,13 +98,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>krishnamohan-flipkart</name>
-	      <url>http://13.233.18.108:9980/mkm-nexus/repository/flipkart-releases/</url>
+	      <url>http://13.235.90.4:9980/mkm-nexus/repository/flipkart-releases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>krishnamohan-flipkart </name>
-	      <url>http://13.233.18.108:9980/mkm-nexus/repository/flipkart-snapshots/</url>
+	      <url>http://13.235.90.4:9980/mkm-nexus/repository/flipkart-snapshots/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
