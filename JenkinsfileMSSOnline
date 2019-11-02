@@ -20,7 +20,8 @@ node
   stage('CheckoutCode')
   {
    git branch: 'development', credentialsId: 'c68e5748-bf4d-4a14-a25d-2af5c3efe5a0', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git'
-  }
+  echo "stage is over"
+ }
   
   /*
   stage('Build')
