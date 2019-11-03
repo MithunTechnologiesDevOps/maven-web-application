@@ -5,7 +5,7 @@
 	<groupId>com.mt</groupId>
 	<artifactId>maven-web-application</artifactId>
 	<packaging>war</packaging>
-	<version></version>
+	<version>2.2.2-SNAPSHOT</version>
 	
 	<name>krishna-fb-project</name>
 
