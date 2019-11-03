@@ -3,9 +3,9 @@
 	<modelVersion>4.0.0</modelVersion>
 	
 	<groupId>com.mt</groupId>
-	<artifactId>USA-SITECRAWL-PROJECT</artifactId>
+	<artifactId>sitecrawl</artifactId>
 	<packaging>war</packaging>
-	<version>2.2.2-SNAPSHOT</version>
+	<version>releases</version>
 	
 	<name>krishna-fb-project</name>
 
