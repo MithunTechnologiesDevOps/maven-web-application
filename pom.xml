@@ -7,7 +7,7 @@
 	<packaging>war</packaging>
 	<version>releases</version>
 	
-	<name>krishna-fb-project</name>
+	<name>krishna-tomcat</name>
 
 	<description>Maven Web Project for Java Project</description>
 
