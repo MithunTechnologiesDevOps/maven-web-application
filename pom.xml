@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 	
 	<groupId>com.mt</groupId>
-	<artifactId>sitecrawl</artifactId>
+	<artifactId>mithunproject1</artifactId>
 	<packaging>war</packaging>
 	<version>releases</version>
 	
-	<name>nov22</name>
+	<name>nov25</name>
 
 	<description>Maven Web Project for Java Project</description>
 
@@ -21,7 +21,7 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<sonar.host.url>http://192.168.0.116:9000/</sonar.host.url>
+		<sonar.host.url>http://192.168.0.125:9000/</sonar.host.url>
 		<sonar.login>002ba001074fdf890b89128d9ae85aa243713d11</sonar.login>
 		<!-- <sonar.password>admin</sonar.password> -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -98,13 +98,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>krishnamohan-flipkart</name>
-	      <url>http://192.168.0.109:8081/repository/flipkart-release/</url>
+	      <url>http://192.168.0.126:8081/repository/flipkart-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>krishnamohan-flipkart </name>
-	      <url>http://192.168.0.109:8081/repository/flipkart-snapshot/</url>
+	      <url>http://192.168.0.126:8081/repository/flipkart-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
