@@ -98,13 +98,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://15.206.94.140:8081/repository/paytm-release</url>
+	      <url>http://13.234.32.177:8081/repository/redbus-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://15.206.94.140:8081/repository/paytm-snapshot</url>
+	      <url>http://13.234.32.177:8081/repository/redbus_snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
