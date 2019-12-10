@@ -104,7 +104,7 @@
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://13.232.129.69:8081/repository/jenkins-practice-snapshot/</url>
+	      <url>http://13.234.117.13:8081/repository/practice-late-night/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
