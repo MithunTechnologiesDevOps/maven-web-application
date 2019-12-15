@@ -8,6 +8,13 @@ node
   echo "Jenkins URL ${env.JENKINS_URL}"
   echo "JOB Name ${env.JOB_NAME}"
     
+    properties([
+    buildDiscarder(logRotator(numToKeepStr: '3')),
+    pipelineTriggers([
+        pollSCM('* * * * *')
+    ])
+  ])
+    
     def mavenHome=tool name:"maven"
     stage("codecheckout")
     {
