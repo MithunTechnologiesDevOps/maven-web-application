@@ -1,4 +1,4 @@
-node('paytm-node'){
+node{
 //node('mss'){
 
   //http://JenkinsServerIPAddress:8080/pipeline-syntax/globals#currentBuild
@@ -19,7 +19,7 @@ node('paytm-node'){
     ])
   ])
   
-  def mavenHome=tool name: "mavenv3.6.3", type: "maven"
+  def mavenHome=tool name: "maven3.6.3", type: "maven"
     
   stage('CheckouttheCode') {
    git branch: 'master', credentialsId: '4d6512c4-c101-4f43-aac5-5860f5d9e20c', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git'  
@@ -45,7 +45,7 @@ node('paytm-node'){
        bat 'mvn test'   
       }
    }
- */
+ 
 
  stage('SonarQubeReport')
  {
@@ -56,6 +56,7 @@ node('paytm-node'){
  {
   sh  "${mavenHome}/bin/mvn deploy"
  }
+ */
  /*
  stage('DeplotoTomcat'){
      
@@ -70,7 +71,7 @@ stage('DeploytoTomcat'){
      sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.235.70.188:/opt/apache-tomcat-9.0.22/webapps/maven-web-application.war"
    }
 }
-*/
+
  stage('EmailNotification'){
     mail to: 'devopstrainingblr@gmail.com',
          bcc: 'devopstrainingblr@gmail.com', 
@@ -88,4 +89,5 @@ stage('DeploytoTomcat'){
  stage("SlackNotification"){
      slackSend baseUrl: 'https://devops-team-bangalore.slack.com/services/hooks/jenkins-ci/', channel: 'build-notification', message: 'Build done through', tokenCredentialId: '12797dc5-eb70-4f19-8e05-8c07bc58d79d'
  }
+ */
 }
