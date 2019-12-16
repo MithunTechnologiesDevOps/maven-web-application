@@ -20,6 +20,7 @@ stage('checkout')
 {
 git 'https://github.com/gajjalareddy7012/maven-web-application.git'
 }
+/*
 stage ('Build')
 {
     sh "${mavenHome}/bin/mvn clean package"
@@ -36,6 +37,7 @@ stage('uploadartifactoryintonexus')
     sh "${mavenHome}/bin/mvn deploy"
     
 }
+*/
 stage('Deploymentinto tomcat')
 {
     sshagent(['4e798b25-77e5-406f-8656-b87fdb290ec3'])
