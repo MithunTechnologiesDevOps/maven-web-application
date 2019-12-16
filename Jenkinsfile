@@ -24,6 +24,7 @@ node
     {
         sh "${mavenHome}/bin/mvn clean package"
     }
+    /*
     stage("sonar")
     {
         sh "${mavenHome}/bin/mvn sonar:sonar"
@@ -44,4 +45,5 @@ node
        emailext body: '''kwebfckjb
 iugwef\'o''', subject: 'qubrfk', to: 'gypratapreddy@gmail.com' 
     }
+    */
 }
