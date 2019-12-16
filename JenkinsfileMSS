@@ -65,9 +65,9 @@ node('paytm-node'){
 
 stage('DeploytoTomcat'){
 
-   sshagent(['9554f0b8-eda0-486d-9d23-ce7585c32f70']) 
+   sshagent(['f0ef3182-69ef-4169-8368-9ea18a5fe3af']) 
    {
-     sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.235.70.188:/opt/apache-tomcat-9.0.22/webapps/maven-web-application.war"
+     sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.126.135.88:/opt/apache-tomcat-9.0.22/webapps/maven-web-application.war"
    }
 }
 */
@@ -85,7 +85,5 @@ stage('DeploytoTomcat'){
                   9980923226'''
  }
  
- stage("SlackNotification"){
-     slackSend baseUrl: 'https://devops-team-bangalore.slack.com/services/hooks/jenkins-ci/', channel: 'build-notification', message: 'Build done through', tokenCredentialId: '12797dc5-eb70-4f19-8e05-8c07bc58d79d'
- }
+ 
 }
