@@ -16,7 +16,7 @@ node
   ])
   
     def mavenHome = tool name:"maven-3.6.2"
-    /*
+    
 stage('checkout')
 {
 git 'https://github.com/gajjalareddy7012/maven-web-application.git'
@@ -45,7 +45,7 @@ stage('Deploymentinto tomcat')
     sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.235.114.254:/opt/apache-tomcat-9.0.30/webapps/"
 
     }
-    */
+    
     stage ('sendEmailNotification')
     {
         emailext body: '''Buils is Successful..
