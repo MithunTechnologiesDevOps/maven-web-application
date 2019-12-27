@@ -21,6 +21,7 @@ stage('checkout')
 {
 git 'https://github.com/gajjalareddy7012/maven-web-application.git'
 }
+  /*
 stage ('Build')
 {
     sh "${mavenHome}/bin/mvn clean package"
@@ -55,4 +56,5 @@ stage('Deploymentinto tomcat')
       7348802800''', subject: 'Buils is Successful', to: 'satishswarna01@gmail.com'
     }
 }
+*/
 }
