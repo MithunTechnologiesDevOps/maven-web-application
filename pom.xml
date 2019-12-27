@@ -21,7 +21,7 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<sonar.host.url>http://13.126.212.35:9000/</sonar.host.url>
+		<sonar.host.url>http://13.232.247.17:9000/</sonar.host.url>
 		<!-- <sonar.login>91afdcce1b8cf33961d4bb3c6bdcb33d2cb30971</sonar.login> -->
 		 <sonar.password>lokendra7012</sonar.password> 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -98,13 +98,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://15.206.145.17:8081/repository/redbus_releases/</url>
+	      <url>http://15.206.27.222:8081/repository/redbus_releases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://15.206.145.17:8081/repository/redbus_snapshot/</url>
+	      <url>http://15.206.27.222:8081/repository/redbus_snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
