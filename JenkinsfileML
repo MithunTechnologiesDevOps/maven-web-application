@@ -1,0 +1,50 @@
+node
+{
+ properties([
+     buildDiscarder(logRotator(numToKeepStr: '3')),
+     pipelineTriggers([
+         pollSCM('* * * * *')
+     ])
+   ])
+ 
+  echo "GitHub BranhName ${env.BRANCH_NAME}"
+  echo "Jenkins Job Number ${env.BUILD_NUMBER}"
+  echo "Jenkins Node Name ${env.NODE_NAME}"
+  
+  echo "Jenkins Home ${env.JENKINS_HOME}"
+  echo "Jenkins URL ${env.JENKINS_URL}"
+  echo "JOB Name ${env.JOB_NAME}"
+ def mvnHome=tool name: "maven"
+ stage('checkoutcode')
+ {
+  git branch: 'development', credentialsId: '7bd1ada6-ff65-4f07-9638-04c36621ced6', url: 'https://github.com/mahalakshmi07-jpg/maven-web-application.git'
+ }
+ stage('build')
+ {
+  sh "${mvnHome}/bin/mvn clean package"
+ }
+   stage('SonarQubeReport')
+ {
+  sh "${mvnHome}/bin/mvn sonar:sonar"
+ }
+ stage('UploadArtifactintoNexus')
+ {
+  sh "${mvnHome}/bin/mvn deploy"
+ }
+ 
+ stage('DeployToTomcat')
+ {
+  sshagent(['4467affa-b8b9-4fd6-ace1-24ef115595f2']) 
+  {
+   sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@54.235.229.247:/opt/apache-tomcat-9.0.30/webapps/maven-web-application.war"
+  }
+ }
+ stage('SendEmailNotification')
+ {
+  emailext body: '''Build is over
+
+  Regards,
+  mahalakshmi,
+  9876543210.''', subject: 'Build is over', to: 'mahalakshmi.pendem95@gmail.com,lahari031998@gmail.com'
+  }
+ }
