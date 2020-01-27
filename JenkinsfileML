@@ -19,6 +19,8 @@ node
  {
   git branch: 'development', credentialsId: '7bd1ada6-ff65-4f07-9638-04c36621ced6', url: 'https://github.com/mahalakshmi07-jpg/maven-web-application.git'
  }
+ 
+ /*
  stage('build')
  {
   sh "${mvnHome}/bin/mvn clean package"
@@ -47,4 +49,7 @@ node
   mahalakshmi,
   9876543210.''', subject: 'Build is over', to: 'mahalakshmi.pendem95@gmail.com,lahari031998@gmail.com'
   }
+  
+  */
+  
  }
