@@ -1,4 +1,4 @@
-node('slaves')
+node
 {
  properties([
      buildDiscarder(logRotator(numToKeepStr: '3')),
