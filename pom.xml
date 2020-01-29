@@ -92,13 +92,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://15.206.27.222:8081/repository/redbus_releases/</url>
+	      <url>http://13.233.172.135:2800/repository/maven-releases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://15.206.27.222:8081/repository/redbus_snapshot/</url>
+	      <url>http://13.233.172.135:2800/repository/maven-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
