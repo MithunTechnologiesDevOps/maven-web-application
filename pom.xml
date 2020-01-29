@@ -98,7 +98,7 @@
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://13.233.172.135:2800/repository/maven-snapshot/</url>
+	      <url>http://13.233.172.135:2800/repository/maven-snapshots/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
