@@ -12,7 +12,7 @@ node
  git branch: 'development', credentialsId: '03b8d2fd-388b-4944-bb34-1419ee66975d', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git'
  }
  
- stage('MavenBuild')
+ stage('MavenBuildMBPL')
  {
   sh "${mavenHome}/bin/mvn clean package"
  }
