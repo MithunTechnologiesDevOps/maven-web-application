@@ -17,7 +17,7 @@ node('flipkart-node')
   sh "${mavenHome}/bin/mvn clean package"
  }
  
- /*
+
  stage('ExecuteSonarQubeReport')
  {
  sh "${mavenHome}/bin/mvn sonar:sonar"
@@ -28,6 +28,7 @@ node('flipkart-node')
  sh "${mavenHome}/bin/mvn deploy"
  }
 
+ /*
 stage('DeployAppIntoTomcatServer')
  {
  sshagent(['314d01b5-1319-43a4-852d-43b364c46ac5']) {
