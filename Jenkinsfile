@@ -1,7 +1,9 @@
 node ('nodes')
 {
 
-  def mavenHome=tool name: "maven3.6.2"
+ // def mavenHome=tool name: "maven3.6.2"
+  
+  echo "I am running in slave 1"
   
   /*
  stage('Checkout')
