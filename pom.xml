@@ -98,13 +98,13 @@
 	    <repository>
 	      <id>google</id>
 	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://13.233.107.192:8081/repository/google-releases/</url>
+	      <url>http://13.233.107.192:8081/repository/google-release/</url> 
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>google</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://113.233.107.192:8081/repository/google-snapshot/</url>
+	      <url>http://13.233.107.192:8081/repository/google-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
