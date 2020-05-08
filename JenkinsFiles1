@@ -1,0 +1,43 @@
+node {
+
+def mavenHome=tool name: 'Maven3.6.3', type: "Maven"
+
+stage('CheckingOutSourceCode')
+{
+git branch: 'development', credentialsId: 'd0dd3e9b-08c6-4964-a681-02c378bee8dd', url: 'https://github.com/adilm007/maven-web-application.git'
+}
+
+stage('MavenBuild')
+(
+sh "${mavenHome}/bin/mvn clean package"
+)
+
+stage('SonarQubeReport')
+{
+sh "${mavenHome}/bin/mvn sonar:sonar"
+}
+
+stage('UploadArtifact')
+{
+sh "${mavenHome}/bin/mvn clean deploy"
+}
+
+stage('DeployAppIntoTomcat')
+{
+sshagent(['59641871-2b2e-4a8a-a17e-37251a7605f3'])
+{
+sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@35.154.186.234:/opt/apache-tomcat-9.0.34/webapps/"
+}
+}
+
+stage('EmailNotification')
+{
+emailext body: '''Build for the project is over....
+
+
+
+Regards,
+
+Adil Muneer''', recipientProviders: [developers()], subject: 'Build is finished.', to: 'adil.munir2001@gmail.com'
+}
+}
