@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1 align="center">Welcome to Mithun Technologies.</h1>
-<h1 align="center"> We have a demo on DevOps with AWS on 7th March at 9 AM IST.karthik bhagya Very Good Training center for DevOps with AWS in Maratha Halli and also for Job Assitance Job Support also...Teaching Real Time scnerios and use cases... Some fake guys are giving the fake reviews dont believe those guys...</h1>
+<h1 align="center"> We have a demo on DevOps with AWS on 7th March at 9 AM IST.karthik  Very Good Training center for DevOps with AWS in Maratha Halli and also for Job Assitance Job Support also...Teaching Real Time scnerios and use cases... Some fake guys are giving the fake reviews dont believe those guys...</h1>
 <hr>
 <div style="text-align: center;">
 	<span>
