@@ -99,13 +99,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://15.206.74.20:9980/mss/repository/paytm-releases/</url>
+	      <url>http://13.235.71.54:9980/mithuntechnologies/repository/paytm-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://15.206.74.20:9980/mss/repository/paytm-snapshot/</url>
+	      <url>http://13.235.71.54:9980/mithuntechnologies/repository/paytm-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
