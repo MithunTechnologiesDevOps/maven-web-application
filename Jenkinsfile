@@ -1,47 +1,54 @@
-node ('nodes')
-{
-
- // def mavenHome=tool name: "maven3.6.2"
+node
+ {
   
-  echo "I am running in slave 1"
+  def mavenHome = tool name: "maven3.6.2"
   
+      echo "GitHub BranhName ${env.BRANCH_NAME}"
+      echo "Jenkins Job Number ${env.BUILD_NUMBER}"
+      echo "Jenkins Node Name ${env.NODE_NAME}"
+  
+      echo "Jenkins Home ${env.JENKINS_HOME}"
+      echo "Jenkins URL ${env.JENKINS_URL}"
+      echo "JOB Name ${env.JOB_NAME}"
+  
+   properties([[$class: 'JiraProjectProperty'], buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '2', daysToKeepStr: '', numToKeepStr: '2')), pipelineTriggers([pollSCM('* * * * *')])])
+  
+  stage("CheckOutCode")
+  {
+   git branch: 'development', credentialsId: '65fb834f-a83b-4fe7-8e11-686245c47a65', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git'
+ }
+ 
+ stage("Build")
+ {
+ sh "${mavenHome}/bin/mvn clean package"
+ }
+ 
   /*
- stage('Checkout')
+ stage("ExecuteSonarQubeReport")
  {
- 	git branch: 'development', credentialsId: 'bed5a851-d84d-412e-87e7-bf9ce23c0e0e', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git'
- 
- }
- 
- stage('Build')
- {
- sh  "${mavenHome}/bin/mvn clean package"
+ sh "${mavenHome}/bin/mvn sonar:sonar"
  }
  
-  
- stage('ExecuteSoanrQubeReport')
+ stage("UploadArtifactsintoNexus")
  {
- sh  "${mavenHome}/bin/mvn sonar:sonar"
+ sh "${mavenHome}/bin/mvn deploy"
  }
  
- stage('UploadArtifactintoNexus')
+  stage("DeployAppTomcat")
  {
- sh  "${mavenHome}/bin/mvn deploy"
+  sshagent(['423b5b58-c0a3-42aa-af6e-f0affe1bad0c']) {
+    sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war  ec2-user@15.206.91.239:/opt/apache-tomcat-9.0.34/webapps/" 
+  }
  }
  
- stage('DeployAppintoTomcat')
+ stage('EmailNotification')
  {
- sshagent(['cd93d61f-2d0f-4c60-8b33-34cf4fa888b0']) {
-  sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.235.132.183:/opt/apache-tomcat-9.0.29/webapps/"
- }
- }
+ mail bcc: 'devopstrainingblr@gmail.com', body: '''Build is over
 
- stage('SendEmailNotification')
- {
- emailext body: '''Build is over..
-
- Regards,
+ Thanks,
  Mithun Technologies,
- 9980923226.''', subject: 'Build is over', to: 'devopstrainingblr@gmail.com'
+ 9980923226.''', cc: 'devopstrainingblr@gmail.com', from: '', replyTo: '', subject: 'Build is over!!', to: 'devopstrainingblr@gmail.com'
  }
  */
-}
+ 
+ }
