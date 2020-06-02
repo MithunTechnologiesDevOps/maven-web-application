@@ -111,7 +111,7 @@
 	</distributionManagement>
 	
 	<build>
-		<finalName>maven-tomcat</finalName>
+		<finalName>maven-web-application</finalName>
 		
 		<plugins>
 			<plugin>
