@@ -99,13 +99,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://13.232.189.92:9980/mithuntechnologies/repository/paytm-release/</url>
+	      <url>http://13.233.84.154:9980/mithuntechnologies/repository/wallmart-releases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://13.232.189.92:9980/mithuntechnologies/repository/paytm-snapshot/</url>
+	      <url>http://13.233.84.154:9980/mithuntechnologies/repository/wallmart-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
