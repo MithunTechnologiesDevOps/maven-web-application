@@ -31,7 +31,7 @@
 <hr>
 <hr>
 <p align=center>Mithun Technologies - Consultant, Training, Development Center.</p>
-<p align=center><small>Copyrights 2019 by <a href="http://mithuntechnologies.com/">Mithun Technologies</a> </small></p>
+<p align=center><small>Copyrights 2020 by <a href="http://mithuntechnologies.com/">Mithun Technologies</a> </small></p>
 
 </body>
 </html>
