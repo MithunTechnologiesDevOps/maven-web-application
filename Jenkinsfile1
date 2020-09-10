@@ -11,7 +11,7 @@ stage('MavenBuild')
 (
 sh "${mavenHome}/bin/mvn clean package"
 )
-/*
+*/
 stage('SonarQubeReport')
 {
 sh "${mavenHome}/bin/mvn sonar:sonar"
@@ -40,5 +40,5 @@ Regards,
 
 Adil Muneer''', recipientProviders: [developers()], subject: 'Build is finished.', to: 'adil.munir2001@gmail.com'
 }
-*/
+/*
 }
