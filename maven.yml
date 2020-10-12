@@ -3,7 +3,7 @@ kind: ReplicationController
 metadata:
   name: maven-rc
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     app: maven
   template:
