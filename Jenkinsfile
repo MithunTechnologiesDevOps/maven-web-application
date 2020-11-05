@@ -13,7 +13,7 @@ def mavenHome = tool name: "maven3.6.2"
  
  sh "${mavenHome}/bin/mvn clean package"
  }
- 
+ /*
  stage('ExecuteSonarQubeReport')
  {
  sh "${mavenHome}/bin/mvn sonar:sonar"
@@ -41,5 +41,6 @@ stage('UploadArtifactIntoNexus')
  9980923226.''', cc: 'bhaskar0504@gmail.com', from: '', replyTo: '', subject: 'Build Over', to: 'devopstrainingblr@gmail.com'
  }
 
+ */
  
 }
