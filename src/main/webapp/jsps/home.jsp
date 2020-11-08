@@ -21,7 +21,7 @@
 		MG Road,
 		Bangalore,
 		+91-8095758941,
-		sanjayrj@004@gmail.com
+		sanjayrj004@gmail.com
 		<br>
 		<a href="sanjayrj@004@gmail.com">Mail to Bright Software solution</a>
 	</span>
