@@ -10,11 +10,11 @@
 </head>
 <body>
 <h1 align="center">Welcome to Software Solutions.</h1>
-<h1 align="center"> MSS- Very Good Training center for DevOps and AWS and also for Job Assitance Job Support also...Teaching Real Time scnerios</h1>
+<h1 align="center"> SSS- Very Good Training center for DevOps and AWS and also for Job Assitance Job Support also...Teaching Real Time scnerios</h1>
 <hr>
 <div style="text-align: center;">
 	<span>
-		<img src="images/mithunlogo.jpg" alt="" width="100">
+		<img src="images/mithunlogo.jpg" alt="" width="200">
 	</span>
 	<span style="font-weight: bold;">
 		Bright Software Solution, 
