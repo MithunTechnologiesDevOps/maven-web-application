@@ -1,6 +1,7 @@
 node
 {
     def mavenHome = tool name: "maven-3.6.3"
+    properties([[$class: 'JiraProjectProperty'], buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), pipelineTriggers([pollSCM('* * * * *')])])
     stage('checkoutCode')
     {
        git branch: 'development', credentialsId: '9738abfc-82b4-40ab-8140-ba86376112eb', url: 'https://github.com/ganesh-solutions/maven-web-application.git' 
@@ -34,8 +35,5 @@ ganesh S
 9035733006''', cc: 'ganeshsgani1996@gmail.com', from: '', replyTo: '', subject: 'build over', to: 'ganeshsgani000@gmail.com'
     }
     */
-    stage('DiscardOldBuilds-pollSCM')
-    {
-    properties([[$class: 'JiraProjectProperty'], buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), pipelineTriggers([pollSCM('* * * * *')])])
-    }
+    
 }
