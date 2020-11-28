@@ -1,0 +1,35 @@
+node
+{
+    def mavenHome = tool name: "maven-3.6.3"
+    stage('checkoutCode')
+    {
+       git branch: 'development', credentialsId: '9738abfc-82b4-40ab-8140-ba86376112eb', url: 'https://github.com/ganesh-solutions/maven-web-application.git' 
+    }
+    stage('build')
+    {
+        sh "${mavenHome}/bin/mvn clean package"
+    }
+    stage('executeSonarQubeReport')
+    {
+        sh "${mavenHome}/bin/mvn sonar:sonar"
+    }
+    stage('executeArtifactIntoNexus')
+    {
+     sh "${mavenHome}/bin/mvn deploy"   
+    }
+    stage('DeployAppInToTomcat')
+    {
+       sshagent(['d8bff15d-7d32-4aed-93e8-b457f7850d1f']) 
+    {
+        sh "scp -o  StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.126.215.153:/opt/apache-tomcat-9.0.39/webapps/"
+    }
+    }
+    stage('SendEmailNotification')
+    {
+        mail bcc: '', body: '''build over...
+
+regards
+ganesh S
+9035733006''', cc: 'ganeshsgani1996@gmail.com', from: '', replyTo: '', subject: 'build over', to: 'ganeshsgani000@gmail.com'
+    }
+}
