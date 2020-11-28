@@ -34,4 +34,8 @@ ganesh S
 9035733006''', cc: 'ganeshsgani1996@gmail.com', from: '', replyTo: '', subject: 'build over', to: 'ganeshsgani000@gmail.com'
     }
     */
+    stage('DiscardOldBuilds-pollSCM')
+    {
+    properties([[$class: 'JiraProjectProperty'], buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), pipelineTriggers([pollSCM('* * * * *')])])
+    }
 }
