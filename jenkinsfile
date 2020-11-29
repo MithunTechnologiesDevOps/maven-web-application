@@ -1,4 +1,4 @@
-node
+node('flipkartnode')
 {
     def mavenHome = tool name: "maven-3.6.3"
     properties([[$class: 'JiraProjectProperty'], buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), pipelineTriggers([pollSCM('* * * * *')])])
