@@ -1,0 +1,37 @@
+node('node3')
+{
+    properties([[$class: 'JiraProjectProperty'], buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '4', daysToKeepStr: '4', numToKeepStr: '4')), parameters([choice(choices: ['development', 'master', 'test', 'qa'], description: '', name: 'BranchName'), string(defaultValue: 'SudheerReddy M', description: '', name: 'PersonName', trim: false)]), [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * *')])])
+ 
+    def mavenHome= tool name: "Maven3.6.3"
+    stage('Checkoutcode From SCM')
+    {
+        git credentialsId: 'c2d22cee-b31e-4038-a180-2d1edb88cce4', url: 'https://github.com/msr-ec-application-mt/maven-web-application.git'
+    }
+    stage('Buildcode from Maven')
+    {
+        sh "${mavenHome}/bin/mvn clean package"
+    }
+    stage('Excute SonarQubeReport')
+    {
+     sh "${mavenHome}/bin/mvn sonar:sonar"   
+    }
+    stage('Upload artifact in to NexusServer')
+    {
+      sh "${mavenHome}/bin/mvn deploy"  
+    }
+    stage('DeployAppIntoTomcatServer')
+    {
+        sshagent(['eb96e5ff-8328-4352-bf3e-45ecff7de812']) 
+        {
+    sh  "scp -o  StrictHostKeyChecking=no target/maven-web-application.war  ec2-user@54.198.188.186:/opt/apache-tomcat-9.0.40/webapps/"
+}
+}
+/*
+stage('Email alerts')
+{
+mail bcc: 'devops2020sudheer!@gmail.com', body: '''regards,
+SudheerReddy.''', cc: 'devops2020sudheer!@gmail.com', from: '', replyTo: '', subject: 'build over...,', to: 'devops2020sudheer!@gmail.com'
+    
+}
+*/
+}
