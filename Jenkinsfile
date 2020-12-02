@@ -20,7 +20,7 @@ node ('master')
  
  stage("Build")
  {
- bat "${mavenHome}/bin/mvn clean package"
+ bat "mvn clean package"
  }
  
   /*
