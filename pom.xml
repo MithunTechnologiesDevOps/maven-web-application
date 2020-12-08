@@ -100,14 +100,14 @@
 	
 	    <repository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://13.232.144.104:9980/ganesh/repository/flipkart-release/</url>
+	      <name>hemanth-release Repository</name>
+	      <url>http://15.207.116.26:9980/ganesh/repository/hemanth-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://13.232.144.104:9980/ganesh/repository/flipkart-snapshot/</url>
+	      <name>hemanth snapshot  Repository </name>
+	      <url>http://15.207.116.26:9980/ganesh/repository/hemanth-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
