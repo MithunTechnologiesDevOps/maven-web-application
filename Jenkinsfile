@@ -15,24 +15,25 @@ def mavenHome = tool name: "maven3.6.3"
  sh "${mavenHome}/bin/mvn clean package"
  }
  
+  /*
  stage('SonarQubeReport')
  {
  sh "${mavenHome}/bin/mvn sonar:sonar"
  }
  
- /*
+
  stage('UploadArtifactIntoNexus')
  {
  sh "${mavenHome}/bin/mvn deploy"
  }
- */
+
  stage('DeployappIntoTomcatServer')
  {
  sshagent(['cb97b0ad-6067-42a4-a9c7-4de4cce322e9']) {
   sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@65.0.133.236:/opt/apache-tomcat-9.0.41/webapps/"  
  }
  }
- 
+  */
  stage('SendNotifications')
  {
  mail bcc: 'devopstrainingblr@gmail.com', body: '''Build Over...
