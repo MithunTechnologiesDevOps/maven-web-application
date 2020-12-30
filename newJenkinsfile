@@ -17,7 +17,12 @@ pipeline {
         stage("Build_Artifact") {
             steps {
                 sh 'mvn clean package'
-		}
+	   }
 	}
+        stage("Build_Image") {
+            steps {
+                sh 'docker build -t 172.31.11.146:8083/mavenapp:v1 .'
+           }
+        }
     }
 }
