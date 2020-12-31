@@ -1,0 +1,28 @@
+node
+ {
+ properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', 
+ artifactNumToKeepStr: '3', daysToKeepStr: '', numToKeepStr: '3')), pipelineTriggers([pollSCM('* * * * *')])])
+ 
+ def mavenHome = tool name: "maven 3.6.3" 
+ 
+ stage ('checkoutcode')
+    {
+git branch: 'development', credentialsId: '08200d05-effd-445b-8881-6cecd6565208', 
+url: 'https://github.com/rajesh-devops-github/maven-web-application.git'	
+}
+stage ('build')
+{
+sh "${mavenHome}/bin/mvn clean package"
+}
+stage ('storeartifactoriesintonexus')
+{
+sh "${mavenHome}/bin/mvn clean deploy"
+}
+stage ('deploycodeintotomcat')
+{
+sshagent(['95649dd9-d978-4775-a781-e3e5fa45c567']) 
+{
+ sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@15.206.90.147:/opt/apache-tomcat-9.0.41/webapps"   
+}
+}
+ }
