@@ -21,7 +21,7 @@ pipeline {
 	}
         stage("Build_Image") {
             steps {
-                sh 'docker build -t 172.31.11.146:8083/mavenapp:v1 .'
+                sh 'docker build -t 172.31.11.146:8083/mavenapp:v2 .'
            }
         }
         stage("push_Image_nexus") {
@@ -29,8 +29,15 @@ pipeline {
                 withCredentials([string(credentialsId: 'Nexushub', variable: 'NexusHub')]) {
                 sh 'docker login -u admin -p ${NexusHub} 172.31.11.146:8083'
                  }
-                sh 'docker push 172.31.11.146:8083/mavenapp:v1'
+                sh 'docker push 172.31.11.146:8083/mavenapp:v2'
+		sh 'docker rmi 172.31.11.146:8083/mavenapp:v2'
            }
         }
+        stage("Local_Deploy") {
+            steps {
+                 withCredentials([string(credentialsId: 'Nexushub', variable: 'NexusHub')]) {
+                 sh 'docker login -u admin -p ${NexusHub} 172.31.11.146:8083'
+		  }
+                 sh 'docker run -d -p 8282:8080 --name maven 172.31.11.146:8083/mavenapp:v2'
     }
 }
