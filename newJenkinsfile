@@ -41,5 +41,5 @@ pipeline {
                  sh 'docker run -d -p 8282:8080 --name maven 172.31.11.146:8083/mavenapp:v2'
             }
         }
-   }
-}
+  }
+
