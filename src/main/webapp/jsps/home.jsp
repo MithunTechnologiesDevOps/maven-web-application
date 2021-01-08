@@ -18,7 +18,7 @@
 	</span>
 	<span style="font-weight: bold;">
 		Reddy Technologies, 
-		Martha Halli,Opp To Madhurai Iddly House
+		Martha Halli,Opp To Madhurai  House
 		Bangalore.
 		+91-9980923226,
 		<br>
