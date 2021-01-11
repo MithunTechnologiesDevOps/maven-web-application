@@ -17,7 +17,7 @@
 		<img src="images/mithunlogo.jpg" alt="" width="100">
 	</span>
 	<span style="font-weight: bold;">
-		reddy Technologies, 
+		Reddy Technologies, 
 		Martha Halli,Opp To Madhurai  House
 		Bangalore.
 		+91-9980923226,
