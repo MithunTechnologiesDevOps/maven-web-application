@@ -12,6 +12,7 @@ node{
   sh "${mavenHome}/bin/mvn clean package"
  }
  
+   /*
  stage('ExecuteSonarQubeReport')
  {
   sh "${mavenHome}/bin/mvn sonar:sonar"
@@ -37,4 +38,5 @@ stage('DeployAppintoTomcatServer')
    Mithun Technologies,
    9980923226''', cc: 'devopstrainingblr@gmail.com', from: '', replyTo: '', subject: 'Build Over..', to: 'devopstrainingblr@gmail.com'
   }
+  */
 }
