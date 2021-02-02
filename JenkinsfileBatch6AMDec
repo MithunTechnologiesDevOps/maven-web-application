@@ -3,6 +3,8 @@ node
     
  def mavenHome = tool name: "maven3.6.3"
  
+ // This is S LC 
+ 
  stage('CheckoutCode')
  {
    git branch: 'development', credentialsId: '8e348aa2-9531-4dbe-863d-1adb64897470', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git'
