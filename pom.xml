@@ -90,7 +90,7 @@
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
-			<version>3.1.1</version>
+			<version>3.1.0</version>
 			<scope>provided</scope>
 		</dependency>
 		
@@ -101,7 +101,7 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>hemanth-release Repository</name>
-	      <url>http://52.66.246.229:8081/repository/maven-web-application/</url>
+	      <url>http://52.66.246.229:8081/repository/maven-web-application-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
