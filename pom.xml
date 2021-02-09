@@ -100,14 +100,14 @@
 	<distributionManagement>
 	
 	    <repository>
-	      <id>nexus</id>
-	      <name>ganesh</name>
+	      <id>maven</id>
+	      <name>release</name>
 	      <url>http://52.66.246.229:8081/repository/maven-web-application-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
-	      <id>nexus</id>
-	      <name>ganesh</name>
+	      <id>maven</id>
+	      <name>snapshot</name>
 	      <url>http://52.66.246.229:8081/repository/maven-web-application-snapshot/</url>
 	    </snapshotRepository>
 	    
