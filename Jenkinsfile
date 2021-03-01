@@ -1,0 +1,43 @@
+node
+{
+
+def mavenHome = tool name: "maven3.6.3"
+
+properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '3', daysToKeepStr: '', numToKeepStr: '3')), pipelineTriggers([pollSCM('* * * * *')])])
+
+stage('CheckoutCode')
+{
+git branch: 'development', credentialsId: '347c3760-8e63-4289-9fe9-0a03f8442491', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git'
+}
+
+stage('Build')
+{
+sh "${mavenHome}/bin/mvn clean package"
+}
+
+stage('ExecuteSonarQubeReport')
+{
+sh "${mavenHome}/bin/mvn sonar:sonar"
+}
+
+stage('UploadArtifactsIntoNexus')
+{
+sh "${mavenHome}/bin/mvn deploy"
+}
+
+stage('DeployAppIntoTomcatSerer')
+{
+sshagent(['a2b944b0-d466-4676-8997-3658e2ab4fca']) {
+ sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.229.224.120:/opt/apache-tomcat-9.0.41/webapps/"
+}
+}
+stage('SendEmailNotification')
+{
+emailext body: '''Build Over!..
+
+Regards,
+Mithun Technologies,
+9980923226''', subject: 'Build Over...', to: 'devopstrainingblr@gmail.com'
+}
+
+}
