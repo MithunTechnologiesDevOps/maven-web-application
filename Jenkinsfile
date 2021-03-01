@@ -15,11 +15,13 @@ stage('Build')
 sh "${mavenHome}/bin/mvn clean package"
 }
 
+/*
 stage('ExecuteSonarQubeReport')
 {
 sh "${mavenHome}/bin/mvn sonar:sonar"
 }
 
+ 
 stage('UploadArtifactsIntoNexus')
 {
 sh "${mavenHome}/bin/mvn deploy"
@@ -39,5 +41,5 @@ Regards,
 Mithun Technologies,
 9980923226''', subject: 'Build Over...', to: 'devopstrainingblr@gmail.com'
 }
-
+*/
 }
