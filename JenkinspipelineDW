@@ -1,0 +1,73 @@
+pipeline{
+                                                 
+agent any;
+
+tools{
+
+maven 'maven3.6.3'
+
+}
+
+options{
+timestamps()
+
+}
+
+stages{
+
+    stage('CheckOutCode'){
+	 steps{
+	   git branch: 'development', credentialsId: '347c3760-8e63-4289-9fe9-0a03f8442491', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git'
+	 }
+	}
+	
+	stage('Build'){
+	  steps{
+	  sh "mvn clean package"
+	  }
+	}
+  
+  stage('ExecuteSonarQubeReport'){
+	steps{
+	sh "mvn sonar:sonar"
+	}
+	}
+	
+	stage('UploadArtifactsIntoNexus'){
+	steps{
+	sh "mvn deploy"
+	}
+	}
+	
+	stage('DeployAppIntoTomcatServer'){
+	steps{
+	sshagent(['a2b944b0-d466-4676-8997-3658e2ab4fca']) {
+	 sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.213.0.19:/opt/apache-tomcat-9.0.41/webapps/"
+	}
+	}
+	}
+	
+}
+
+	post{
+
+	  success{
+	    mail body: '''Build Over!.. Success
+
+Regards,
+Mithun Technologies,
+9980923226''', subject: 'Build Over...Successfull', to: 'devopstrainingblr@gmail.com'
+	  }
+	  
+	  failure{
+	     
+	  	    mail body: '''Build Over!.. Failed
+
+	  Regards,
+	  Mithun Technologies,
+	  9980923226''', subject: 'Build Over...Failed', to: 'devopstrainingblr@gmail.com'
+	  }
+	  
+	  
+	}
+}
