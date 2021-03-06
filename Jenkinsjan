@@ -1,0 +1,38 @@
+node('nodes')
+{
+
+def mavenHome = tool name: "maven3.6.3"
+
+stage('CheckoutCode')
+{
+git credentialsId: '296bb605-a0b1-4f19-8293-ffa146c24ec8', url: 'https://github.com/dineshsar/maven-web-application.git'
+}
+
+stage('Build')
+{
+sh "${mavenHome}/bin/mvn clean package"
+}
+
+/*
+stage('ExecuteSonarQubeReport')
+{
+sh "${mavenHome}/bin/mvn sonar:sonar"
+}
+
+ 
+stage('UploadArtifactsIntoNexus')
+{
+sh "${mavenHome}/bin/mvn deploy"
+}
+
+stage('DeployAppIntoTomcatSerer')
+{sshagent(['330d0c17-f3dd-443a-9c12-6732e6779477']) {
+ sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.229.224.120:/opt/apache-tomcat-9.0.41/webapps/"
+}
+}
+stage('SendEmailNotification')
+{
+mail body: 'build over', subject: 'build over', to: 'dk23606@gmail.com''
+}
+*/
+}
