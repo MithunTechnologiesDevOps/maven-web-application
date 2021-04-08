@@ -99,13 +99,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Naveen Technologies Releases Nexus Repository</name>
-	      <url>http://13.232.100.245:8081/mithuntechnologies/repository/paytm-release/</url>
+	      <url>http://65.1.107.143:8081/repository/flipkart-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Naveen Technologies Snapshot Nexus Repository </name>
-	      <url>http://13.232.100.245:8081/mithuntechnologies/repository/paytm-snapshot/</url>
+	      <url>http://65.1.107.143:8081/repository/flipkart-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
