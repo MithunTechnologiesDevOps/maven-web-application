@@ -10,6 +10,7 @@ node
   echo "Jenkins URL ${env.JENKINS_URL}"
   echo "JOB Name ${env.JOB_NAME}"
   
+  properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '3', daysToKeepStr: '', numToKeepStr: '3')), pipelineTriggers([pollSCM('* * * * * ')])])
   
  stage('CheckoutCode')
  {
