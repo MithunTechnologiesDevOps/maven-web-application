@@ -1,0 +1,83 @@
+pipeline
+{
+
+agent any
+
+tools {
+ maven 'maven3.6.3'
+}
+
+triggers{
+pollSCM('* * * * *')
+}
+
+options{
+//Add the timestamp to the console output
+timestamps()
+//Discard old buids
+buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '3', daysToKeepStr: '', numToKeepStr: '3'))
+}
+
+
+stages{
+
+  stage('CheckOutCode')
+  {
+    steps{
+    git branch: 'development', credentialsId: '05d44367-ae8e-4ef8-88f3-330b9e349310', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git'
+	}
+  }
+  
+  stage('Build')
+  {
+   steps{
+   sh "mvn clean package"
+   }
+  }
+
+stage('ExecuteSonarqubeReport')
+  {
+    steps{
+	sh "mvn sonar:sonar"
+	}
+  }
+  
+  stage('UploadArtifactsintoNexus')
+  {
+    steps{
+	sh "mvn deploy"
+	}
+  }
+  
+  stage('DeployAppIntoTomcatServer')
+  {
+    steps{
+    sshagent(['80459334-5776-471c-90c6-277f3fbdd727']) {
+    sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@3.104.111.88:/opt/apache-tomcat-9.0.44/webapps/"
+    }
+	}
+  }
+  
+  
+    
+}
+
+post{
+  
+   success{
+	 emailext body: '''Build is over - Declarative way..
+
+	 Regards,
+	 Mithun Technologies,
+	 9980923226''', subject: 'Build is successfull - Declarative way..', to: 'devopstrainingblr@gmail.com,bhaskar0504@gmail.com'
+   }
+   failure{
+   emailext body: '''Build is  failed - Declarative way..
+
+   Regards,
+   Mithun Technologies,
+   9980923226''', subject: 'Build is over - Declarative way..', to: 'devopstrainingblr@gmail.com,bhaskar0504@gmail.com'
+   }
+  }
+
+}
