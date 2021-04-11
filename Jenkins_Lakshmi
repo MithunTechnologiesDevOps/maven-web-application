@@ -1,0 +1,27 @@
+node
+ {
+     def mavenHome=tool name:"maven3.6.3"
+ stage('code checkout')
+ {
+ git branch: 'development', credentialsId: '97998c49-93ca-4f47-8940-37ebdd36e98b', url: 'https://github.com/lakshmi-devops-jan/maven-web-application.git'
+ }
+ stage('Build')
+ {
+ sh "${mavenHome}/bin/mvn clean package"
+ }
+  stage('SonarQube Report')
+ {
+ sh "${mavenHome}/bin/mvn sonar:sonar"
+ }
+   stage('Upload artifacts into Nexus Repository')
+ {
+ sh "${mavenHome}/bin/mvn deploy"
+ }
+    stage('Deploy Application to Tomcat Server')
+ {
+ sshagent(['4d88bac9-0fe2-418d-bd04-f91ab0618c7d']) 
+ {
+    sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@65.1.248.13:/opt/apache-tomcat-9.0.44/webapps"
+ }
+ }
+ }
