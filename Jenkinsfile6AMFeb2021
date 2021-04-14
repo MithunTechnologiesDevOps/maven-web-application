@@ -3,12 +3,12 @@ node
  def mavenHome = tool name: "maven3.6.3"
  
  //echo "GitHub BranhName ${env.BRANCH_NAME}"
-  //echo "Jenkins Job Number ${env.BUILD_NUMBER}"
+  //echo "Jenkins Job Number is: -->  ${env.BUILD_NUMBER}"
   echo "Jenkins Node Name is: --> ${env.NODE_NAME}"
   
-  echo "Jenkins Home ${env.JENKINS_HOME}"
-  echo "Jenkins URL ${env.JENKINS_URL}"
-  echo "JOB Name ${env.JOB_NAME}"
+  echo "Jenkins Home is: --> ${env.JENKINS_HOME}"
+  echo "Jenkins URL is: -->  ${env.JENKINS_URL}"
+  echo "JOB Name is: -->  ${env.JOB_NAME}"
   
   properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '3', daysToKeepStr: '', numToKeepStr: '3')), pipelineTriggers([pollSCM('* * * * * ')])])
   
