@@ -1,4 +1,4 @@
-node ('master')
+node ('nodejsinstance')
  {
   
   def mavenHome = tool name: "maven3.6.3"
