@@ -100,7 +100,8 @@
 	      <id>nexus</id>
 	      <name>Mithun Technologies Releases Nexus Repository</name>
 	      <url>http://13.235.69.173:9980/Aishwarya/repository/wallmart-release/</url>
-	    
+	      </repository>
+		
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
