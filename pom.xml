@@ -100,13 +100,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://13.126.217.173:8081/repository/maven-web-application-releases/</url>
+	      <url>http://13.233.246.91:8081/repository/maven-web-application-releases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://13.126.217.173:8081/repository/maven-web-application-snapshots/</url>
+	      <url>http://13.233.246.91:8081/repository/maven-web-application-snapshots/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
