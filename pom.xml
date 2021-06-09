@@ -7,7 +7,7 @@
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	
-	<!-- chking github webhook-->
+	<!-- chking poll scm-->
 	
 	<name>maven-web-application</name>
 
