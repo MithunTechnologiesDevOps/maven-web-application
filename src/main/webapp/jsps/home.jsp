@@ -9,8 +9,8 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to Sravani's Family</h1>
-<h1 align="center"> Welcome to Sravani's Family....and devops course LinuxCommands==>Shellscripting==>Maven==>SonarQube==>Nexus==>Jenkins</h1>
+<h1 align="center">Welcome to Bujji's Family</h1>
+<h1 align="center"> Welcome to Bujji's Family....and devops course LinuxCommands==>Shellscripting==>Maven==>SonarQube==>Nexus==>Jenkins</h1>
 <hr>
 <div style="text-align: center;">
 	<span>
