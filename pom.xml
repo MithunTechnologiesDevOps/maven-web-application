@@ -105,7 +105,7 @@
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://3.108.215.114:8000/repository/basha-snapshot/</url>
+	      <url>http://3.108.215.114:8081/repository/basha-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
