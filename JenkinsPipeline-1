@@ -1,0 +1,34 @@
+node('master'){
+    def mavenHome= tool name:"maven3.8.1"
+    buildName 'Lithvipurushotham'
+    properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), pipelineTriggers([githubPush()])])
+    stage('checkOut'){
+       git branch: 'development', credentialsId: '9dd19eff-aa52-4a04-a57d-dfaa51373d57', url: 'https://github.com/COVID-19-AP/maven-web-application.git' 
+    }
+    stage('Build'){
+	 sh "${mavenHome}/bin/mvn clean package"
+	}
+	stage('ExecuteSonarQubeReport'){
+	   sh "${mavenHome}/bin/mvn sonar:sonar" 
+	}
+	stage('UploadArtifactIntoNexus'){
+	   sh "${mavenHome}/bin/mvn deploy" 
+	}
+	stage('DeployIntoTomcatServer'){
+	    sshagent(['33bc9cd9-4fc8-4a32-a365-3d55101b2cf3']) {
+	        sh "scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/maven-web-application-pipeline/target/maven-web-application.war ec2-user@65.0.134.157:/opt/apache-tomcat-9.0.46/webapps"
+    
+       }
+	}
+	stage('EmailNotifications'){
+	  emailext body: '''Hi Team ,
+
+This is First session for the Pipeline practice 
+
+Regards
+Purushotham A
+9494412397''', recipientProviders: [developers()], subject: 'Pipeline Project Practice session 1', to: 'apurushotham19@gmail.com'  
+	    
+	}
+	
+}
