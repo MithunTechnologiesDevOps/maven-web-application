@@ -1,0 +1,56 @@
+pipeline {
+agent any
+triggers {
+    githubPush()
+}
+options {
+    timestamps()
+}
+tools {
+    maven "maven3.8.1"
+}
+stages{
+ stage ('codecheckout') {
+steps {
+   git branch: 'development', credentialsId: '30de2c62-5afb-48c0-b5b8-5502660bbeec', url: 'https://github.com/mahaboobbasha1/maven-web-application.git' 
+}
+}
+stage ('build') {
+    steps {
+        sh "mvn clean package"
+    }
+}
+stage ('sonarcodequalityreport') {
+steps {
+    sh "mvn sonar:sonar"
+}
+}
+stage ('deployintoartifact'){
+    steps {
+        sh "mvn clean deploy"
+    }
+}
+stage ('tomcatserverdeploy') {
+    steps {
+         sshagent(['fd113686-fa73-4bbb-a0b3-507e1304d684']) {
+    sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war/ ec2-user@3.7.70.126:/opt/tomcat/webapps/"
+}
+    }
+}
+     
+     
+    
+    
+}
+
+post {
+    success {
+        emailext body: 'successfully done ', subject: 'declarative script result', to: 'mahisam49@gmail.com'
+    }
+    failure {
+        emailext body: 'build failed ', subject: 'declarative script result', to: 'mahisam49@gmail.com'
+    }
+}
+    
+    
+}
