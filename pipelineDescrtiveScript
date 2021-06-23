@@ -19,27 +19,27 @@ pipeline{
 
 stages{
  stage('CheckOutCode'){
-	step{
+	steps{
 	git branch: 'development', credentialsId: '9dd19eff-aa52-4a04-a57d-dfaa51373d57', url: 'https://github.com/COVID-19-AP/maven-web-application.git'
 	}
    }//checkoutOut closed
     stage('Build'){
-	  step{
+	  steps{
 	     sh "mvn clean package"
 		 }
    }//Build stage closed
     stage('ExeciteSonarQubeReport'){
-	    step{
+	    steps{
 	     sh "mvn clean sonar:soanr"
 		 }
    }//ExecuteSonarQubeReport stage closed
 	stage('UploadArtifactIntonexus'){
-		step{
+		steps{
 			sh "mvn clean deploy"
 		}
 	}//UploadArtifactIntonexus stage close
 	stage('DeployIntoTomcatServer'){
-		step{
+		steps{
 			sshagent(['33bc9cd9-4fc8-4a32-a365-3d55101b2cf3']) {
 			sh "scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/pipeline-project-descriptive/target/maven-web-application.war ec2-user@13.126.245.16:/opt/apache-tomcat-9.0.46/webapps"
 			}
