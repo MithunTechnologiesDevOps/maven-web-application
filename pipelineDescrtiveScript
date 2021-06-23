@@ -51,7 +51,7 @@ stages{
 
 post{
 
-	sucess{
+	success{
 		emailext body: '''Hi Team Build is completed you find the success !!-report
 
 
