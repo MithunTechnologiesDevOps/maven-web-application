@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1 align="center">Welcome to purushotham's Family</h1>
-<h1 align="center"> Welcome to Alapakula's Family....and devops course LinuxCommands==>Shellscripting==>Maven==>SonarQube==>Nexus==>Jenkins ==> Ansible ==> Decker</h1>
+<h1 align="center"> Welcome to Purushotham's Family....and devops course LinuxCommands==>Shellscripting==>Maven==>SonarQube==>Nexus==>Jenkins ==> Ansible ==> Decker</h1>
 <hr>
 <div style="text-align: center;">
 	<span>
