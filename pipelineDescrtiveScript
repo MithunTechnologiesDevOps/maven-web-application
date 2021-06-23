@@ -6,12 +6,14 @@ pipeline{
 	tools{
 		maven "maven3.8.1"
 	}//tools closed
+	/*
 	triggers{
 		//pipelineTriggers([githubPush()])
 		//pipelineTriggers([cron('* * * * *')])
 		//pipelineTriggers([pollSCM('* * * * *')])
 
 	}//triggers closed
+	*/
 	options{
 		buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5'))
 	
