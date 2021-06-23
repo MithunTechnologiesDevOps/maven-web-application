@@ -1,0 +1,23 @@
+node {
+    def mavenhome = tool name : "maven3.8.1"
+    stage ('codecheckout') {
+     git branch: 'development', credentialsId: '30de2c62-5afb-48c0-b5b8-5502660bbeec', url: 'https://github.com/mahaboobbasha1/maven-web-application.git'   
+    }
+    stage ('build') {
+        sh "$mavenhome/bin/mvn clean package"
+    }
+    stage ('sonarcodequality') {
+        sh "$mavenhome/bin/mvn sonar:sonar"
+    }
+    stage  ('storeintoartifactory') {
+        sh "$mavenhome/bin/mvn deploy" 
+    }
+    stage('deplyingintotomcat') {
+        sshagent(['fd113686-fa73-4bbb-a0b3-507e1304d684']) {
+    sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war/ ec2-user@15.207.110.44:/opt/tomcat/webapps/"
+}
+    }
+    stage ('mail') {
+        emailext body: 'basha successful', subject: 'basha', to: 'mahisam49@gmail.com'
+    }
+}
