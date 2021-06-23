@@ -9,7 +9,7 @@ pipeline{
 	triggers{
 		//pipelineTriggers([githubPush()])
 		//pipelineTriggers([cron('* * * * *')])
-		pipelineTriggers([pollSCM('* * * * *')])
+		//pipelineTriggers([pollSCM('* * * * *')])
 
 	}//triggers closed
 	options{
