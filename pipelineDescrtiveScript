@@ -59,7 +59,7 @@ Best regards
 Purushotham A
 9494412397''', subject: 'Build Activity is Over!!', to: 'apurushotham19@gmail.com'
 	}
-	Failure{
+	failure{
 		emailext body: '''Hi Team Build is completed you find the Failure !!-report
 
 
