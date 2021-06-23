@@ -1,9 +1,9 @@
 pipeline{
 	agent any
 	triggers{
-		//pipelineTriggers([githubPush()])
-		//pipelineTriggers([cron('* * * * *')])
-		pipelineTriggers([pollSCM('* * * * *')])
+		//githubPush()
+		//cron('* * * * *')
+		pollSCM('* * * * *')
 
 	}//triggers closed
 	tools{
@@ -11,6 +11,7 @@ pipeline{
 	}//tools closed
 	
 	options{
+		timestamp()
 		buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5'))
 	
 	}//options closed
