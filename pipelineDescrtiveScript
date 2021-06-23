@@ -7,9 +7,9 @@ pipeline{
 		maven "maven3.8.1"
 	}//tools closed
 	triggers{
-		pipelineTriggers([githubPush()])
+		//pipelineTriggers([githubPush()])
 		//pipelineTriggers([cron('* * * * *')])
-		//pipelineTriggers([pollSCM('* * * * *')])
+		pipelineTriggers([pollSCM('* * * * *')])
 
 	}//triggers closed
 	options{
