@@ -6,9 +6,9 @@ triggers {
 options {
     timestamps()
 }
-tools {
+/*tools {
     maven "maven3.8.1"
-}
+}*/
 stages{
  stage ('codecheckout') {
 steps {
