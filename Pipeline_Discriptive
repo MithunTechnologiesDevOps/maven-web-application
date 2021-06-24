@@ -1,6 +1,6 @@
 pipeline{
 	agent{
-	label 'slaves'
+	label 'slave_Tomcat'
 	}
 	triggers{
 		//githubPush()
