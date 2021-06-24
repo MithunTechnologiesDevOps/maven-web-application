@@ -1,9 +1,7 @@
 pipeline{
-	agent{
-	 label 'Branching_Pipeline_slaves'
-	}
+	agent any
 	triggers{
-		//githubPush()
+		githubPush()
 		//cron('* * * * *')
 		//pollSCM('* * * * *')
 
@@ -36,7 +34,7 @@ stages{
    }//ExecuteSonarQubeReport stage closed
 	stage('UploadArtifactIntonexus'){
 		steps{
-			sh "mvn clean deploy"
+			sh "mvn deploy"
 		}
 	}//UploadArtifactIntonexus stage close
 	stage('DeployIntoTomcatServer'){
@@ -51,22 +49,23 @@ stages{
 }//stagres closed
 
 post{
+success{
+	emailext body: '''Hi Team,
 
-	success{
-		emailext body: '''Hi Team Build is completed you find the success !!-report
-
+ You build is scuess.
 
 Best regards
 Purushotham A
-9494412397''', subject: 'Build Activity is Over!!', to: 'apurushotham19@gmail.com'
-	}
+9494412397''', subject: 'Build is Success !!!', to: 'apurushotham19@gmail.com'
+}
 	failure{
-		emailext body: '''Hi Team Build is completed you find the Failure !!-report
+		emailext body: '''Hi Team,
 
+Your build is failure 
 
-Best regards
-Purushotham A
-9494412397''', subject: 'Build Activity is Over!!', to: 'apurushotham19@gmail.com'
+Besr regards
+Purushotham A 
+9494412397''', subject: 'Build is failure !!!', to: 'apurushotham19@gmail.com'
 	}
 
 }//post section closed
