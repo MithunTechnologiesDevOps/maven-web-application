@@ -5,7 +5,7 @@ pipeline{
 	triggers{
 		//githubPush()
 		//cron('* * * * *')
-		pollSCM('* * * * *')
+		//pollSCM('* * * * *')
 
 	}//triggers closed
 	tools{
