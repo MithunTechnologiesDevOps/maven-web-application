@@ -1,9 +1,7 @@
 pipeline{
-	agent{
-	label 'slaves'
-	}
+	agent any
 	triggers{
-		//githubPush()
+		githubPush()
 		//cron('* * * * *')
 		//pollSCM('* * * * *')
 
