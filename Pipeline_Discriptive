@@ -3,7 +3,7 @@ pipeline{
 	label 'slaves'
 	}
 	triggers{
-		githubPush()
+		//githubPush()
 		//cron('* * * * *')
 		//pollSCM('* * * * *')
 
