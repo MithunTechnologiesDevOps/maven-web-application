@@ -1,5 +1,7 @@
 pipeline{
-	agent any
+	agent{
+	label 'slaves'
+	}
 	triggers{
 		githubPush()
 		//cron('* * * * *')
