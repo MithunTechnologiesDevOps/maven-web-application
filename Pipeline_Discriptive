@@ -2,14 +2,14 @@ pipeline{
 	agent{
 	label 'slaves'
 	}
-	
+	/*
 	triggers{
 		//githubPush()
 		//cron('* * * * *')
 		pollSCM('* * * * *')
 
 	}//triggers closed
-	
+	*/
 	tools{
 		maven "maven3.8.1"
 	}//tools closed
