@@ -98,14 +98,14 @@
 	
 	    <repository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://3.109.54.181:9980/mithuntechnologies/repository/wallmart-release/</url>
+	      <name>raviteja wallmart-release</name>
+	      <url>http://3.238.29.155:8888/ravitejabadabagni/repository/wallmart-release//</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://3.109.54.181:9980/mithuntechnologies/repository/wallmart-snapshot/</url>
+	      <name>raviteja wallmart-snapshot </name>
+	      <url>http://3.238.29.155:8888/ravitejabadabagni/repository/wallmart-snapshot//</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
