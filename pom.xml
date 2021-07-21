@@ -99,13 +99,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>raviteja wallmart-release</name>
-	      <url>http://3.238.29.155:8888/ravitejabadabagni/repository/wallmart-release//</url>
+	      <url>http://3.215.23.34:8888/ravitejabadabagni/repository/wallmart-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>raviteja wallmart-snapshot </name>
-	      <url>http://3.238.29.155:8888/ravitejabadabagni/repository/wallmart-snapshot//</url>
+	      <url>http://3.215.23.34:8888/ravitejabadabagni/repository/wallmart-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
