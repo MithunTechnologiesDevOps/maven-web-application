@@ -94,18 +94,18 @@
 		
 	</dependencies>
 	
-	<!-- <distributionManagement>
+	<distributionManagement>
 	
 	    <repository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://3.94.123.187:8888/sudheertech/repository/flipkart-release/</url>
+	      <name>Sudheer Technologies Releases Nexus Repository</name>
+	      <url>http://34.228.36.151:8081/repository/flipkar-releases/></url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://3.94.123.187:8888/sudheertech/repository/flipkart-snapshot/</url>
+	      <name>Sudheer Technologies Snapshot Nexus Repository </name>
+	      <url>http://34.228.36.151:8081/repository/flipkart-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement> -->
