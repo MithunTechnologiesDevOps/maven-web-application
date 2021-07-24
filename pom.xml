@@ -99,13 +99,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Sudheer Technologies Releases Nexus Repository</name>
-	      <url>http://3.94.196.120:8081/repository/flipkar-releases/</url>
+	      <url>http://54.145.222.243:8081/repository/flipkar-releases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Sudheer Technologies Snapshot Nexus Repository </name>
-	      <url>http://3.94.196.120:8081/repository/flipkart-snapshot/</url>
+	      <url>http://54.145.222.243:8081/repository/flipkart-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement> 
