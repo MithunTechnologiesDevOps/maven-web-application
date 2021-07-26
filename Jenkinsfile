@@ -1,0 +1,41 @@
+node{
+
+def mavenHome = tool name: "maven3.6.3"
+
+stage('CheckoutCode'){
+ git branch: 'development', credentialsId: '957b543e-6f77-4cef-9aec-82e9b0230975', url: 'https://github.com/devopstrainingblr/maven-web-application-1.git'
+}
+
+stage('Build'){
+sh "${mavenHome}/bin/mvn clean package"
+}
+
+/*
+stage('ExecuteSonarQubeReport'){
+sh "${mavenHome}/bin/mvn sonar:sonar"
+}
+
+stage('UploadArtifactIntoNexus'){
+sh "${mavenHome}/bin/mvn deploy"
+}
+
+stage('DeployAppIntoTomcatServer')
+{
+sshagent(['bfe1b3c1-c29b-4a4d-b97a-c068b7748cd0']) {
+ sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@35.154.190.162:/opt/apache-tomcat-9.0.50/webapps/"    
+}
+}
+
+
+stage('SendEmailNotification')
+{
+emailext body: '''Build Over!...
+
+Regards,
+Mithun Technologies,
+9980923226''', subject: 'Build over!!', to: 'devopstrainingblr@gmail.com,bhaskar0504@gmail.com,javed.devops0706@gmail.com'
+
+}
+*/
+
+}
