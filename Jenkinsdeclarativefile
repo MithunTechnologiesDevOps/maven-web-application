@@ -1,0 +1,57 @@
+pipeline{
+    agent any;
+    
+    triggers{
+pollSCM('* * * * * ')
+}
+
+    options{
+buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '5', numToKeepStr: '5'))
+}
+    tools{
+        maven "maven 3.8.1"
+    }
+    
+    stages{
+        stage('checkoutcode'){
+            steps{
+                git branch: 'development', credentialsId: '1e9c097e-f2b1-4f59-9877-c9e5a5d78fc2', url: 'https://github.com/ravitejabadabagni/maven-web-application.git'
+            }
+        }
+    stage('build'){
+        steps{
+            sh "mvn clean package"
+        }
+    }
+     stage('sonarqubereport'){
+        steps{
+            sh "mvn clean sonar:sonar"
+        }
+    }   
+    
+    stage('UploadArtifactIntoNexus'){
+      steps{
+          sh "mvn deploy"
+      }
+  }
+  stage('DeployIntoTomcat'){
+  steps{
+      sshagent(['8776029d-fd34-4d53-8d3d-223ab8b2c196']) {
+   sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@44.195.67.68:/opt/apache-tomcat-9.0.50/webapps/"
+}
+     
+  }
+  }    
+        
+    }
+    post {
+    success {
+        emailext body: 'hi', subject: 'hi', to: 'ravitejab8@gmail.com'
+    }
+    failure {
+        emailext body: 'hi', subject: 'hi', to: 'ravitejab8@gmail.com'
+    }
+}
+    
+    
+}
