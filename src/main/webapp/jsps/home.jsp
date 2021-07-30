@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1 align="center"> Good Morning Guys..</h1>
-<h1 align="center">Welcome to DevOps Training , Class starts at 10am, Phone: 7842602239o from rajampet</h1>
+<h1 align="center">Welcome to DevOps Training , Class starts at 10am, Phone: 7842602239o from rajampet Kadapa</h1>
 <hr>
 <br>
 	<h1><h3> Server Side IP Address </h3><br>
