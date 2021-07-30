@@ -47,7 +47,7 @@ node ('master')
 
  Thanks,
  Mithun Technologies,
- 9980923226.''', cc: 'devopstrainingblr@gmail.com', from: '', replyTo: '', subject: 'Build is over!!', to: 'ksureshkumar1025@gmail.com'
+ 9980923226.''', cc: 'devopstrainingblr@gmail.com', from: '', replyTo: '', subject: 'Build is over!!', to: 'devopstrainingblr@gmail.com'
  }
  */
  
