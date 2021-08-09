@@ -1,4 +1,4 @@
-node
+node ( 'Jenkins_Node1 ' )
  {
 
 def mavenHome = tool name: "maven3.8.1"
