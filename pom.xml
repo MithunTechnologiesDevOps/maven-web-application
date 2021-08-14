@@ -100,13 +100,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Sudheer Technologies Releases Nexus Repository</name>
-	      <url>http://52.73.172.30:8081/repository/flipkar-releases/</url>
+	      <url>http://54.224.157.225:8081/repository/wallmart-releases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Sudheer Technologies Snapshot Nexus Repository </name>
-	      <url>http://52.73.172.30:8081/repository/flipkart-snapshot/</url>
+	      <url>http://54.224.157.225:8081/repository/wallmart-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement> 
