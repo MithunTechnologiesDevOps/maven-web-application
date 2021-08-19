@@ -1,0 +1,25 @@
+node(){
+    def MavenHome = tool name:"maven3.6.3"
+    stage ('CheckoutCode'){
+        git branch: 'development', credentialsId: 'Github', url: 'https://github.com/maheshsoftware/maven-web-application.git'
+    }
+    stage ('Build'){
+       sh "${MavenHome}/bin/mvn clean package" 
+    }
+    stage('ExcuteSonarQubeReport'){
+        sh "${MavenHome}/bin/mvn sonar:sonar"
+    }
+    stage('UploadArtifactIntoNexus'){
+        sh "${MavenHome}/bin/mvn deploy"
+    }
+    stage('DeployIntoTomcat'){
+        sshagent(['25ebf216-bb86-4364-a81a-bdd1ae31937f']) {
+    sh "scp -o StrictHostKeyChecking=no  target/maven-web-application.war ec2-user@65.0.31.128:/opt/apache-tomcat-9.0.50/webapps"
+}
+        
+    }
+    stage('EmailNotifiaction'){
+        emailext body: '''This is from 
+MAHESWAR ''', subject: 'Build Success', to: 'mahesh91.me@gmial.com,gift2hyd@gmial.com'
+    }
+}
