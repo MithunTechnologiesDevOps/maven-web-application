@@ -1,6 +1,6 @@
 node
 {
-     def mavenHome = tool name: "maven3.6.3"
+     def mavenHome = tool name: "maven3.8.2"
      
      properties([[$class: 'JiraProjectProperty'], buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '2')), pipelineTriggers([pollSCM('* * * * *')])])
   
@@ -50,7 +50,7 @@ node
 
    Regards,
    Mithun Technologies,
-   9980923226.''', subject: 'Build is over', to: 'devopstrainingblr@gmail.com,bhaskar0504@gmail.com'
+   998092322.''', subject: 'Build is over', to: 'jagadeeshkumar760@gmail.com'
    }
     
     */
