@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>AMAZON SOFTWARE- Home Page</title>
+<title>mithun softwere solutions Home Page</title>
 <link href="images/mithunlogo.jpg" rel="icon">
 </head>
 </head>
