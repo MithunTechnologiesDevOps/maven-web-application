@@ -42,9 +42,10 @@ node('wallmart-node'){
    emailext body: '''Build is over !!
 
    Regards,
-   Mithun Technologies,
-   9980923226''', subject: 'Build Over... !!', to: 'devopstrainingblr@gmail.com'
+   Krishna Technologies,
+   9441286165''', subject: 'Build Over... !!', to: 'bikkiravikumar.rk@gmail.com'
  }
  
  
+}
 }
