@@ -19,7 +19,7 @@ node(node-js'){
   sh "${mavenHome}/bin/mvn clean package"
  }
 
-/*
+
  stage('SonarQubeReport'){
  sh "${mavenHome}/bin/mvn clean sonar:sonar"
  }
@@ -32,11 +32,11 @@ node(node-js'){
  stage('DeployAppIntoTomcatServer')
  {
  sshagentsshagent(['6a7c2275-a25f-4ea3-941d-a367e01d3f8b']){
-  sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@54.152.4.130:/opt/apache-tomcat-9.0.52/webapps/"
+  sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@34.228.255.95:/opt/apache-tomcat-9.0.52/webapps/"
  }
  }6
  
- */
+ 
  
  stage('SendEmailNotification'){
    emailext body: '''Build is over !!
