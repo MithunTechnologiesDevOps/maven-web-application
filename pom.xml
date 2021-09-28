@@ -99,13 +99,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Naga Vardhan reddy Releases Nexus Repository</name>
-	      <url>http://65.1.147.25:8081/repository/wallmart-release/</url>
+	      <url>http://15.207.100.113:8081/repository/wallmart-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Naga Vardhan reddy Snapshot Nexus Repository </name>
-	      <url>http://65.1.147.25:8081/repository/wallmart-snapshot/</url>
+	      <url>http://15.207.100.113:8081/repository/wallmart-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
