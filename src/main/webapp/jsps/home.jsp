@@ -4,13 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>MithunTechnologies- Home Page</title>
+<title>DevOps Training- Home Page</title>
 <link href="images/mithunlogo.jpg" rel="icon">
 </head>
 </head>
 <body>
 <h1 align="center"> Good Morning Guys..</h1>
-<h1 align="center">Welcome to DevOps Training , Class starts at 10am, Phone: 78426022390 from rajampet Kadapa, Andhra Pradesh</h1>
+<h1 align="center">Welcome to DevOps Training , This is our second batch training, Phone: 78426022390 from rajampet Kadapa, Andhra Pradesh</h1>
 <hr>
 <br>
 	<h1><h3> Server Side IP Address </h3><br>
@@ -30,21 +30,21 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 		<img src="images/mithunlogo.jpg" alt="" width="100">
 	</span>
 	<span style="font-weight: bold;">
-		Mithun Technologies, 
-		Martha Halli, Above ICICI Bank, Beside Meghana Foods,
-		Bangalore,
-		+91-9980923226
-		devopstrainingblr@gmail.com
+		DevOps Online Training, 
+		Trainer : Jeevan,
+		Rajampet,
+		+91-7842602230
+		djeevan12@gmail.com
 		<br>
-		<a href="mailto:devopstrainingblr@gmail.com">Mail to Mithun Technologies</a>
+		<a href="mailto:devopstrainingblr@gmail.com">Mail to DevOps Online Training</a>
 	</span>
 </div>
 <hr>
 	<p> Service : <a href="services/employee/getEmployeeDetails">Get Employee Details </p>
 <hr>
 <hr>
-<p align=center>Mithun Technologies - Consultant, Training, Development Center.</p>
-<p align=center><small>Copyrights 2019 by <a href="http://mithuntechnologies.com/">Mithun Technologies</a> </small></p>
+<p align=center>DevOps - Consultant, Training, Development Center.</p>
+<p align=center><small>Copyrights 2019 by <a href="http://DevOpstechnologies.com/">DevOps Online Training</a> </small></p>
 
 </body>
 </html>
