@@ -13,9 +13,9 @@ pipeline{
        buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5'))
     }
     
-   /* triggers{
-       cron('* * * * *')
-    }*/
+    triggers{
+       pollSCM('* * * * *')
+    }
     
     stages{
         stage('checkoutcode'){
