@@ -1,0 +1,48 @@
+pipeline{
+    agent{
+      label: 'nodes'
+    }
+    
+    tools{
+        maven "Maven3.6.2"
+    }
+    
+    options{
+       buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5'))
+    }
+    
+   /* triggers{
+       cron('* * * * *')
+    }*/
+    
+    stages{
+        stage('checkoutcode'){
+            steps{
+            git credentialsId: '27f800d6-0dce-460f-8a74-7226e787be5e', url: 'https://github.com/vignesh130597/maven-web-application.git'
+        }
+        }
+        stage('buildpackage'){
+            steps{
+                sh "mvn clean package"
+            }
+        }
+        stage('sonarqube'){
+            steps{
+                sh "mvn clean sonar:sonar"
+            }
+        }
+        stage('nexus'){
+            steps{
+                sh "mvn deploy"
+            }
+        }
+        stage('deploy'){
+            steps{
+                sshagent(['588162ef-ea5e-42a9-b6f6-99bf7f3c606a']) {
+                sh "scp -o StrictHostKeyChecking=no target/maven-web-java-application.war ec2-user@65.0.6.178:/opt/apache-tomcat-9.0.53/webapps"
+}
+                
+            }
+        }
+    }
+}
