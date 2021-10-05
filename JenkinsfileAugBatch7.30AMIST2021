@@ -1,4 +1,4 @@
-node
+node('wallmart-node')
 {
   
   def mavenHome = tool name: "maven3.6.2"
@@ -28,7 +28,7 @@ node
   }
    }
   
- */
+ 
   stage('SendEmailNotification'){
    mail bcc: 'devopstrainingblr@gmail.com', body: '''Build Over !!
 
@@ -36,5 +36,5 @@ node
    Mithun Technologies,
    9980923226''', cc: 'devopstrainingblr@gmail.com', from: '', replyTo: '', subject: 'Build Over!!', to: 'devopstrainingblr@gmail.com'
   }
-  
+  */
 }//Closing brancket for Node 
