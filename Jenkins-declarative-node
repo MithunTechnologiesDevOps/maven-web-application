@@ -1,7 +1,5 @@
 pipeline{
-    agent{
-      label: "nodes"
-    }
+    agent any
     
     tools{
         maven "Maven3.6.2"
