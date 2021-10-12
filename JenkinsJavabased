@@ -1,0 +1,54 @@
+pipeline{
+    agent any
+    
+    tools{
+        maven 'Maven3.6.3'
+    }
+      
+    stages{
+        stage('checkoutcode'){
+            steps{
+                git credentialsId: '27f800d6-0dce-460f-8a74-7226e787be5e', url: 'https://github.com/vignesh130597/maven-web-application.git'
+            }
+        }
+        stage('buildPackages'){
+            steps{
+                sh "mvn clean package"
+            }
+        }
+        stage('sonarqubereport'){
+            steps{
+                withSonarQubeEnv('Sonarqube'){
+		        	sh "mvn clean sonar:sonar"
+			}
+            }
+        }
+ 
+    	stage("Quality Gate"){
+    steps {
+        script {
+            timeout(time: 1, unit: 'HOURS') {
+                def qg = waitForQualityGate()
+                if (qg.status != 'OK') {
+                    error "Pipeline aborted due to quality gate failure: ${qg.status}"
+            }
+        }
+    }
+}
+}
+
+        stage('nexus'){
+            steps{
+                sh "mvn clean deploy"
+            }
+        }
+        stage('deploy'){
+            steps{
+                sshagent(['tomcat2']) {
+                sh "scp -o StrictHostKeyChecking=no target/maven-web-java-application.war ec2-user@13.127.146.96:/opt/apache-tomcat-9.0.53/webapps"
+            }
+            }
+        }
+    }
+}
+
