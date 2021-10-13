@@ -6,7 +6,7 @@ pipeline{
     }
     
     options{
-    	properties([parameters([choice(choices: 'master\ndevelopment\nuat', name: 'branch')]), [$class: 'JobLocalConfiguration', changeReasonComment: '']])
+    parameters([choice(choices: 'master\ndevelopment\nuat', name: 'branch')]), [$class: 'JobLocalConfiguration', changeReasonComment: '']
     }
       
     stages{
