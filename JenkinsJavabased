@@ -4,11 +4,15 @@ pipeline{
     tools{
         maven 'Maven3.6.3'
     }
+    
+    options{
+    	properties([parameters([choice(choices: 'master\ndevelopment\nuat', name: 'branch')]), [$class: 'JobLocalConfiguration', changeReasonComment: '']])
+    }
       
     stages{
         stage('checkoutcode'){
             steps{
-                git branch:"${branchName}" credentialsId: '27f800d6-0dce-460f-8a74-7226e787be5e', url: 'https://github.com/vignesh130597/maven-web-application.git'
+                git branch:"${params.branch}" credentialsId: '27f800d6-0dce-460f-8a74-7226e787be5e', url: 'https://github.com/vignesh130597/maven-web-application.git'
             }
         }
         stage('buildPackages'){
