@@ -5,11 +5,7 @@ pipeline{
         maven 'Maven3.6.3'
     }
     
-   /* 
-   options{
-    parameters([choice(choices: 'master\ndevelopment\nuat', name: 'branch')]), [$class: 'JobLocalConfiguration', changeReasonComment: '']
-    }
-    */
+   
       
     stages{
         stage('checkoutcode'){
