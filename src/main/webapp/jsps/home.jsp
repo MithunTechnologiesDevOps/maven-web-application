@@ -24,6 +24,10 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 <br>
 <%out.println("Server IP Address :: "+ip);%>
 </h1>
+<br>
+<h1><h3> Client Side IP Address </h3><br>
+<%out.print( "Client IP Address :: " + request.getRemoteAddr() ); %><br>
+<%out.print( "Client Name Host :: "+ request.getRemoteHost() );%><br></h1>
 <hr>
 <div style="text-align: center;">
 	<span>
