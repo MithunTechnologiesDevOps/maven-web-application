@@ -4,7 +4,6 @@ def mavenHome = tool name: "maven3.6.3"
 
  properties([[$class: 'JiraProjectProperty'], buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '3', daysToKeepStr: '', numToKeepStr: '3')), pipelineTriggers([pollSCM('* * * * *')])])
 
-
  stage('CheckoutCode')
  {
  git branch: 'development', credentialsId: '0fc2b8fe-0aa8-4d3d-be77-60b219ade16c', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git'
