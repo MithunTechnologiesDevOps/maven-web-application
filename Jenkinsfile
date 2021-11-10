@@ -1,11 +1,9 @@
 pipeline{
 
-agent{
-label 'slaves'
-}
+agent any
 
 tools{
-maven 'maven3.6.3'
+maven 'maven3.8.2'
 
 }
 
