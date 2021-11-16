@@ -9,7 +9,7 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to Mithun Software Solutions.</h1>
+<h1 align="center">Welcome to Mithun Software Solutions. Bengaluru,Karnataka </h1>
 <h1 align="center"> Mithun Software Solutions- Very Good Training center for DevOps with AWS in Maratha Halli Bangalore India and also for Job Assitance Job Support also...Teaching Real Time scnerios</h1>
 <hr>
 <br>
@@ -24,6 +24,10 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 <br>
 <%out.println("Server IP Address :: "+ip);%>
 </h1>
+<br>
+<h1><h3> Client Side IP Address </h3><br>
+<%out.print( "Client IP Address :: " + request.getRemoteAddr() ); %><br>
+<%out.print( "Client Name Host :: "+ request.getRemoteHost() );%><br></h1>
 <hr>
 <div style="text-align: center;">
 	<span>

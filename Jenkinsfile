@@ -1,54 +1,75 @@
-node ('master')
- {
-  
-  def mavenHome = tool name: "maven3.6.3"
-  
-      echo "GitHub BranhName ${env.BRANCH_NAME}"
-      echo "Jenkins Job Number ${env.BUILD_NUMBER}"
-      echo "Jenkins Node Name ${env.NODE_NAME}"
-  
-      echo "Jenkins Home ${env.JENKINS_HOME}"
-      echo "Jenkins URL ${env.JENKINS_URL}"
-      echo "JOB Name ${env.JOB_NAME}"
-  
-   //properties([[$class: 'JiraProjectProperty'], buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '2', daysToKeepStr: '', numToKeepStr: '2')), pipelineTriggers([pollSCM('* * * * *')])])
-  
-  stage("CheckOutCodeGit")
-  {
-   git branch: 'master', credentialsId: '65fb834f-a83b-4fe7-8e11-686245c47a65', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git'
- }
- 
- stage("Build")
- {
- sh "${mavenHome}/bin/mvn clean package"
- }
- 
-  /*
- stage("ExecuteSonarQubeReport")
- {
- sh "${mavenHome}/bin/mvn sonar:sonar"
- }
- 
- stage("UploadArtifactsintoNexus")
- {
- sh "${mavenHome}/bin/mvn deploy"
- }
- 
-  stage("DeployAppTomcat")
- {
-  sshagent(['423b5b58-c0a3-42aa-af6e-f0affe1bad0c']) {
-    sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war  ec2-user@15.206.91.239:/opt/apache-tomcat-9.0.34/webapps/" 
-  }
- }
- 
- stage('EmailNotification')
- {
- mail bcc: 'devopstrainingblr@gmail.com', body: '''Build is over
+pipeline{
 
- Thanks,
- Mithun Technologies,
- 9980923226.''', cc: 'devopstrainingblr@gmail.com', from: '', replyTo: '', subject: 'Build is over!!', to: 'devopstrainingblr@gmail.com'
+agent any
+
+tools{
+maven 'maven3.8.2'
+
+}
+
+triggers{
+pollSCM('* * * * *')
+}
+
+options{
+timestamps()
+buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5'))
+}
+
+stages{
+
+  stage('CheckOutCode'){
+    steps{
+    git branch: 'development', credentialsId: '957b543e-6f77-4cef-9aec-82e9b0230975', url: 'https://github.com/devopstrainingblr/maven-web-application-1.git'
+	
+	}
+  }
+  
+  stage('Build'){
+  steps{
+  sh  "mvn clean package"
+  }
+  }
+/*
+ stage('ExecuteSonarQubeReport'){
+  steps{
+  sh  "mvn clean sonar:sonar"
+  }
+  }
+  
+  stage('UploadArtifactsIntoNexus'){
+  steps{
+  sh  "mvn clean deploy"
+  }
+  }
+  
+  stage('DeployAppIntoTomcat'){
+  steps{
+  sshagent(['bfe1b3c1-c29b-4a4d-b97a-c068b7748cd0']) {
+   sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@35.154.190.162:/opt/apache-tomcat-9.0.50/webapps/"    
+  }
+  }
+  }
+  */
+}//Stages Closing
+
+post{
+
+ success{
+ emailext to: 'devopstrainingblr@gmail.com,mithuntechnologies@yahoo.com',
+          subject: "Pipeline Build is over .. Build # is ..${env.BUILD_NUMBER} and Build status is.. ${currentBuild.result}.",
+          body: "Pipeline Build is over .. Build # is ..${env.BUILD_NUMBER} and Build status is.. ${currentBuild.result}.",
+          replyTo: 'devopstrainingblr@gmail.com'
  }
- */
  
+ failure{
+ emailext to: 'devopstrainingblr@gmail.com,mithuntechnologies@yahoo.com',
+          subject: "Pipeline Build is over .. Build # is ..${env.BUILD_NUMBER} and Build status is.. ${currentBuild.result}.",
+          body: "Pipeline Build is over .. Build # is ..${env.BUILD_NUMBER} and Build status is.. ${currentBuild.result}.",
+          replyTo: 'devopstrainingblr@gmail.com'
  }
+ 
+}
+
+
+}//Pipeline closing
