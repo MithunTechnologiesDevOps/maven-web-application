@@ -1,0 +1,49 @@
+//echo "GitHub BranhName ${env.BRANCH_NAME}"
+  //echo "Jenkins Job Number ${env.BUILD_NUMBER}"
+  echo "Jenkins Node Name ${env.NODE_NAME}"
+  
+  echo "Jenkins Home ${env.JENKINS_HOME}"
+  echo "Jenkins URL ${env.JENKINS_URL}"
+  echo "JOB Name ${env.JOB_NAME}"
+  
+  node{
+def mavenHome = toolname: "maven3.8.3"
+
+properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '10', artifactNumToKeepStr: '', daysToKeepStr: '10', numToKeepStr: '15')), [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * * ')])])
+
+
+stage('from git'){
+git credentialsId: 'c4d73a13-ca3b-461a-8e4b-fd7a1051aca2', url: 'https://github.com/Nayeem0030/maven-web-application.git'
+}
+
+stage('Build'){
+sh "${mavenHome}/bin/mvn clean package"
+
+}
+
+stage('SonarQubeReport'){
+sh "${mavenHome}/bin/mvn sonar:sonar"
+}
+
+stage('nexusartifact saved'){
+sh "${mavenHome}/bin/mvn deploy"
+}
+stage('TomcatDeploy'){
+sshagent(['627e2b9f-b15f-4d71-ae9b-096a8b3af335']) {
+   sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@65.2.39.208:/opt/apache-tomcat-9.0.54/webapps" 
+}
+
+}
+
+
+
+stage('sendemailnotification'){
+emailext body: '''Build complete
+
+
+
+Regards
+Nayeem''', subject: 'Build complete', to: 'nayeemu548@gmail.com'
+
+}
+}
