@@ -15,7 +15,7 @@ properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '10', artifactNumTo
 stage('from git'){
 git credentialsId: 'c4d73a13-ca3b-461a-8e4b-fd7a1051aca2', url: 'https://github.com/Nayeem0030/maven-web-application.git'
 }
-
+//
 stage('Build'){
 sh "${mavenHome}/bin/mvn clean package"
 
@@ -47,3 +47,4 @@ Nayeem''', subject: 'Build complete', to: 'nayeemu548@gmail.com'
 
 }
 }
+//
