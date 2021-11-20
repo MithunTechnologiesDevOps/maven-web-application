@@ -98,13 +98,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Nayeem</name>
-	      <url>/http://65.0.11.245:8081/repository/wallmart-release/</url>
+	      <url>http://65.0.11.245:8081/repository/wallmart-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Nayeem</name>
-	      <url>/http://65.0.11.245:8081/repository/walmart-snapshot/</url>
+	      <url>http://65.0.11.245:8081/repository/walmart-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
