@@ -9,4 +9,4 @@ COPY target/maven-web-java-application.war /usr/local/tomcat/webapps/target/mave
 
 WORKDIR $PROJECT_HOME
 
-CMD ["java" ,"-jar","./maven-web-java-application.war"]
+CMD ["java" ,"-jar","maven-web-java-application.war"]
