@@ -1,4 +1,4 @@
-node('node-walmart'){
+node('node-wallmart'){
 
 echo "Dev Job"
 
