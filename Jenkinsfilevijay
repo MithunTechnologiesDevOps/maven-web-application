@@ -24,7 +24,7 @@ stages{
    
    steps{
 
-        dir('/var/lib/jenkins/workspace/s3 upload_pipeline/target/'){
+        dir('/var/lib/jenkins/workspace'){
 
             pwd(); //Log current directory
 
@@ -33,7 +33,7 @@ stages{
                  
 
                 // Upload files from working directory 'dist' in your project workspace
-                s3Upload(file:'maven-web-app.war', bucket:'vijay-jenkins-to-s3', path:'/var/lib/jenkins/workspace/s3 upload_pipeline/target/maven-web-application.war')
+                s3Upload(file:'/var/lib/jenkins/workspace/s3 upload_pipeline/target/', bucket:'vijay-jenkins-to-s3', path:'/var/lib/jenkins/workspace/s3 upload_pipeline/target/maven-web-application.war')
             }
          }
         }
