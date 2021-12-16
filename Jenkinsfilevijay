@@ -20,7 +20,16 @@ stages{
   sh  "mvn clean package"
   }
   }
-   stage('Upload') {
+  stage('Zip Artifact'){
+  steps{
+  
+                  echo "ZIP"
+                  zip zipFile: 'Test.zip', dir:'/var/lib/jenkins/workspace/s3 upload_pipeline/target/maven-web-application.war'
+                  echo "END - ZIP"
+		  }
+                  }
+  
+  stage('Upload') {
    
    steps{
 
@@ -30,9 +39,7 @@ stages{
 
             withAWS(region:'us-east-1',credentials:'aws_cred') {
 
-                  echo "ZIP"
-                  zip zipFile: 'Test.zip', dir:'/var/lib/jenkins/workspace/s3 upload_pipeline/target/maven-web-application.war'
-                  echo "END - ZIP"
+                  
 
                 // Upload files from working directory 'dist' in your project workspace
                 //s3Upload(file:'/var/lib/jenkins/workspace/s3 upload_pipeline/target/', bucket:'vijay-jenkins-to-s3', path:'/var/lib/jenkins/workspace/s3 upload_pipeline/target/maven-web-application.war')
