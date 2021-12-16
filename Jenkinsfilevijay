@@ -24,7 +24,7 @@ stages{
    
    steps{
 
-        dir('/var/lib/jenkins/workspace/s3 upload_pipeline/target/'){
+        dir('/var/lib/jenkins/workspace'){
 
             pwd(); //Log current directory
 
