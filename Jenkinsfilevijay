@@ -1,0 +1,42 @@
+pipeline {
+    agent any
+    parameters {
+        string(name: 'Artifact URL', defaultValue: '', description: 'Provide the URL of the plugin Artifacts')
+        string(name: 'S3 Bucket Name', defaultValue: '', description: 'Provide the S3 Bucket Name')
+        choice(name: 'Plugin Type', choices: ['intellij', 'eclipse', 'jenkins'], description: 'Select the Plugin Type')
+        }
+
+stages{
+
+  stage('CheckOutCode'){
+    steps{
+    git branch: 'development', credentialsId: 'Git_Cred', url: 'https://github.com/VijayPersistent/maven-web-application.git'
+	
+	}
+  }
+  
+  stage('Build'){
+  steps{
+  sh  "mvn clean package"
+  }
+  }
+   stage('Upload') {
+   
+   steps{
+
+        dir('/var/lib/jenkins/workspace'){
+
+            pwd(); //Log current directory
+
+            withAWS(region:'us-east-1',credentials:'aws_cred') {
+
+                 
+
+                // Upload files from working directory 'dist' in your project workspace
+                s3Upload(file:'maven-web-app.war', bucket:'vijay-jenkins-to-s3', path:'/var/lib/jenkins/workspace/s3 upload/target/')
+            }
+         }
+        }
+    }
+}
+}
