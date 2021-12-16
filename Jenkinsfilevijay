@@ -22,7 +22,7 @@ stages{
   }
   stage ('zip artifact') {
             steps {
-                sh 'mkdir archive'
+                sh 'mkdir -p archive' 
                 sh 'echo test > archive/test.txt'
                 zip zipFile: 'test.zip', archive: false, dir: 'archive'
                 archiveArtifacts artifacts: 'test.zip', fingerprint: true
