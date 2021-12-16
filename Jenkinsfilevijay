@@ -24,8 +24,8 @@ stages{
             steps {
                 sh 'mkdir -p archive' 
                 sh 'echo test > /var/lib/jenkins/workspace/s3 upload_pipeline/target/maven-web-application.war'
-                zip zipFile: 'CxConsolePlugin-1.1.2.zip', archive: false, dir: '/var/lib/jenkins/workspace/s3 upload_pipeline/target/'
-                archiveArtifacts artifacts: 'CxConsolePlugin-1.1.2.zip', fingerprint: true
+                zip zipFile: 'CxConsolePlugin-1.1.3.zip', archive: false, dir: '/var/lib/jenkins/workspace/s3 upload_pipeline/target/'
+                archiveArtifacts artifacts: 'CxConsolePlugin-1.1.3.zip', fingerprint: true
             }
         }
 	/*
