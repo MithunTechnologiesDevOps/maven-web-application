@@ -20,14 +20,6 @@ stages{
   sh  "mvn clean package"
   }
   }
-  stage('Zip Artifact'){
-  steps{
-  
-                  echo "ZIP"
-                  zip zipFile: 'Test.zip', dir:'/var/lib/jenkins/workspace/s3 upload_pipeline/target/maven-web-application.war'
-                  echo "END - ZIP"
-		  }
-                  }
   
   stage('Upload') {
    
