@@ -24,9 +24,9 @@ stages{
    
    steps{
 
-        dir('/var/lib/jenkins/workspace'){
+        //dir('/var/lib/jenkins/workspace'){
 
-            pwd(); //Log current directory
+            //pwd(); //Log current directory
 
             withAWS(region:'us-east-1',credentials:'aws_cred') {
 
