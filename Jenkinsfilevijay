@@ -52,7 +52,7 @@ stages{
 
                 // Upload files from working directory 'dist' in your project workspace
                 //s3Upload(file:'/var/lib/jenkins/workspace/s3 upload_pipeline/target/', bucket:'vijay-jenkins-to-s3', path:'/var/lib/jenkins/workspace/s3 upload_pipeline/target/maven-web-application.war')
-		s3Upload(bucket:"vijay-jenkins-to-s3", path:'/var/lib/jenkins/workspace/s3 upload_pipeline/archive', includePathPattern:'**.war')
+		s3Upload(bucket:"vijay-jenkins-to-s3", path:'/var/lib/jenkins/workspace/s3 upload_pipeline/archive', includePathPattern:'**/*.war')
 		//s3Upload(bucket:"vijay-jenkins-to-s3", path:'/var/lib/jenkins/workspace/s3 upload_pipeline/target/', includePathPattern:'**/*.war')
             }
          }
