@@ -1,5 +1,6 @@
 node{
  def mavenHome = tool name: "maven3.8.4"
+ 
   
        echo "GitHub BranhName ${env.BRANCH_NAME}"
        echo "Jenkins Job Number ${env.BUILD_NUMBER}"
@@ -23,7 +24,8 @@ node{
  stage('SonarQubeReport'){
  sh "${mavenHome}/bin/mvn clean sonar:sonar"
  }
- 
+
+ /*
  stage('UploadArtifactIntoNexus'){
  sh "${mavenHome}/bin/mvn clean deploy"
  }
@@ -34,6 +36,8 @@ node{
   sh "scp -o  StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.232.77.125:/opt/apache-tomcat-9.0.56/webapps/"
  } 
  }
+ 
+ */
  
  stage('SendEmailNotification'){
    emailext body: '''Build is over!!
