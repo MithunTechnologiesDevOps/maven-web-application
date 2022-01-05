@@ -96,14 +96,14 @@
 	
 	    <repository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://65.0.85.199:8082/repository/maven-pipeline-git/</url>
+	      <name>Release Repo</name>
+	      <url>http://3.109.122.56:8081/repository/maven-releases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://3.6.37.237:8082/repository/declarative-snapshot/</url>
+	      <name>Snapshot Repo</name>
+	      <url>http://3.109.122.56:8081/repository/maven-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
