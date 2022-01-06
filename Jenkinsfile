@@ -1,5 +1,6 @@
 node
 {
+    properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5'))])
     def Maven_Home=tool name: "Maven 3.8.4"
 
     stage('GitcodePulling')
