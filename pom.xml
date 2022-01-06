@@ -98,14 +98,14 @@
 	
 	    <repository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://54.252.173.144:9980/mithuntechnologies/repository/wallmart-release/</url>
+	      <name>Indra Releases Nexus Repository</name>
+	      <url>http://65.2.57.117:9886/indradevops/repository/indra-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://54.252.173.144:9980/mithuntechnologies/repository/wallmart-snapshot/</url>
+	      <name>Indra Snapshot Nexus Repository </name>
+	      <url>http://65.2.57.117:9886/indradevops/repository/indra-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
