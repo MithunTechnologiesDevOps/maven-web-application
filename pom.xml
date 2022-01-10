@@ -105,7 +105,7 @@
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://3.109.213.202:9980/gayathri/repository/mackbook-snapshot/</url>
+	      <url>http://3.109.213.202:9980/gayathri/repository/mackbook/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
