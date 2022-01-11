@@ -34,6 +34,7 @@ options {
 	}
 	}
 	
+	/*
 	//Execute SonarQube Report
 	stage('SonarQubeReport'){
 	steps{
@@ -56,6 +57,7 @@ options {
     }
 	}
 	}
+*/	
  }//Stages Closing
  
  post {
