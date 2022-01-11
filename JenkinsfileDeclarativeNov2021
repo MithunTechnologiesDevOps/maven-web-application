@@ -1,0 +1,86 @@
+pipeline{
+
+agent any
+
+
+tools{
+maven 'maven3.8.4'
+}
+
+triggers {
+  pollSCM('* * * * *')
+  //cron('* * * * *')
+}
+
+options {
+  //Add the Timestamp to the console output
+  timestamps()
+  //Discard Old Builds
+  buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')
+}
+ stages{
+ 
+    //Get the code from GitHub
+     stage('CheckoutCode'){
+	 steps{
+	  git branch: 'development', credentialsId: '87e4399d-5e09-4de8-b24d-926428729444', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git'
+	 }
+	 }
+  
+    //Do the build
+	stage('Build'){
+	steps{
+	sh "mvn clean package"
+	}
+	}
+	
+	//Execute SonarQube Report
+	stage('SonarQubeReport'){
+	steps{
+	sh "mvn clean sonar:sonar"
+	}
+	}
+	
+	//Upload Artifact Into Nexus Server
+	stage('UploadArtifactIntoNexusServer'){
+	steps{
+	sh "mvn clean deploy"
+	}
+	}
+	
+	//Deploy App into Tomcat Server
+	stage('DeployAppIntoTomcatServer'){
+	steps{
+    sshagent(['ff8e7c6e-91d1-46b7-a2ae-7b80841604c5']) {
+        sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@3.108.42.78:/opt/apache-tomcat-9.0.56/webapps/"
+    }
+	}
+	}
+ }//Stages Closing
+ 
+ post {
+   always {
+	 emailext body: '''Build Over..
+
+	 Regards,
+	 Mithun Technologies,
+	 9980923226''', subject: 'Build Over..', to: 'devopstrainingblr@gmail.com'
+   }
+   success {
+    emailext body: '''Build Over.. Success
+
+    Regards,
+    Mithun Technologies,
+    9980923226''', subject: 'Build Over..', to: 'devopstrainingblr@gmail.com'
+   }
+   failure {
+    emailext body: '''Build Over.. Failure
+
+    Regards,
+    Mithun Technologies,
+    9980923226''', subject: 'Build Over..', to: 'devopstrainingblr@gmail.com'
+   }
+ }
+ 
+ 
+}//Pipeline closing
