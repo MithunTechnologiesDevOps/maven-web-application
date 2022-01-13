@@ -1,0 +1,61 @@
+
+pipeline{
+agent any
+tools{
+maven 'maven3.8.4'
+}
+triggers {
+  pollSCM ('* * * * *')
+  //cron ('* * * * *')
+  
+}
+options {
+//add the timestamp for the console output
+  timestamps()
+  //discard old builds
+  buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '5', numToKeepStr: '5')
+}
+
+
+stages{
+
+//Get the code from github
+stage('checkoutcode'){
+steps{
+git branch: 'development', credentialsId: '8fb9f2d6-99da-43b8-ac88-973f6c5d2df1', url: 'https://github.com/gayu-ess-app/maven-web-application.git'
+}
+}
+
+
+//do the build
+stage('Build')
+{
+steps{
+sh "mvn clean package"
+}
+}
+//Execute Sonarcubereport
+
+stage('Sonarcubereport')
+{
+steps{
+sh "mvn clean sonar:sonar"
+}
+}
+//upload arifact into nexus server
+stage('uploadArtifactIntoNexusserver'){
+steps{
+sh "mvn clean deploy"
+}
+}
+//Deploy to tomcat server
+stage('Deploy app into tomcat server')
+{
+steps{
+sshagent(['40bf914b-0332-4b57-980f-828a6e3ac99c']) {
+    sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@65.2.10.104:/opt/apache-tomcat-9.0.56/webapps/"
+}
+}
+}
+}//stagesclosing
+}//pipeline closing
