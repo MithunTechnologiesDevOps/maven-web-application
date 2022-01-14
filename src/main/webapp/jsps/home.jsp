@@ -9,8 +9,8 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to Mithun Software Solutions. Bengaluru,Karnataka </h1>
-<h1 align="center"> Mithun Software Solutions- Very Excellent devops Training caoching center for DevOps with Linux in Maratha Hali BangaloreCity India and also for 100% Job Assitance and also Job Support will give..Teaching Real Time scnerios</h1>
+<h1 align="center">Welcome to Mithun Software Technologies. Bengaluru,Karnataka </h1>
+<h1 align="center"> Mithun Software Technologies- Very GOOD devops Training caoching center for DevOps with Linux in Maratha Hali BangaloreCity India and also for 100% Job Assitance and also Job Support will give..Teaching was Good and Real Time scnerios</h1>
 <hr>
 <br>
 	<h1><h3> Server Side IP Address </h3><br>
