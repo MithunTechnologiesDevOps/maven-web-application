@@ -98,13 +98,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Maven Web App Release</name>
-	      <url>http://13.234.186.91:8081/repository/Java_Web_App_Release/</url>
+	      <url>http://13.233.255.22:8081/repository/Flipkart_Release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Maven Web App Snapshot </name>
-	      <url>http://13.234.186.91:8081/repository/Java_Web_App_Snapshot/</url>
+	      <url>http://13.233.255.22:8081/repository/Flipkart_SNAPSHOT/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
