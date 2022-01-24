@@ -107,8 +107,8 @@
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name> mvn</name>
-	      <url>http://3.131.98.128:8081/repository/mvn/</url>
+	      <name> maven2022</name>
+	      <url>http://18.212.53.84:8081/maven2022</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
