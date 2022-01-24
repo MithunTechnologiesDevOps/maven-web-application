@@ -32,7 +32,7 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 	<span style="font-weight: bold;">
 		DevOps Online Training, 
 		Trainer : Jeevan,
-		Rajampet-516115,
+		Rajampet-516115,Kadapa.
 		+91-7842602230
 		djeevan12@gmail.com
 		<br>
