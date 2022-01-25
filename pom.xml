@@ -21,7 +21,7 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version> 
-		<sonar.host.url>http://3.95.221.97:9000/</sonar.host.url>
+		<sonar.host.url>http:///</sonar.host.url>
 		<sonar.login>admin</sonar.login>
 		<sonar.password>admin</sonar.password> 
 	<!--	<sonar.host.url>http://54.167.177.216:9000/</sonar.host.url>
@@ -108,7 +108,7 @@
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name> maven2022</name>
-	      <url>http://18.212.53.84:8081/maven2022</url>
+	      <url>http://44.202.54.92:8081/repository/maven2022/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
