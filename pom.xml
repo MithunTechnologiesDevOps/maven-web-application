@@ -99,13 +99,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://13.127.18.21:9980/mithuntechnologies/repository/facebook-release/</url>
+	      <url>http://15.207.100.92:8792/mithuntechnologies/repository/Jio-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://13.127.18.21:9980/mithuntechnologies/repository/facebook-snapshot/</url>
+	      <url>http://15.207.100.92:8792/mithuntechnologies/repository/Jio-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
