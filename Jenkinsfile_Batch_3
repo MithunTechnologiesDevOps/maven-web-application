@@ -11,7 +11,7 @@ echo "GitHub BranhName ${env.BRANCH_NAME}"
       echo "Jenkins URL ${env.JENKINS_URL}"
       echo "JOB Name ${env.JOB_NAME}"
   
-
+properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), pipelineTriggers([pollSCM('* * * * *')])])
 stage( 'CheckoutCodeFromGitHub' )
 {
 git credentialsId: '114c982a-3837-4aeb-b343-b53335dfe920', url: 'https://github.com/ClassDev-Org/maven-web-application.git'
