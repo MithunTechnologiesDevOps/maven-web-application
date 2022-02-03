@@ -1,0 +1,79 @@
+	pipeline
+	{
+		agent any
+		
+		tools 
+		{
+		maven 'maven 3.8.4'
+		}
+		triggers 
+		{
+		pollSCM '* * * * * '
+		}
+		options 
+		{
+		timestamps()
+		}
+		
+		stages
+		{
+			stage('gitcode checkout') 
+			{
+			steps{
+			//git code checkout is used to git the code from the github repository
+			git branch: 'development', credentialsId: 'a84f4bb9-d3c8-490e-8d01-cdec00d7e92d', url: 'https://github.com/Indrasekhar365/maven-web-application.git'
+			}
+			}
+			stage('Do the unit test cases and Build')
+			{
+			steps
+			{
+			// here after getting the code from the repository then run the unit test cases and do build.
+			sh "mvn clean package"
+			}
+			}
+			stage('then execute report SonarQube')
+			{
+			steps
+			{
+			// update the sonarqube server details in pom.xml file.
+			sh "mvn clean sonar:sonar"
+			}
+			}
+			stage('stote arifacts in nexus repository')
+			{
+			steps
+			{
+			//update the artifacts repositries in pom.xml and also update the server details in jenkins home dirctory under settings.xml file
+			sh "mvn clean deploy"
+			}
+			}
+			stage('deploy to Application server_Tomcat')
+			{
+			steps
+			{
+			//to deploy to applocation server get the privatekey from pem files and update in jenkins pipeline script.
+			// and also give the directory to full permissons chmod -R 777 /webapps directory
+			//use -o -StrictHostKeyChecking=no by using this command it won't ask the host to login it will take directly
+			// to deploy means copy the cwar files from jenkins to tomacat server in webapps directory.
+			sshagent(['c2911812-243e-4ba1-9588-ea01b41e20ec']) 
+			{
+			sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.126.115.108:/opt/apache-tomcat-9.0.56/webapps/"
+			}
+			}
+			}
+		}//stages close
+		post {
+			success {
+					emailext body: 'buils succesful ', subject: 'Build over', to: 'devopssmtpcheck@gmail.com'
+					}
+			failure {
+					emailext body: 'buid failure ', subject: 'Build fail', to: 'devopssmtpcheck@gmail.com'
+					}
+			unsuccessful 
+					{
+					emailext body: 'buid unsuccessful ', subject: 'Build unsuccessful', to: 'devopssmtpcheck@gmail.com'
+					}
+			}
+
+	}// pipeline close
