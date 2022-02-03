@@ -1,0 +1,96 @@
+pipeline
+
+{
+ 
+agent any
+
+tools{
+ maven 'Maven_3.8.4'
+}
+
+triggers{
+pollSCM('* * * * *')
+}
+
+options{
+    buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5'))
+}
+
+stages
+{
+ stage( 'CheckOutCode' )
+ {
+  steps{
+   git credentialsId: '114c982a-3837-4aeb-b343-b53335dfe920', url: 'https://github.com/ClassDev-Org/maven-web-application.git'
+       }
+ }
+
+ stage('Build')
+{
+  steps{
+   sh "mvn clean package"
+}
+
+}
+
+stage('SonarQubeReport')
+
+{
+   steps{
+   sh "mvn sonar:sonar" 
+   
+      }
+} 
+
+stage('UploadingToNexus')
+{
+    steps{
+    sh "mvn clean deploy"
+        }
+}
+
+stage('DeployToTomcat')
+{
+    steps{
+   sshagent(['cc77f162-bbcd-457e-9887-ff5264699dbf']) {
+    sh "rm -rf /opt/apache-tomcat-9.0.58/webapps/maven-web-application.war"
+   sh " scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@3.109.202.16:/opt/apache-tomcat-9.0.58/webapps/"
+}
+  
+ }
+}
+/*
+   post{
+
+    always{ 
+
+    emailext body: '''Declerative_Pipeline over
+
+   Regards,
+   Jeevan''', subject: 'Declerative_Pipeline Status', to: 'jeevan12@gmail.com'
+
+          }
+       
+    success{
+       emailext body: '''Declerative_Pipeline over
+
+Regards,
+Jeevan''', subject: 'Declerative_Pipeline Status', to: 'jeevan12@gmail.com,djeevand140@gmail.com'
+ 
+           }
+
+
+    failure{
+
+emailext body: '''Declerative_Pipeline over
+
+Regards,
+Jeevan''', subject: 'Declerative_Pipeline Status', to: 'uday@gmail.com,Nandan@gmail.com'
+
+
+          }
+
+}
+*/
+}
+}  
