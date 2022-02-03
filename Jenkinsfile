@@ -21,7 +21,7 @@
 	stage('Tomacat server')
 	{
 	sshagent(['c2911812-243e-4ba1-9588-ea01b41e20ec']) {
-     sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.126.115.108:/opt/apache-tomcat-9.0.56/webapps"
+     	sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.126.115.108:/opt/apache-tomcat-9.0.56/webapps/"
 	 
 	 // if you not specified StrictHostKeyChecking=no you will get error as "script returned exit code 1" & "Host key verification failed."
 	}
