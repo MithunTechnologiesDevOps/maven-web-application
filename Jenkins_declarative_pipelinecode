@@ -24,7 +24,7 @@
 			{
 			steps{
 			//git code checkout is used to git the code from the github repository
-			git branch: 'development', credentialsId: 'a84f4bb9-d3c8-490e-8d01-cdec00d7e92d', url: 'https://github.com/Indrasekhar365/maven-web-application.git'
+			git branch: "${params.BranchName}", credentialsId: 'a84f4bb9-d3c8-490e-8d01-cdec00d7e92d', url: 'https://github.com/Indrasekhar365/maven-web-application.git'
 			}
 			}
 			stage('Do the unit test cases and Build')
@@ -63,6 +63,13 @@
 			{
 			sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@15.207.116.63:/opt/apache-tomcat-9.0.56/webapps/"
 			}
+			}
+			}
+			stage('display the name of the person triggered')
+			{
+			steps
+			{
+			sh "echo the person name : ${params.NameofthePerson}"
 			}
 			}
 		}//stages close
