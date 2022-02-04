@@ -58,7 +58,7 @@
 			// to deploy means copy the cwar files from jenkins to tomacat server in webapps directory.
 			sshagent(['c2911812-243e-4ba1-9588-ea01b41e20ec']) 
 			{
-			sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.126.115.108:/opt/apache-tomcat-9.0.56/webapps/"
+			sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@15.207.116.63:2352:/opt/apache-tomcat-9.0.56/webapps/"
 			}
 			}
 			}
