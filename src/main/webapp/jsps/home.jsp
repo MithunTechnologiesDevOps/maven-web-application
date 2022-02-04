@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1 align="center">Welcome to Mithun Technologies...Git-Hub Webhook demo </h1>
-<h1 align="center"> Welcome to Mithun Software Solutions:.......We have a demo on DevOps-Master Program on last week of feb 2022 i.e., on 26th Saturday @ 7 PM IST for new batch, This is a weekdays morning batch starts from 6:00 AM to 7.30 AM IST . MSS- Very Good Training center for DevOps with AWS in Maratha Halli and also for Job Assitance & Job Support also...Teaching Real Time scenarios and use cases... Some fake guys are giving the fake reviews dont believe those guys..I am requesting everyone. Please give your reviews in FB and Google.</h1>
+<h1 align="center"> Welcome to Mithun Software Solutions.......We have a demo on DevOps-Master Program on last week of feb 2022 i.e., on 26th Saturday @ 7 PM IST for new batch, This is a weekdays morning batch starts from 6:00 AM to 7.30 AM IST . MSS- Very Good Training center for DevOps with AWS in Maratha Halli and also for Job Assitance & Job Support also...Teaching Real Time scenarios and use cases... Some fake guys are giving the fake reviews dont believe those guys..I am requesting everyone. Please give your reviews in FB and Google.</h1>
 <hr>
 <div style="text-align: center;">
 	<span>
