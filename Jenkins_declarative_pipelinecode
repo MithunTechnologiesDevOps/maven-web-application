@@ -1,5 +1,9 @@
 	pipeline
 	{
+		label
+		{
+		'slave'
+		}
 		agent any
 		parameters {
   		choice choices: ['development', 'qa', 'stages', 'master'], description: 'Please select the name of the branch which is going to do build.', name: 'BranchName'
