@@ -5,7 +5,7 @@
 		{
 		label
 		{
-		'slave'
+		"slave"
 		}
 		}
 		parameters {
