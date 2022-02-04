@@ -21,7 +21,7 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<sonar.host.url>http://13.233.207.207:9000/</sonar.host.url>
+		<sonar.host.url>http://13.232.194.35:9000/</sonar.host.url>
                 <sonar.login>admin</sonar.login>
 		<sonar.password>Krish@143</sonar.password>
              
@@ -99,13 +99,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://15.207.21.168:8792/mithuntechnologies/repository/Jio-release/</url>
+	      <url>http://15.207.18.27:8792/mithuntechnologies/repository/Jio-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://15.207.21.168:8792/mithuntechnologies/repository/Jio-snapshot/</url>
+	      <url>http://15.207.18.27:8792/mithuntechnologies/repository/Jio-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
