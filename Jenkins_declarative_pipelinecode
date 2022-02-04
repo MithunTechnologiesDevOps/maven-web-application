@@ -3,7 +3,7 @@
 		//agent any
 		agent
 		{
-		"slave"
+		label 'slave'
 		}
 		parameters {
   		choice choices: ['development', 'qa', 'stages', 'master'], description: 'Please select the name of the branch which is going to do build.', name: 'BranchName'
