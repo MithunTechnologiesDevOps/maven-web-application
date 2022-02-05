@@ -2,7 +2,9 @@ pipeline
 
 {
  
-agent any
+agent {
+agent 'NodeJs_Node'
+}
 
 tools{
  maven 'Maven_3.8.4'
