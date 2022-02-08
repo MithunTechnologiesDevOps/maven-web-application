@@ -1,4 +1,4 @@
-node{  //node start
+node{  //node start here
     
     properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: ''], 
     
@@ -6,12 +6,12 @@ node{  //node start
     
     def mavenHome = tool name: "maven3.8.4"
 
-//Get the code from GitHub Repo
+//This stage will get the code from GitHub Repo
 stage('CheckoutCode'){
 git branch: 'development', credentialsId: '21d33a3a-d695-49ea-a7e9-1640fb207568', url: 'https://github.com/krishnaprasadkeerthi/maven-web-application.git'
 }
 
-//Using Maven for performing the Build
+//This stage will use Maven for performing the Build
 stage('Build'){
 sh "${mavenHome}/bin/mvn clean package"
 }
@@ -26,7 +26,7 @@ stage('UploadArtifactIntoNexusRepo'){
 sh "${mavenHome}/bin/mvn deploy"
 }
 
-//This stage will deploy the code to tomcat server
+//This stage will deploy the code in to Tomcat server
 stage('DeployApplicationIntoTomcatServer')
 {
 sshagent(['c34e4b81-93d8-4c0f-bb12-17bab3b05b2f']) 
@@ -36,4 +36,4 @@ sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@65
 }
 
 
-} //node close
+} //node closes here
