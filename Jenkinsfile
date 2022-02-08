@@ -18,10 +18,10 @@ stage('Build'){
 sh "${mavenHome}/bin/mvn clean package"
 }
 
+ /*
 stage('ExecuteSonarQubeReport'){
 sh "${mavenHome}/bin/mvn sonar:sonar"
 }
-
 stage('UploadArtifcatIntoNexusRepo'){
 sh "${mavenHome}/bin/mvn deploy"
 }
@@ -33,5 +33,5 @@ sshagent(['c29671b1-f627-4b75-a391-49155466e661']) {
 }
 
 }
-
+*/
 }
