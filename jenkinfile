@@ -1,0 +1,26 @@
+node 
+{
+def MavenHome = tool name: "Maven3.8.4"
+properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '5')), pipelineTriggers([pollSCM('* * * * *')])])
+stage('checkout')
+{
+git branch: 'development', credentialsId: '8e9a3f80-48f1-4264-91ca-e3b3bb557902', url: 'https://github.com/adreddys5/maven-web-application.git'
+}
+stage('Build')
+{
+sh "${MavenHome}/bin/mvn clean package"
+}
+stage('Deply Tomcat')
+{
+sshagent(['eb3de964-ecc2-4a93-9049-bc3c2a208393']) {
+sh "scp  -o StrictHostkeychecking=no target/maven-web-application.war ec2-user@65.0.108.42:/opt/apache-tomcat-9.0.56/webapps"
+
+}
+}
+stage('Email Notification')
+{
+emailext body: '''Build Over
+Regards
+damodar''', subject: 'BUILDOVER', to: 'adreddys5@gmail.com'
+}
+}
