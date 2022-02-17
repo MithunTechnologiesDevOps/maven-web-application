@@ -13,7 +13,7 @@ sh "${MavenHome}/bin/mvn clean package"
 stage('Deply Tomcat')
 {
 sshagent(['eb3de964-ecc2-4a93-9049-bc3c2a208393']) {
-sh "scp  -o StrictHostkeychecking=no target/maven-web-application.war ec2-user@65.0.108.42:/opt/apache-tomcat-9.0.56/webapps"
+sh "scp  -o StrictHostkeychecking=no target/maven-web-application.war ec2-user@13.233.156.40:/opt/apache-tomcat-9.0.56/webapps"
 
 }
 }
