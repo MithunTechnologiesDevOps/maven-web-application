@@ -5,7 +5,7 @@
 	<groupId>maven-web-application</groupId>
 	<artifactId>maven-web-application</artifactId>
 	<packaging>war</packaging>
-	<version>7.0</version>
+	<version>3.0</version>
 	
 	<name>maven-web-application</name>
 
@@ -22,7 +22,7 @@
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
         	<sonar.host.url>http://34.135.223.86:9000</sonar.host.url>
-		<sonar.login>ceb024613d88a3e482ee499d10b632780e1d6d65</sonar.login> 	      
+		<sonar.login>584a54b90d7a6afd257f3b175b62f5f5baf18d8a</sonar.login> 	      
          		
 		
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
