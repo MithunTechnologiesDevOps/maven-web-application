@@ -4,12 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>SudheerTechnologies- Home Page</title>
+<title>Sudheer Technologies- Home Page</title>
 <link href="images/mithunlogo.jpg" rel="icon">
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to Sudheer  Solutions. -- GitHub  change..</h1>
+<h1 align="center">Welcome to Sudheer Software Solutions. -- GitHub  change..</h1>
 <h1 align="center"> Welcome to Sudheer Software Solutions.......We have a demo on  DevOps with AWS on 10th Mar 2022  at 7 PM IST for new batch. , Timings are 7.30 AM to 9.00 AM  . MSS- Very Good Training center for DevOps with AWS in Maratha Halli and also for Job Assitance Job Support also...Teaching Real Time scnerios and use cases... Some fake guys are giving the fake reviews dont believe those guys..I am requesting everyone. Please give your reviews in FB and Google.</h1>
 <hr>
 <div style="text-align: center;">
@@ -23,7 +23,7 @@
 		+91-8555074541,
 		devopstrainingbr@gmail.com
 		<br>
-		<a href="mailto:devopstrainingblr@gmail.com">Mail to Mithun Technologies</a>
+		<a href="mailto:devopstrainingblr@gmail.com">Mail to Sudheer Technologies</a>
 	</span>
 </div>
 <hr>
