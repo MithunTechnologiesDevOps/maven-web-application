@@ -1,0 +1,35 @@
+node 
+{
+ properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '5', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * *')])])  
+def mavenHome=tool name:"maven3.8.2"    
+stage('CheckOutCode')
+{
+  git branch: 'development', url: 'https://github.com/devops2020sudheer/maven-web-application.git' 
+}
+stage('Buildthejob')
+{
+  sh "${mavenHome}/bin/mvn clean package"
+}
+stage('Execute SonarQube Report')
+{
+sh "${mavenHome}/bin/mvn sonar:sonar"    
+}
+stage('Upload artifact into Nexus')
+{
+sh "${mavenHome}/bin/mvn deploy"    
+}
+stage('Deploy application to TomcatServer')
+{
+sshagent(['TomcatServerdetails']) 
+{
+ sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@35.174.176.108:/opt/apache-tomcat-9.0.58/webapps/"
+}
+}
+stage('send email notification')
+{
+    mail bcc: 'devops2021sdr@gmail.com', body: '''Regards,
+M.Sudheer Reddy
+8555074541.''', cc: 'devops2021sdr@gmail.com', from: '', replyTo: '', subject: 'Build over......,', to: 'devops2021sdr@gmail.com'
+}
+
+}
