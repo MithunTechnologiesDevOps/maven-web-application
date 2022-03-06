@@ -21,7 +21,7 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-	      <sonar.host.url>http://174.129.87.120:9000/</sonar.host.url>
+	      <sonar.host.url>http://3.81.146.220:9000/</sonar.host.url>
 	<!--	<sonar.login>d57a35cf04131a7c3ea27baa185cdb486b575962</sonar.login>  -->
                 <sonar.login>admin</sonar.login>
 		<sonar.password>sudheer</sonar.password>  
@@ -100,13 +100,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Sudheer Technologies Releases Nexus Repository</name>
-	      <url>http://34.200.246.66:8081/repository/flipkart-release/</url>
+	      <url>http://44.198.58.250:8081/repository/flipkart-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Sudheer Technologies Snapshot Nexus Repository </name>
-	      <url>http://34.200.246.66:8081/repository/flipkart-snapshot/</url>
+	      <url>http://44.198.58.250:8081/repository/flipkart-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement> 
