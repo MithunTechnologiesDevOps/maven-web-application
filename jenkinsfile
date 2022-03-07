@@ -10,6 +10,7 @@ stage('Buildthejob')
 {
   sh "${mavenHome}/bin/mvn clean package"
 }
+/*
 stage('Execute SonarQube Report')
 {
 sh "${mavenHome}/bin/mvn sonar:sonar"    
@@ -25,6 +26,7 @@ sshagent(['TomcatServerdetails'])
  sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@100.25.202.141:/opt/apache-tomcat-9.0.58/webapps/"
 }
 }
+*/
 stage('send email notification')
 {
     mail bcc: 'devops2021sdr@gmail.com', body: '''Regards,
