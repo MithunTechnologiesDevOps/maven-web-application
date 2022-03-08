@@ -9,7 +9,15 @@ stage("BUILD")
     sh 'mvn clean package'
 }
 
+stage("deploytoTomcat")
+{
+    sshagent(['Tomcat_server_pipeline']) 
+    {
+        
+    sh 'scp /root/.jenkins/workspace/pipeline_dev/target/maven-web-application.war vinay@192.168.29.211:/opt/apache-tomcat-9.0.58/webapps/'
+    }
 }
    
-  
+    
+}
 
