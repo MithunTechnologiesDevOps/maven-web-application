@@ -42,10 +42,9 @@ node
  stage('SendEmailNotification')
  {
  emailext body: '''Build Over - Scriptedway
-
  Regards,
- Mithun Software Solutions,
- 9980923226''', subject: 'Build Over - Scriptedway', to: 'devopstrainingblr@gmail.com'
+ Kishor Software Solutions,
+ 7093450584''', subject: 'Build Over - Scriptedway', to: 'kishordevops96@gmail.com'
  }
  
 }
