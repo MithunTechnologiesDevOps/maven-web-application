@@ -99,13 +99,13 @@
 	   <repository>
 	      <id>nexus</id>
 	      <name>Releases Nexus Repository</name>
-	      <url>http://35.188.62.2:8081/repository/maven-rele/</url>
+	      <url>http://34.118.89.87:8081/repository/maven2-rele/</url>
 	   </repository>
 	    
 	   <snapshotRepository>
 	      <id>nexus</id>
 	      <name> Snapshot Nexus Repository </name>
-	      <url>http://35.188.62.2:8081/repository/maven-snap/</url>
+	      <url>http://34.118.89.87:8081/repository/maven2/</url>
 	   </snapshotRepository>
 	    
 	</distributionManagement> 
