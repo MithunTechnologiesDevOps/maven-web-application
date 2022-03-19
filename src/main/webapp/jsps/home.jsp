@@ -4,12 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>MithunTechnologies- Home Page</title>
+<title>Balaji Software Solutions- Home Page</title>
 <link href="images/mithunlogo.jpg" rel="icon">
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to Mithun Software Solutions. GitHub Webhook Demo</h1>
+<h1 align="center">Welcome to Balaji Software Solutions. GitHub Webhook Demo</h1>
 <h1 align="center"> Welcome to Balaji Software Solutions.......We have a demo on  DevOps with AWS on  10th July  2021  at 7 PM IST for new batch. , This is a weekdays batch  . MSS- Very Good Training center for DevOps with AWS ..Teaching Real Time scnerios and use cases... Some fake guys are giving the fake reviews dont believe those guys..I am requesting everyone. Please give your reviews in FB and Google.</h1>
 <hr>
 <div style="text-align: center;">
