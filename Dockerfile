@@ -1,5 +1,5 @@
 FROM tomcat:latest 
 WORKDIR /usr/local/tomcat
-COPY target/warfile /usr/local/tomcat/webapps/warfile 
+COPY target/maven-web-application.war /usr/local/tomcat/webapps/maven-web-application.war
 EXPOSE 8080
 
