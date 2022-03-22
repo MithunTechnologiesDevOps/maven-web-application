@@ -96,8 +96,8 @@
 	
 	    <repository>
 	      <id>nexus</id>
-	      <namehttp://3.110.119.153:8096/madhusudhan/repository/facebook-Release/>Mithun Technologies Releases Nexus Repository</name>
-	      <url></url>
+	      <name>Mithun Technologies Releases Nexus Repository</name>
+	      <url>http://3.110.119.153:8096/madhusudhan/repository/facebook-Release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
