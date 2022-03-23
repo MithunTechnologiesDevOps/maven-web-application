@@ -1,0 +1,30 @@
+node
+{
+ def mavenHome = tool name: "maven-3.6.2"
+ 
+ stage ('CodeCheckout')
+ {
+ git branch: 'development', credentialsId: '14c900e6-6b3e-4475-94f5-f55245fb3f80', url: 'https://github.com/balajigajendran002/maven-web-application.git'
+ }
+ 
+ stage ('BuildCode')
+ {
+ sh "${mavenHome}/bin/mvn clean package"
+ }
+ 
+ stage ('CodeQualityCheck')
+ {
+ sh "${mavenHome}/bin/mvn clean sonar:sonar"
+ }
+ 
+ stage ('CodeDeploy')
+ {
+ sh "${mavenHome}/bin/mvn deploy"
+ }
+ 
+ stage ('CodePush')
+ {
+ deploy adapters: [tomcat9(credentialsId: 'd848f18e-1be2-4005-be47-2312282a5ac9', path: '', url: 'http://65.2.129.105:8080/')], contextPath: null, war: '**/maven-web-application.war'
+ }
+ 
+}
