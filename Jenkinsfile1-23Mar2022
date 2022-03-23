@@ -25,7 +25,10 @@ node
  
  stage ('CodePush')
  {
- deploy adapters: [tomcat9(credentialsId: 'd848f18e-1be2-4005-be47-2312282a5ac9', path: '', url: 'http://65.2.129.105:8080/')], contextPath: null, war: '**/maven-web-application.war'
+ sshagent(['b0e1474a-7342-4fd6-8a2b-90c12e2de2f5']) 
+ {
+ sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@65.2.129.105:/opt/apache-tomcat-9.0.58/webapps/"  
+ }
  }
  
 }
