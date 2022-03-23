@@ -1,8 +1,7 @@
 node
 {
-
  def mavenHome = tool name: "maven-3.6.2"
- properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), pipelineTriggers([pollSCM('* * * * *')])])
+ properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '3', daysToKeepStr: '', numToKeepStr: '3')), pipelineTriggers([pollSCM('* * * * *')])])
  
  stage'(CodeCheckOut)'
  {
@@ -13,28 +12,4 @@ node
  {
  sh "${mavenHome}/bin/mvn clean package"
  }
- 
- stage'(codeQualityCheck)'
- {
- sh "${mavenHome}/bin/mvn sonar:sonar"
- }
- 
- stage'(codeDeploy)'
- {
- sh "${mavenHome}/bin/mvn deploy"
- }
- 
- stage'(PushtoTomcat)'
- {
- sshagent(['b0e1474a-7342-4fd6-8a2b-90c12e2de2f5']) 
- {
- sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war 13.127.133.31:/opt/apache-tomcat-9.0.58/webapps/"
- }
- }
-
- stage'(SendingEmailNotication)'
- {
- mail bcc: '', body: 'Pipeline Deployment Completed', cc: '', from: '', replyTo: '', subject: 'Deployment Completed', to: 'ijalab.21@gmail.com'
- }
- 
 }
