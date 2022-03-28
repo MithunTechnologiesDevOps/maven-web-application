@@ -98,14 +98,14 @@
 	
 	    <repository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://13.233.158.86:9980/mithuntechnologies/repository/facebook-release/</url>
+	      <name>MBS Releases Nexus Repository</name>
+	      <url>http://3.110.54.190:9980/bala/repository/facebook-releases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://13.233.158.86:9980/mithuntechnologies/repository/facebook-snapshot/</url>
+	      <name>MBS Snapshot Nexus Repository </name>
+	      <url>http://3.110.54.190:9980/bala/repository/facebook-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
