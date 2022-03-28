@@ -1,19 +1,19 @@
 node
- {
- 
-  def mavenHome = tool name: "maven3.8.4"
+{
+
+  def mavenHome = tool name: "maven3.8.5"
   
   stage('CheckoutCode')
   {
-  git branch: 'development', credentialsId: 'c0890c36-4dc1-424c-b6d0-c3ad5606eca5', url: 'https://github.com/mss-ec-apps-novbatchanil/maven-web-application.git'
+  git branch: 'development', credentialsId: '1a45899f-9350-4d96-9894-42c222d595e3', url: 'https://github.com/mss-ec-apps-novbatchanil/maven-web-application.git'
   }
-  
+
   stage('Build')
   {
   sh "${mavenHome}/bin/mvn clean package"
   }
-  /*
-  stage('ExecuteSonarQubeReport')
+  
+  stage('ExecuteSonarqubeReport')
   {
   sh "${mavenHome}/bin/mvn clean sonar:sonar"
   }
@@ -23,19 +23,16 @@ node
   sh "${mavenHome}/bin/mvn clean deploy"
   }
   
-  stage('DeployAppintoTomcat')
+  stage('DeployAppIntoTomcat')
   {
-  sshagent(['5c9fafae-069d-457b-99cf-462b2c9095b4']) {
-    sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.233.245.126:/opt/apache-tomcat-9.0.58/webapps"
+  sshagent(['5c9bd688-00af-4114-b318-ed985664fcae']) {
+    sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.127.17.200:/opt/apache-tomcat-9.0.59/webapps"
 }
   }
   
   stage('SendNotifications')
   {
-  emailext body: '''Build Over
-
-Regards
-     Anil...''', subject: 'Build Over', to: 'anilkumar.artik82@gmail.com'
+    emailext body: 'By Anil...', subject: 'Build Over', to: 'anil8069@gmail.com'  
   }
-  */
- }
+
+}
