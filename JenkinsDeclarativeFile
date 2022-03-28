@@ -1,0 +1,70 @@
+pipeline
+{
+agent any
+
+tools
+{
+maven 'maven3.8.4'
+}
+/*
+triggers {
+  //pollSCM '* * * * *'
+  //cron '* * * * *'
+}
+*/
+options {
+  buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')
+  timestamps()
+}
+
+  stages
+  {
+   
+    stage('CheckoutCode')
+	{
+	  steps
+	  {
+	    git branch: 'development', credentialsId: '1a45899f-9350-4d96-9894-42c222d595e3', url: 'https://github.com/mss-ec-apps-novbatchanil/maven-web-application.git'
+	  }
+	}
+	
+	stage('Build')
+	{
+	  steps
+	  {
+	  sh "mvn clean package"
+	  }
+	}
+	
+	//Execute Sonarqube Report
+	stage('ExecuteSonarqubeReport')
+	{
+	  steps
+	  {
+	   sh "mvn clean sonar:sonar"
+	  }
+	}
+	
+	//Generate Nexus Report
+	stage('UploadArtifactIntoNexus')
+	{
+	  steps
+	  {
+	   sh "mvn clean deploy"
+	  }
+	}
+	
+	//Deploy App Into Tomcat Server
+	stage('DeployAppIntoTomcat')
+	{
+	  steps
+	  {
+	   sshagent(['5c9bd688-00af-4114-b318-ed985664fcae']) 
+	   {
+    sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.127.17.200:/opt/apache-tomcat-9.0.59/webapps"
+       }
+	  }
+	}
+	
+  }
+}
