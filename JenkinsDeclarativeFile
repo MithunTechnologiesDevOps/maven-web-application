@@ -8,7 +8,7 @@ options {
 }
 
 triggers {
-  cron '* * * * *'
+  //cron '* * * * *'
   //pollSCM '* * * * *'
 }
 
