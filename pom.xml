@@ -99,13 +99,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>MBS Releases Nexus Repository</name>
-	      <url>http://3.110.54.190:9980/bala/repository/facebook-releases/</url>
+	      <url>http://15.207.117.49:9980/bala/repository/facebook-releases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>MBS Snapshot Nexus Repository </name>
-	      <url>http://3.110.54.190:9980/bala/repository/facebook-snapshot/</url>
+	      <url>http://15.207.117.49:9980/bala/repository/facebook-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
