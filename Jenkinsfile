@@ -4,7 +4,8 @@ def mavenHome = tool name: "maven3.8.5"
 echo "The branch name is:  ${env.BRANCH_NAME} "
 echo  " The job name:  ${env.JOB_NAME} "
    
-properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '3', daysToKeepStr: '', numToKeepStr: '3'))])   
+properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '3', daysToKeepStr: '', numToKeepStr: '3'))])  
+properties([pipelineTriggers([pollSCM('* * * * *')])])   
    
 stage('checkout'){
   echo "The branch name is:  ${env.BRANCH_NAME} "
