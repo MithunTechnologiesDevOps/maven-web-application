@@ -4,6 +4,7 @@ def mavenHome = tool name: "maven3.8.5"
 echo "The branch name is:  ${env.BRANCH_NAME} "
 echo  " The job name:  ${env.JOB_NAME} "
 stage('checkout'){
+  echo "The branch name is:  ${env.BRANCH_NAME} "
 git branch: 'development', credentialsId: '9c5b52be-ec0b-4b3d-8350-fe86cd3811b9', url: 'https://github.com/MBS-developements/maven-web-application.git'
 }// Get code from SCM
 
