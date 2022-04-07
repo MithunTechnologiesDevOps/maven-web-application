@@ -6,12 +6,9 @@ buildName 'Develop -${BUILD_NUMBER}'
 //Project name and Branch   
 echo "The branch name is:  ${env.BRANCH_NAME} "
 echo  " The job name:  ${env.JOB_NAME} "
-
- options {
+options{
   buildDiscarder logRotator(artifactNumToKeepStr: '5', daysToKeepStr: '30', numToKeepStr: '5')
 }
-
-   
 properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '3', daysToKeepStr: '', numToKeepStr: '3'))])  
 properties([pipelineTriggers([pollSCM('* * * * *')])])   
    
