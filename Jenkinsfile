@@ -1,8 +1,8 @@
 node{
 def mavenHome = tool name: "maven3.8.5"
 //Build description and buildname   
-buildDescription 'Develop -#$(BUILD_NUMBER)'
-buildName 'PIPELINE scriptedway '
+buildDescription 'PIPELINE scriptedway '
+buildName 'Develop -$(BUILD_NUMBER)'
 //Project name and Branch   
 echo "The branch name is:  ${env.BRANCH_NAME} "
 echo  " The job name:  ${env.JOB_NAME} "
