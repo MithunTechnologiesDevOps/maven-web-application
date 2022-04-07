@@ -1,0 +1,62 @@
+pipeline{
+agent any
+tools{
+maven"maven3.8.5"
+}
+//OLD BUILD DISCORD// AND TIMESTAMPS
+options {
+  buildDiscarder logRotator(artifactNumToKeepStr: '5', numToKeepStr: '5')
+  timestamps()     
+}
+
+triggers {
+  pollSCM( '* * * * *')
+  //cron( '* * * * *')
+}
+ stages{
+   //Get the code from the SCM repo
+   stage('checkout'){
+      steps{
+      git branch: 'development', credentialsId: '9c5b52be-ec0b-4b3d-8350-fe86cd3811b9', url: 'https://github.com/MBS-developements/maven-web-application.git'
+      }
+    }
+   stage('BUILD'){
+       steps{
+   sh "mvn clean package"
+       }
+    }
+    stage('Execute sonarqube report'){
+      steps{
+         sh "mvn sonar:sonar"  
+      }
+    }
+    stage('upoad aritifactinto remoterepo'){
+       steps{
+          sh"mvn deploy"
+        }
+    }
+    stage('upload apliction into tomcat server'){
+        steps{
+          sshagent(['17d61311-f1e0-4eea-802f-c02ba3d7751e']) {
+    sh"scp -o StrictHostKeyChecking=no target/maven-web-application.war   ec2-user@3.110.88.64:/opt/apache-tomcat-9.0.60/webapps" 
+           }
+         }
+
+    }
+ }//stages closing
+ // Post has implemented
+ post {
+  always {
+    // One or more steps need to be included within each condition's block.
+    echo"The job  is running"
+  }
+  success {
+    // One or more steps need to be included within each condition's block.
+    echo"The Build is successful"
+  }
+  failure {
+    // One or more steps need to be included within each condition's block.
+    echo" The build is faild. check the error and guidlines"
+  }
+}
+}//Pipeline closing
