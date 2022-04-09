@@ -1,75 +1,61 @@
 pipeline{
+    agent any
+    tools {
+     maven 'MAVEN'
+    }
 
-agent any
-
-tools{
-maven 'maven3.8.2'
-
-}
-
-triggers{
-pollSCM('* * * * *')
-}
-
-options{
-timestamps()
-buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5'))
-}
-
-stages{
-
-  stage('CheckOutCode'){
-    steps{
-    git branch: 'development', credentialsId: '957b543e-6f77-4cef-9aec-82e9b0230975', url: 'https://github.com/devopstrainingblr/maven-web-application-1.git'
-	
-	}
-  }
+     stages{
+         
+         stage('CHECKOUT SCM CODE'){
+             steps{
+                git 'https://github.com/SOFTWARESOLUTONS-PVT-LIMITED/maven-web-application.git' 
+             }
+         }
+    
+    
+    stage('BUILD PACKAGE'){
+        steps{
+            sh "mvn clean package"
+        }
+    }
+    
+    stage('DOCKER BUILD'){
+        steps{
+            sh "docker build -t newjen-image ."
+        }
+    }
+    
+    stage('DOCKER LOGIN AND PUSH'){
+        steps{
+            withCredentials([string(credentialsId: 'DOCKER', variable: 'DOCKER')]) {
+            sh " docker login -u ashokganidocker -p ${DOCKER} "
+         }
+          sh "docker tag newjen-image  ashokganidocker/newjen-image:latest "
+          sh "docker push ashokganidocker/newjen-image:latest"
+        }
+    }
+    
+    stage('SEND EMAIL NOTIFICATION'){
+        steps{
+            mail bcc: 'sappoguashokrock6629@gmail.com,sappoguashok462@gmail.com', body: '''REGARDS,
+            NAME- MR.S.ASHOKKUMAR,
+            PROJECT-MAVEN PROJECT,
+            ROLE-DEVOPSENGINEER,
+          ''', cc: 'rhopnbbkeccgwihz', from: '', replyTo: '', subject: 'THIS CI-CD PIPELINE IS OVER', to: 'sappoguashok462@gmail.com'
+        }
+    }
+    
+    stage('SEND EMAIL TEXT'){
+        steps{
+            emailext body: 'THIS MAVEN BASED PROJECT IS OVER', recipientProviders: [requestor()], subject: 'BUILD IS OVER', to: 'sappoguashok462@gmail.com'
+        }
+    }
+    
+    
+     
   
-  stage('Build'){
-  steps{
-  sh  "mvn clean package"
-  }
-  }
-/*
- stage('ExecuteSonarQubeReport'){
-  steps{
-  sh  "mvn clean sonar:sonar"
-  }
-  }
-  
-  stage('UploadArtifactsIntoNexus'){
-  steps{
-  sh  "mvn clean deploy"
-  }
-  }
-  
-  stage('DeployAppIntoTomcat'){
-  steps{
-  sshagent(['bfe1b3c1-c29b-4a4d-b97a-c068b7748cd0']) {
-   sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@35.154.190.162:/opt/apache-tomcat-9.0.50/webapps/"    
-  }
-  }
-  }
-  */
-}//Stages Closing
+         
+     }//stagesclosed   
 
-post{
-
- success{
- emailext to: 'devopstrainingblr@gmail.com,mithuntechnologies@yahoo.com',
-          subject: "Pipeline Build is over .. Build # is ..${env.BUILD_NUMBER} and Build status is.. ${currentBuild.result}.",
-          body: "Pipeline Build is over .. Build # is ..${env.BUILD_NUMBER} and Build status is.. ${currentBuild.result}.",
-          replyTo: 'devopstrainingblr@gmail.com'
- }
- 
- failure{
- emailext to: 'devopstrainingblr@gmail.com,mithuntechnologies@yahoo.com',
-          subject: "Pipeline Build is over .. Build # is ..${env.BUILD_NUMBER} and Build status is.. ${currentBuild.result}.",
-          body: "Pipeline Build is over .. Build # is ..${env.BUILD_NUMBER} and Build status is.. ${currentBuild.result}.",
-          replyTo: 'devopstrainingblr@gmail.com'
- }
- 
-}
-
-
-}//Pipeline closing
+    
+}//pipelineclosed
