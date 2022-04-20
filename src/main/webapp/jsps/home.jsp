@@ -9,7 +9,7 @@
 </head>
 </head>
 <body>
-<h1 align="center"> Good Morning Guys..</h1>
+<h1 align="center"> Hello Everyone...</h1>
 <h1 align="center">Welcome to DevOps Training , This is our 4rd batch training, Phone: 7842602230 from Rajampet Kadapa, Andhra Pradesh</h1>
 <hr>
 <br>
