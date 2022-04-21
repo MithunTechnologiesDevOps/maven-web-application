@@ -3,4 +3,4 @@ RUN sed -i '/<\/tomcat-users>/ i\<user username="admin" password="password" role
 #COPY tomcat-users.xml /usr/local/tomcat/conf/tomcat-users.xml
 COPY java-web-app.war /usr/local/tomcat/webapps/java-web-app.war
 CMD sh catalina.sh start
-MAINTAINER jeevan
+MAINTAINER Jeevan
