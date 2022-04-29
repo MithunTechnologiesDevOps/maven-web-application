@@ -30,7 +30,8 @@ echo "build nuber is: ${env.BUILD_NUMBER}"
 echo "job name is:  ${env.JOB_NAME}"
 echo "node name is:  ${env.NODE_NAME}"
  properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * *')])])
-def mavenHome = tool name: 'maven3.8.5'   
+def mavenHome = tool name: 'maven3.8.5'
+  try{
 //get the code from github repo
 stage('checkoutcode'){
 git branch: 'development', credentialsId: 'fe3bb905-fc53-495e-95fd-8e5f0cde5900', url: 'https://github.com/sujitha-devops-learning/maven-web-application.git'
@@ -58,7 +59,13 @@ sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@3.
 }
     
 }
-
+  }//try closing
+  catch(e){
+    currentBuild.result = "FAILED"
+  }
+  finally{
+    slackNotifications(currentBuild.result)
+  }
 
 }//node closes
 
