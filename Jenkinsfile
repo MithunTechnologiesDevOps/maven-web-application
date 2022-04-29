@@ -3,7 +3,7 @@ echo "build nuber is: ${env.BUILD_NUMBER}"
 echo "job name is:  ${env.JOB_NAME}"
 echo "node name is:  ${env.NODE_NAME}"
     
-def mavenHome = tool name: 'maven3.8.5'   
+def mavenHome = tool name: 'maven3.8.4'   
 //get the code from github repo
 stage('checkoutcode'){
 git branch: 'development', credentialsId: 'fe3bb905-fc53-495e-95fd-8e5f0cde5900', url: 'https://github.com/sujitha-devops-learning/maven-web-application.git'
