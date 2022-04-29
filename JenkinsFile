@@ -2,7 +2,6 @@ node {
       echo "Job name is: ${env.JOB_NAME}"
       echo "Node name is: ${env.NODE_NAME}"
     def mavenHome = tool name: "Maven3.8.5"
-    properties([parameters([choice(choices: ['development', 'qa', 'stage'], name: 'BranchName')])])
     stage('CheckoutCode'){
         git branch: 'development', credentialsId: '1bf7e1d8-c4f1-4c82-a915-c1c2523ecf5f', url: 'https://github.com/Manikantamarreddi/maven-web-application.git'
     }
