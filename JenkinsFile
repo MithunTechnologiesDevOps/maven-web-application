@@ -25,12 +25,11 @@ def notifyBuild(String buildStatus = 'STARTED') {
 }
 
 node {
-try{
-node {
       echo "Job name is: ${env.JOB_NAME}"
       echo "Node name is: ${env.NODE_NAME}"
     def mavenHome = tool name: "Maven3.8.5"
     properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), pipelineTriggers([pollSCM('* * * * *')])])
+    try{
     stage('CheckoutCode'){
         git branch: 'development', credentialsId: '1bf7e1d8-c4f1-4c82-a915-c1c2523ecf5f', url: 'https://github.com/Manikantamarreddi/maven-web-application.git'
     }
