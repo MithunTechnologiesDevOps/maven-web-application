@@ -1,4 +1,4 @@
-def sendslacknotifications(String buildStatus = 'STARTED') {
+/*def sendslacknotifications(String buildStatus = 'STARTED') {
   // build status of null means successful
   buildStatus =  buildStatus ?: 'SUCCESSFUL'
 
@@ -22,7 +22,7 @@ def sendslacknotifications(String buildStatus = 'STARTED') {
 
   // Send notifications
   slackSend (color: colorCode, message: summary)
-}
+} */
 
 node{
 
