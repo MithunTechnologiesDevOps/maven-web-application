@@ -1,4 +1,4 @@
-def sendslacknotifications(String buildStatus = 'STARTED') {
+def sendSlackNotifications(String buildStatus = 'STARTED') {
   // build status of null means successful
   buildStatus =  buildStatus ?: 'SUCCESS'
 
@@ -60,8 +60,8 @@ sshagent(['0cbe3170-1c0a-482a-a067-67e54c561cb7']) {
 
 } //try closing
 
-cache(e) { currentBuild.result='FAILED'
+catch(e) { currentBuild.result='FAILED'
 }
 finally {
-sendslacknotifications {  currentBuild.result }
+sendSlackNotifications {  currentBuild.result }
 } //Node closig
