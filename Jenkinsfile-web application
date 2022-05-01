@@ -1,3 +1,249 @@
+- Create organization
+  https://github.com/Vali-DevOpsteam ( SCM URL )
+  
+- Create the repository
+  https://github.com/Vali-DevOpsteam/facebook.git  ( Public repository ) 
+  https://github.com/Vali-DevOpsteam/amazon.git    ( Private repository )  
+
+- Create the Team -> ex: facebook - Devteam
+  https://github.com/orgs/Vali-DevOpsteam/teams/facebook-devteam ( team URL )
+  
+- Add resource/users to the team
+
+- Provide repo access to the team
+
+--Pull request url: https://github.com/Vali-DevOpsteam/facebook/pull/1
+
+export M2_HOME=/opt/apache-maven-3.8.5
+
+export PATH=$PATH:$M2_HOME/bin
+
+/opt/apache-maven-3.8.5
+
+ln -s /opt/apache-tomcat-9.0.62/bin/startup.sh /usr/bin/startTomcat
+ln -s /opt/apache-tomcat-9.0.62/bin/shutdown.sh /usr/bin/stopTomcat
+
+
+13.235.86.53
+ec2-user
+pass123
+22
+
+
+/opt/apache-maven-3.8.5
+
+export M2_HOME=/opt/apache-maven-3.8.5
+
+export PATH=$PATH:$M2_HOME/bin
+
+===============================================================================================================
+
+Tomcat:
+url: http:// << public IPV >>:9980
+user: vali
+password: pass12345 
+
+===============================================================================================================
+
+
+SonarQube:
+
+url: http://<< public IPV >>:9000
+user: admin
+password: pass123
+
+7c9a8d2db78f09d3e50599593bf676e6afccf613  --> SonarQube token
+
+wget https://www.sonarqube.org/success-download-community-edition/
+
+wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.4.0.54424.zip
+
+http:13.232.3.128:9000
+http://35.154.36.69:9000/
+
+================================================================================================================
+
+
+
+Nexus:
+
+url: http://<< public IPV >>:9980/valitechsolutions
+user: admin
+password: pass123
+
+
+wget https://download.sonatype.com/nexus/3/nexus-3.38.1-01-unix.tar.gz
+
+
+http://35.154.36.69:9000/projects
+
+ 
+
+
+http://3.7.254.109:9980/valitechsolutions/repository/facebook-release/
+
+
+http://3.7.254.109:9980/valitechsolutions/repository/facebook-snapshot/
+
+
+http://65.1.147.141:9980/valitechsolutions/repository/valitechsolutions-remote-repository/
+
+
+http://65.1.147.141:9980/valitechsolutions/repository/vali-proxy-repo/
+
+
+http://65.1.147.141:9980/valitechsolutions/repository/vali-Group-Repository/
+
+==================================================================================================================
+
+
+Jenkins:
+
+user name - vali
+password  - pass123
+
+jenkins key: 5fcabde4bee44cdba100ddc03d0e17c0
+
+
+/var/lib/jenkins/workspace/facebook-development/target/maven-web-application.war
+
+
+
+
+http://52.66.239.208:9980/valitechsolutions/repository/facebook-snapshot/
+
+http://52.66.239.208:9980/valitechsolutions/repository/facebook-release/
+
+https://slack.com
+
+
+http://65.0.106.27:8080/github-webhook/
+
+
+scripted pipeline :
+
+node{
+
+def mavenhome = tool name: 'maven3.8.5'
+
+//Get the code from GitHub Repository
+stage('checkoutcode'){
+git branch: 'development', credentialsId: 'cc5b54f6-54e2-49d6-b2a2-4fb16abf544a', url: 'https://github.com/vali04091988/maven-web-application.git'
+}
+
+//Do the build useing maven build tool
+stage('Build'){
+sh "${mavenhome}/bin/mvn clean package"
+}
+
+//Generating the sonar report
+stage('executingthesonarreport'){
+sh "${mavenhome}/bin/mvn sonar:sonar"
+}
+
+//uploading artifacts into artifact repository
+stage('uploadingartifactsintoartifactrepo'){
+sh "${mavenhome}/bin/mvn deploy"
+}
+
+//Deploying application into tomcat server
+stage('Deploying application'){
+sshagent(['0cbe3170-1c0a-482a-a067-67e54c561cb7']) {
+  sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.235.77.231:/opt/apache-tomcat-9.0.62/webapps
+"
+}
+
+}
+
+}
+------------------------------------------------
+
+FINALE CODE:
+
+
+node{
+
+echo "Job name is:  ${env.JOB_NAME} "
+echo "Node name is:  ${env.NODE_NAME}"
+
+def mavenhome = tool name: 'maven3.8.5'
+
+//Get the code from GitHub Repository
+stage('checkoutcode'){
+git branch: 'development', credentialsId: 'cc5b54f6-54e2-49d6-b2a2-4fb16abf544a', url: 'https://github.com/vali04091988/maven-web-application.git'
+}
+
+//Do the build useing maven build tool
+stage('Build'){
+sh "${mavenhome}/bin/mvn clean package"
+}
+
+//Generating the sonar report
+stage('executingthesonarreport'){
+sh "${mavenhome}/bin/mvn sonar:sonar"
+}
+
+//uploading artifacts into artifact repository
+stage('uploadingartifactsintoartifactrepo'){
+sh "${mavenhome}/bin/mvn deploy"
+}
+
+//Deploying application into tomcat server
+stage('Deploying application'){
+sshagent(['0cbe3170-1c0a-482a-a067-67e54c561cb7']) {
+  sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@43.204.116.174:/opt/apache-tomcat-9.0.62/webapps/"
+}
+
+}
+
+}
+
+------------------------------------------------------------------------------------------------------
+
+adding script to 'Discard old builds'
+
+node{
+
+properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * *')])])
+
+echo "Job name is:  ${env.JOB_NAME} "
+echo "Node name is:  ${env.NODE_NAME}"
+
+def mavenhome = tool name: 'maven3.8.5'
+
+//Get the code from GitHub Repository
+stage('checkoutcode'){
+git branch: 'development', credentialsId: 'cc5b54f6-54e2-49d6-b2a2-4fb16abf544a', url: 'https://github.com/vali04091988/maven-web-application.git'
+}
+
+//Do the build useing maven build tool
+stage('Build'){
+sh "${mavenhome}/bin/mvn clean package"
+}
+
+//Generating the sonar report
+stage('executingthesonarreport'){
+sh "${mavenhome}/bin/mvn sonar:sonar"
+}
+
+//uploading artifacts into artifact repository
+stage('uploadingartifactsintoartifactrepo'){
+sh "${mavenhome}/bin/mvn deploy"
+}
+
+//Deploying application into tomcat server
+stage('Deploying application'){
+sshagent(['0cbe3170-1c0a-482a-a067-67e54c561cb7']) {
+  sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@43.204.116.174:/opt/apache-tomcat-9.0.62/webapps/"
+}
+
+}
+
+}
+
+---------------------------------------------------------------------------------------------
+adding slack notification script for scripted way job:
+
 def sendslacknotifications(String buildStatus = 'STARTED') {
   // build status of null means successful
   buildStatus =  buildStatus ?: 'SUCCESSFUL'
@@ -33,6 +279,8 @@ echo "Node name is:  ${env.NODE_NAME}"
 def mavenhome = tool name: 'maven3.8.5'
 
 try{
+
+sendslacknotifications('STARTED')
 
 //Get the code from GitHub Repository
 stage('checkoutcode'){
@@ -71,4 +319,4 @@ sendslacknotifications(currentBuild.result)
 
 }
 
-}//Node closing
+}//Node closing 
