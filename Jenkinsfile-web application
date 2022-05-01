@@ -1,6 +1,6 @@
 def sendslacknotifications(String buildStatus = 'STARTED') {
   // build status of null means successful
-  buildStatus =  buildStatus ?: 'SUCCESSFUL'
+  buildStatus =  buildStatus ?: 'SUCCESS'
 
   // Default values
   def colorName = 'RED'
@@ -12,7 +12,7 @@ def sendslacknotifications(String buildStatus = 'STARTED') {
   if (buildStatus == 'STARTED') {
     color = 'YELLOW'
     colorCode = '#FFFF00'
-  } else if (buildStatus == 'SUCCESSFUL') {
+  } else if (buildStatus == 'SUCCESS') {
     color = 'GREEN'
     colorCode = '#00FF00'
   } else {
@@ -25,11 +25,6 @@ def sendslacknotifications(String buildStatus = 'STARTED') {
 }
 
 node{
-
-properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * *')])])
-
-echo "Job name is:  ${env.JOB_NAME} "
-echo "Node name is:  ${env.NODE_NAME}"
 
 def mavenhome = tool name: 'maven3.8.5'
 
@@ -58,15 +53,15 @@ sh "${mavenhome}/bin/mvn deploy"
 //Deploying application into tomcat server
 stage('Deploying application'){
 sshagent(['0cbe3170-1c0a-482a-a067-67e54c561cb7']) {
-  sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@43.204.116.174:/opt/apache-tomcat-9.0.62/webapps/"
+  sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@52.66.245.15:/opt/apache-tomcat-9.0.62/webapps/"
 }
 
 }
 
 } //try closing
 
-cache(e) { currentbuild.result='FAILED'
+cache(e) { currentBuild.result='FAILED'
 }
 finally {
-sendslacknotifications {  currentbuild.result }
+sendslacknotifications {  currentBuild.result }
 } //Node closig
