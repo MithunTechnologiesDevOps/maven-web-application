@@ -24,7 +24,7 @@ def notifyBuild(String buildStatus = 'STARTED') {
   slackSend (color: colorCode, message: summary)
 }
 
-node {
+node('slaves'){
       echo "Job name is: ${env.JOB_NAME}"
       echo "Node name is: ${env.NODE_NAME}"
     def mavenHome = tool name: "Maven3.8.5"
@@ -37,6 +37,7 @@ node {
 	    notifyBuild('STARTED')
         sh "$mavenHome/bin/mvn clean package"
     }
+    /*
     stage('SonarQubeReport'){
         sh "${mavenHome}/bin/mvn sonar:sonar"
     }
@@ -49,6 +50,7 @@ node {
 }
         
     }
+  */
 }
 catch(e){
 currentBuild.result = "FAILED"
