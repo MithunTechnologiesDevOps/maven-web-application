@@ -24,7 +24,7 @@
 		<sonar.host.url>http://3.84.101.7:9000/</sonar.host.url>
 		<sonar.login>admin</sonar.login>
 		<sonar.password>admin</sonar.password> 
-	<!--	<sonar.host.url>http://34.207.65.96:9000/</sonar.host.url>
+	<!--	<sonar.host.url>http://3.94.79.221:9000/</sonar.host.url>
 		<sonar.login>admin</sonar.login>
 		<sonar.password>admin</sonar.password> -->  
 		
