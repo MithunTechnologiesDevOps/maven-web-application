@@ -1,0 +1,41 @@
+node
+{
+
+def mavenHome = tool name: "maven3.8.5"
+
+ stage('CheckoutCode')
+ {
+    git branch: 'development', changelog: false, credentialsId: '249f37c3-c5d6-4e5c-9dd7-15500cc9ac06', poll: false, url: 'https://github.com/ravikumarcpatil/maven-web-application.git'
+ }
+ 
+ stage('Build')
+ {
+ 
+ sh "${mavenHome}/bin/mvn clean package"
+ }
+ 
+ stage('ExecuteSonarQubeReport')
+ {
+ sh "${mavenHome}/bin/mvn sonar:sonar"
+ }
+ 
+stage('UploadArtifactIntoNexus')
+ {
+ sh "${mavenHome}/bin/mvn deploy"
+ }
+ 
+ 
+ 
+ stage('SendEmailNotiifcation')
+ {
+emailext body: '''Build completed successfully
+
+
+
+Regards,
+Ravikumar Patil''', subject: 'Build Statu', to: 'roja.rajeshwari@gmail.com'
+ }
+
+ 
+ 
+}
