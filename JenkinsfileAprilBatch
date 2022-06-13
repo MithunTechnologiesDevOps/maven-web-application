@@ -9,7 +9,7 @@ echo "Node name is: ${env.NODE_NAME}"
 echo "Build number is: ${env.BUILD_NUMBER}" 
 
 
-
+try{
 stage('CheckoutCode')
 {
 git branch: 'development', credentialsId: 'f5708724-a441-46f4-8f75-3757193ad3f4', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git'
@@ -37,4 +37,12 @@ sshagent(['82db108b-c059-4ce7-92f7-933e8f8c5dea']) {
 }
 }
 */
+}catch(e){
+currentBuild.result = "FAILED"
+    throw e
 }
+finally{
+sendSlackNotifications(currentBuild.result)
+}
+
+}//Node Closing
