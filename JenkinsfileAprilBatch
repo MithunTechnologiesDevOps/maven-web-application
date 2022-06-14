@@ -24,6 +24,11 @@ stage('Build')
 {
 sh "${mavenHome}/bin/mvn clean package"
 }
+
+stage('TriggerDownstreamJob'){
+build job: 'pipelinescriptwithbuildparameters'
+}
+
 /*
 stage('ExecuteSonarQubeReport')
 {
@@ -38,8 +43,9 @@ sh "${mavenHome}/bin/mvn deploy"
 stage('DeployAppIntoTomcatServer')
 {
 sshagent(['82db108b-c059-4ce7-92f7-933e8f8c5dea']) {
- sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@172.31.45.84:/opt/apache-tomcat-9.0.63/webapps"   
+ sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@172.31.45.84:/opt/apache-tomcat-9.0.63/webapps" 
 }
+ 
 }
 */
 }catch(e){
