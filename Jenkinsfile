@@ -1,9 +1,9 @@
 node {
 def mavenHome = tool name: "Maven 3.8.5"
 properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([cron('* * * * *')])])
-    echo "Branch name is: ${env.BUILD_NUMBER}"
-    echo "Branch name is: ${env.BUILD_DISPLAY_NAME}"
-    echo "Branch name is: ${env.JOB_NAME}"
+    echo "Build number is: ${env.BUILD_NUMBER}"
+    echo "Build display name is: ${env.BUILD_DISPLAY_NAME}"
+    echo "Job name is: ${env.JOB_NAME}"
     stage ('CheckoutCode') {
         git branch: 'development', credentialsId: 'd43640b0-f4a2-4e1b-a011-4e90de1f9e73', url: 'https://github.com/Github-practice-june/maven-web-application.git'
     }
