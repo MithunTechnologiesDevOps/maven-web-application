@@ -7,8 +7,6 @@ maven 'maven'
 
 }
 
-triggers{
-pollSCM('* * * * *')
 }
 
 options{
