@@ -24,7 +24,7 @@ node('wallmart-node')
  {
  sh "${mavenHome}/bin/mvn deploy"
  }
- 
+
   stage('DeployAppintoTomcatServer')
  {
  sshagent(['017ba0e8-c08f-46e9-94aa-834371229478']) {
