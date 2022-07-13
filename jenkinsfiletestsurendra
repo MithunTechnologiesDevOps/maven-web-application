@@ -1,6 +1,7 @@
 node{
 
 def mvnversion = tool name: 'mvn3.8.4'
+properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([githubPush()])])
    stage('gitCheckout'){
    
    git branch: 'development', credentialsId: '9c63f97d-4dcc-4594-8ddb-73ed191a90d9', url: 'https://github.com/Hogarthwithfnfi/maven-web-application.git'
