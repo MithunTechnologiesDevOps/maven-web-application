@@ -22,3 +22,4 @@ properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKe
        sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.235.82.128:/opt/apache-tomcat-9.0.46/webapps/"
 }
 }
+}
