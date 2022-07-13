@@ -1,0 +1,25 @@
+node{
+
+def mvnversion = tool name: 'maven3.8.4'
+   stage('gitCheckout){
+   
+   git branch: 'development', credentialsId: '9c63f97d-4dcc-4594-8ddb-73ed191a90d9', url: 'https://github.com/Hogarthwithfnfi/maven-web-application.git'
+   }
+   stage('Build'){
+   
+   sh "${mvnversion}/bin/mvn clean package"
+   }
+   stage('sonar'){
+   
+   sh "${mvnversion}/bin/mvn sonar:sonar"
+   }
+   stage('nexus'){
+   sh "${mvnversion}/bin/mvn deploy"
+   }
+   stage('tomcat'){
+   sshagent(['282b469f-248a-460e-88b7-e6a91d8e833d']) {
+       sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.235.82.128:/opt/apache-tomcat-9.0.46/webapps/"
+}
+   
+   }
+}
