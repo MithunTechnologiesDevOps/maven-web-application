@@ -18,7 +18,7 @@ properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKe
    sh "${mvnversion}/bin/mvn deploy"
    }
    stage('tomcat'){
-   deploy adapters: [tomcat9(credentialsId: '7c8cd8d1-73b3-4138-b569-63e6f585b5d4', path: '', url: 'http://13.235.82.128:8080/')], contextPath: 'maven-web-app/', war: '**/maven-web-application/'
-   
-   }
+   sshagent(['282b469f-248a-460e-88b7-e6a91d8e833d']) {
+       sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.235.82.128:/opt/apache-tomcat-9.0.46/webapps/"
+}
 }
