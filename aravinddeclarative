@@ -1,0 +1,91 @@
+pipeline{
+
+agent any
+
+triggers {
+  pollSCM ('* * * * *')
+  githubPush()
+}
+parameters {
+  choice choices: ['development', 'uat', 'qa', 'master'], name: 'dynamicbranch'  
+}
+options {
+  buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '5', numToKeepStr: '')
+  timestamps()
+}
+tools{
+maven "maven-3.8.5"
+}
+stages{
+
+stage('checkoutcode'){
+steps{
+sendSlackNotifications('started')
+git branch: "${dynamicbranch}", credentialsId: '2ca26487-f4d1-4171-a75d-ae3b6892c2f6', url: 'https://github.com/devopsdemo10/maven-web-application.git'
+}
+}
+stage('build'){
+steps{
+sh "mvn clean package"
+}
+}
+stage('sonarreports'){
+steps{
+sh "mvn sonar:sonar"
+}
+}
+stage('uploadtonexus'){
+steps{
+sh "mvn deploy"
+}
+}
+stage('delpoytotomcat'){
+steps{
+sshagent(['9b9de740-0002-433d-84fa-95bfe6e60d39']) {
+sh "scp -o StrictHostKeyChecking=no target/*.war  ec2-user@172.31.43.121:/opt/apache-tomcat-9.0.64/webapps/" 
+}
+}
+}
+
+}
+post {
+  unstable {
+   sendSlackNotifications(currentBuild.result)
+  }
+  notBuilt {
+   sendSlackNotifications(currentBuild.result)
+  }
+  success {
+   sendSlackNotifications(currentBuild.result)
+  }
+  failure {
+   sendSlackNotifications(currentBuild.result) 
+  }
+}
+
+}
+def sendSlackNotifications(String buildStatus = 'STARTED') {
+  
+  buildStatus =  buildStatus ?: 'SUCCESS'
+
+  // Default values
+  def colorName = 'RED'
+  def colorCode = '#FF0000'
+  def subject = "${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'"
+  def summary = "${subject} (${env.BUILD_URL})"
+
+  // Override default values based on build status
+  if (buildStatus == 'STARTED') {
+    color = 'YELLOW'
+    colorCode = '#FFFF00'
+  } else if (buildStatus == 'SUCCESS') {
+    color = 'GREEN'
+    colorCode = '#00FF00'
+  } else {
+    color = 'RED'
+    colorCode = '#FF0000'
+  }
+
+  // Send notifications
+  slackSend (color: colorCode, message: summary, channel: 'devops') //(predefined variable)
+}
