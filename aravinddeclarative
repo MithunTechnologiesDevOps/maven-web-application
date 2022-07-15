@@ -6,9 +6,7 @@ label "aravind"
 
 triggers {
   githubPush()
-}
-parameters {
-  choice choices: ['development', 'uat', 'qa', 'master'], name: 'dynamicbranch'  
+}  
 }
 options {
   buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '5', numToKeepStr: '')
@@ -22,7 +20,7 @@ stages{
 stage('checkoutcode'){
 steps{
 sendSlackNotifications('started')
-git branch: "${dynamicbranch}", credentialsId: '2ca26487-f4d1-4171-a75d-ae3b6892c2f6', url: 'https://github.com/devopsdemo10/maven-web-application.git'
+git branch: ' ', credentialsId: '2ca26487-f4d1-4171-a75d-ae3b6892c2f6', url: 'https://github.com/devopsdemo10/maven-web-application.git'
 }
 }
 stage('build'){
