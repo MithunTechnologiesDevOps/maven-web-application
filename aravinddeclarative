@@ -1,9 +1,10 @@
 pipeline{
 
-agent any
+agent{
+label "aravind"
+}
 
 triggers {
-  pollSCM ('* * * * *')
   githubPush()
 }
 parameters {
