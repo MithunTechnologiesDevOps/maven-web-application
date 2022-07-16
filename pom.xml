@@ -98,13 +98,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://3.110.28.85:8082/repository/akash-release/</url>
+	      <url>http://13.126.235.58:8081/repository/ganesh-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://3.110.28.85:8082/repository/akash-snapshot/</url>
+	      <url>http://13.126.235.58:8081/repository/ganesh-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
