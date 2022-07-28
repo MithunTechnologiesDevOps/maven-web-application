@@ -23,7 +23,7 @@ node ('master')
  sh "${mavenHome}/bin/mvn clean package"
  }
  
-  /*commented
+  /*comment
  stage("ExecuteSonarQubeReport")
  {
  sh "${mavenHome}/bin/mvn sonar:sonar"
