@@ -5,7 +5,7 @@ import os
 path = "/var/lib/jenkins/workspace/TestPipeline/target"
 dir_list = os.listdir(path)
 
-print("Files and directories in '", path, "' :")
+print("Files and directories in target folder '", path, "' :")
 
 # prints all files
 print(dir_list)
