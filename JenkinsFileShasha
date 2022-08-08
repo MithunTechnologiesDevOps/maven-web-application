@@ -1,0 +1,13 @@
+node{
+    def mavenHome = tool name: "Maven 3.8.6"
+    
+    properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '5'))])
+    
+    stage('checkutCode'){
+        git credentialsId: '3eff1cab-bad0-4b0f-9d71-11846927dc75', url: 'https://github.com/shashavalidudekula/maven-web-application.git'
+    }
+    
+   stage('Execute Shell'){
+   sh "echo 'shasha multi-branch'"
+   }
+}
