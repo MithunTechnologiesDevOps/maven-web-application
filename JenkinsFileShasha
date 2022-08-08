@@ -1,5 +1,4 @@
 node{
-    def mavenHome = tool name: "Maven 3.8.6"
     
     properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '5'))])
     
