@@ -1,0 +1,34 @@
+node{
+    
+    def buildNumber = BUILD_Number
+    stage('Get Code from GITHub Repo'){
+        git branch: 'main', url: 'https://github.com/Pratap-devops-training/maven-web-application.git'
+    }
+    stage('Build Package'){
+    def mavenHome = tool name: "Maven",type: "maven"
+    
+    sh "${mavenHome}/bin/mvn clean package "
+    }
+    
+    stage('Build Docker Image'){
+        
+    sh "docker build -t prataptec22/maven-web-app-docker:${buildNumber} ."
+        
+    }
+    stage('Docker Login and push'){
+        
+        withCredentials([string(credentialsId: 'DockerPWD', variable: 'DockerPWD')]) {
+            sh "docker login -u prataptec22 -p ${DockerPWD}"
+        }
+        sh "docker push prataptec22/maven-web-app-docker:${buildNumber}"
+    }
+    stage('Deploy App as cointainer in Deployment Server'){
+        
+        sshagent(['Docker_Dev_Server_Ssh']) {
+    sh "ssh -o StrictHostKeyChecking=no ubuntu@172.31.8.94 docker rm -f javawebappconatiner || true "
+    sh "ssh -o StrictHostKeyChecking=no ubuntu@172.31.8.94 docker run -d -p 8080:8080 --name javawebappcontainer prataptec22/maven-web-app-docker:${buildNumber}"
+    }
+        
+    }
+    
+}
