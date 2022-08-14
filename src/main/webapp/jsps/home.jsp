@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1 align="center">Welcome to Sample Java Project </h1>
-<h1 align="center"> Created to Show the example App Deployment</h1>
+<h1 align="center"> Thanks for accessing the link</h1>
 <hr>
 <br>
 	<h1><h3> Server Side IP Address </h3><br>
