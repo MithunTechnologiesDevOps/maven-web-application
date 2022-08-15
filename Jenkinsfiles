@@ -10,6 +10,7 @@ node
     {
     sh "${mavenHome}/bin/mvn clean package"
     }
+    /*
     stage('sonarqubeexecutereport')
     {
     sh "mvn sonar:sonar"
@@ -28,4 +29,5 @@ node
     {
     slackSend channel: 'jenkins', message: 'success'
     }
+    */
 }
