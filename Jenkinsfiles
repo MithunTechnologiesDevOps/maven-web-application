@@ -1,0 +1,31 @@
+node
+{
+    def mavenHome = tool name: "maven3.6.0"
+    
+    stage('checkoutstage')
+    {
+    git credentialsId: 'github', url: 'https://github.com/pravansai/maven-web-application.git'
+    }
+    stage('build')
+    {
+    sh "${mavenHome}/bin/mvn clean package"
+    }
+    stage('sonarqubeexecutereport')
+    {
+    sh "mvn sonar:sonar"
+    }
+    stage('nexusuploader')
+    {
+    nexusArtifactUploader artifacts: [[artifactId: 'maven-web-application', classifier: '', file: '/root/.jenkins/workspace/pipeline1/target/maven-web-application.war', type: 'war']], credentialsId: 'd309a278-0df4-4d1b-b1f6-6edfac14197b', groupId: 'com.mt', nexusUrl: '54.226.84.184:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'flipkart-snapshot', version: '0.0.1-SNAPSHOT'
+    }
+    stage('deploytotomcat')
+    {
+    sshagent(['ccdaad01-ccb7-4468-bf8d-796cab823d0b']) {
+    sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@3.84.103.30:/opt/tomcat/webapps/"
+}
+    }
+    stage('slacknotify')
+    {
+    slackSend channel: 'jenkins', message: 'success'
+    }
+}
