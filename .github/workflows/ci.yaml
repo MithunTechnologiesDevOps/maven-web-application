@@ -1,0 +1,27 @@
+name: CI with gradel 
+
+on: 
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+    
+jobs:
+  build:
+    
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    - name: setup jdk
+      uses: actions/setup-java@v2
+      with: 
+        java-version: '11'
+        distribution: adpot
+        cache: gradle
+        
+    - name: permisions grant gradle
+      run: chmod +x gradle
+    - name: bild with gradle
+      run: ./gradle build
+      
