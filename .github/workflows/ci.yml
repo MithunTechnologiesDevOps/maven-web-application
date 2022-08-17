@@ -12,14 +12,29 @@ jobs:
      runs-on: ubuntu-latest
 
      steps:
-     - name: set the jdk 11
      - uses: actions/checkout@v2
-       uses: actions/setup-java@v2
+       name: setup jdk 11
+     - uses: actions/setup-java@v2
        with:
          java-version: '11'
          distribution: adopt
          cache: gradlew
-      - name: grsnt the permisision of gradlew
-        run: chmod +x gradlew
-      - name: build with gradlew
-        run: ./ gradlew build
+     - name: grsnt the permisision of gradlew
+       run: chmod +x gradlew
+     - name: build with gradlew
+       run: ./ gradlew build
+      
+     - name: SonarQube Scan
+       uses: sonarsource/sonarqube-scan-action@master
+       env:
+        SONAR_TOKEN: ${{ secrets.SONARQUBE_TOKEN }}
+        SONAR_HOST_URL: ${{ secrets.SONARQUBE_HOST_URL }}
+
+    # Check the Quality Gate status.
+     - name: SonarQube Quality Gate check
+       id: sonarqube-quality-gate-check
+       uses: sonarsource/sonarqube-quality-gate-action@master
+      # Force to fail step after specific time.
+       timeout-minutes: 5
+       env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
