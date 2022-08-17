@@ -1,4 +1,4 @@
-name: ci with maven
+name: Ci with maven
 
 on:
   push:
