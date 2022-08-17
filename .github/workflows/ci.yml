@@ -1,0 +1,25 @@
+name: ci with maven
+
+on:
+  push:
+    branches: [ main ]
+  pull_requests: 
+    branches: [ main ]
+
+jobs:
+  build:
+
+     runs-on: ubuntu-latest
+
+     steps:
+     - name: set the jdk 11
+     - uses: actions/checkout@v2
+       uses: actions/setup-java@v2
+       with:
+         java-version: '11'
+         distribution: adopt
+         cache: gradlew
+      - name: grsnt the permisision of gradlew
+        run: chmod +x gradlew
+      - name: build with gradlew
+        run: ./ gradlew build
