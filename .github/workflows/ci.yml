@@ -19,7 +19,7 @@ jobs:
          java-version: '11'
          distribution: adopt
          cache: gradlew
-     - name: grsnt the permisision of gradlew
+     - name: grant the permisision of gradlew
        run: chmod +x gradlew
      - name: build with gradlew
        run: ./ gradlew build
@@ -29,12 +29,11 @@ jobs:
        env:
         SONAR_TOKEN: ${{ secrets.SONARQUBE_TOKEN }}
         SONAR_HOST_URL: ${{ secrets.SONARQUBE_HOST_URL }}
-
-    # Check the Quality Gate status.
+        
      - name: SonarQube Quality Gate check
        id: sonarqube-quality-gate-check
-       uses: sonarsource/sonarqube-quality-gate-action@master
-      # Force to fail step after specific time.
+       uses: sonarsource/sonarqube-quality-gate-action@master.
+       
        timeout-minutes: 5
        env:
         SONAR_TOKEN: ${{ secrets.SONARQUBE_TOKEN }}
