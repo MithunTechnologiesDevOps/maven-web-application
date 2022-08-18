@@ -1,4 +1,4 @@
-name: Ci with maven
+name: Ci with gradlew
 
 on:
   push:
