@@ -1,3 +1,4 @@
+**/
 on:
   push:
     branches: [ main ]
@@ -24,3 +25,4 @@ jobs:
       timeout-minutes: 5
       env:
       SONAR_TOKEN: ${{ secrets.SONARQUBE_TOKEN }}
+/**
