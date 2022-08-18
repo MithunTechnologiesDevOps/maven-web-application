@@ -97,14 +97,14 @@
 	
 	    <repository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://13.126.235.58:8081/repository/ganesh-release/</url>
+	      <name>ganesh release</name>
+	      <url>http://54.213.117.5:8081/repository/maven-web-app-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://13.126.235.58:8081/repository/ganesh-snapshot/</url>
+	      <name>Ganesh Snapshot Nexus Repository </name>
+	      <url>http://54.213.117.5:8081/repository/maven-web-app-snapshot//</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
