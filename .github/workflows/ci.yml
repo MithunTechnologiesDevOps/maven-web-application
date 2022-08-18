@@ -23,17 +23,3 @@ jobs:
        run: chmod +x gradlew
      - name: build with gradlew
        run: ./ gradlew build
-      
-     - name: SonarQube Scan
-       uses: sonarsource/sonarqube-scan-action@master
-       env:
-        SONAR_TOKEN: ${{ secrets.SONARQUBE_TOKEN }}
-        SONAR_HOST_URL: ${{ secrets.SONARQUBE_HOST_URL }}
-        
-     - name: SonarQube Quality Gate check
-       id: sonarqube-quality-gate-check
-       uses: sonarsource/sonarqube-quality-gate-action@master.
-       
-       timeout-minutes: 5
-       env:
-        SONAR_TOKEN: ${{ secrets.SONARQUBE_TOKEN }}
