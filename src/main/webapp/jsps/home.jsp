@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1 align="center">Welcome to sevenhills software solutions, Ananthapur,Andhra Pradesh </h1>
-<h1 align="center"> Sevenhills Software Solutions- Very Good Training center for DevOps with AWS in Gulzarpet, Anantapur,Andhra Pradesh, India and also for Job Assitance Job Support also...Teaching Real Time scnerios</h1>
+<h1 align="center"> Sevenhills Software Solutions - Very Good Training center for Linux,DevOps with AWS in Gulzarpet, Anantapur,Andhra Pradesh, India and also for Job Assitance Job Support also...Teaching Real Time scnerios</h1>
 <hr>
 <br>
 	<h1><h3> Server Side IP Address </h3><br>
