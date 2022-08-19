@@ -40,7 +40,7 @@ node ('master')
     sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war  ec2-user@15.206.91.239:/opt/apache-tomcat-9.0.34/webapps/" 
   }
  }
- // i am commented
+ 
  stage('EmailNotification')
  {
  mail bcc: 'devopstrainingblr@gmail.com', body: '''Build is over
