@@ -9,7 +9,7 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to 7hills software solutions, Ananthapur,Andhra Pradesh </h1>
+<h1 align="center">Welcome to sevenhills software solutions, Ananthapur,Andhra Pradesh </h1>
 <h1 align="center"> Sevenhills Software Solutions- Very Good Training center for DevOps with AWS in Gulzarpet, Anantapur,Andhra Pradesh, India and also for Job Assitance Job Support also...Teaching Real Time scnerios</h1>
 <hr>
 <br>
