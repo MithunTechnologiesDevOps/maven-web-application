@@ -1,0 +1,44 @@
+ node 
+ {
+ def mavenHome = tool name: "maven3.8.6"
+  echo "GitHub BranhName ${env.BRANCH_NAME}"
+  echo "Jenkins Job Number ${env.BUILD_NUMBER}"
+  echo "Jenkins Node Name ${env.NODE_NAME}"
+  
+  echo "Jenkins Home ${env.JENKINS_HOME}"
+  echo "Jenkins URL ${env.JENKINS_URL}"
+  echo "JOB Name ${env.JOB_NAME}"
+  properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '3', daysToKeepStr: '', numToKeepStr: '3')), pipelineTriggers([pollSCM('* * * * *')])])
+  stage ('checkout')
+  {
+  git credentialsId: '539f5650-050c-4cfa-8ea5-7e9f30424948', url: 'https://github.com/rafi2022/maven-web-application-1.git'
+  }
+  stage ('build')
+  {
+   sh "${mavenHome}/bin/mvn clean package" 
+  }
+  stage ('ExecuteSonarQube Report')
+  {
+    sh "${mavenHome}/bin/mvn clean sonar:sonar"  
+  }
+  stage ('UploadArtifactinto Nexus')
+  {
+    sh "${mavenHome}/bin/mvn clean deploy"  
+  }
+  stage ('DeployAppintoTomcatServer')
+  {
+  sshagent(['9886c34f-f1c1-4e4c-8caf-7aa8251965a6']) 
+    {
+      sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@54.90.227.141:/opt/apache-tomcat-9.0.65/webapps/"
+     }
+   }
+   stage ('EmailNotification')
+   {
+       emailext body: '''Hi Team,
+
+Please find the Pipeline-Status
+
+Regards,
+DevOps Team''', subject: 'Pipeline-Status', to: 'rafid.atp1@gmail.com'
+   }
+ }
