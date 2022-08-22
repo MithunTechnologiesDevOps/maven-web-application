@@ -1,1 +1,74 @@
+pipeline 
+{
+    agent any
+    
+    tools
+    {
+        maven 'maven3.8.6'
+    }
+    triggers
+    {
+        pollSCM('* * * * *')
+    }
+    
+
+    stages 
+    {
+        stage('GettingSourceCode') 
+        {
+            steps 
+            {
+                git credentialsId: '539f5650-050c-4cfa-8ea5-7e9f30424948', url: 'https://github.com/rafi2022/maven-web-application-1.git'
+            }    
+        }
+        stage("Buildthesourcecode")
+        {
+            steps
+            {
+              sh  "mvn clean install"
+            }
+        }
+        stage("Scanthesourcecode")
+        {
+            steps
+            {
+                sh "mvn clean install sonar:sonar"
+            }
+        }
+        stage("StoringAftifactoryintonexux")
+        {
+            steps
+            {
+                sh "mvn clean deploy"
+            }
+        }
+        stage("DeploytoTomcat")
+        {
+            steps
+            {
+                sshagent(['9886c34f-f1c1-4e4c-8caf-7aa8251965a6']) 
+                {
+                sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@3.88.110.97:/opt/apache-tomcat-9.0.65/webapps/"
+            
+                }    
+           }
+            
+        }
+    }
+
+    post
+    {
+        always
+        {
+           emailext body: '''Hi Team,
+
+           Please find the attached build and look on the build
+
+
+            Thanks & Regards,
+            DevOps Team''', subject: 'Build-Status', to: 'rafid.atp1@gmail.com'
+        }        
+    }
+}
+
 
