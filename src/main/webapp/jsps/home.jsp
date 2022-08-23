@@ -18,7 +18,7 @@
 	</span>
 	<span style="font-weight: bold;">
 		Mithun Software Solutions, 
-		Martha Hali,
+		Martha Hai,
 		Bangalore,
 		+91-9980923226,
 		devopstrainingbr@gmail.com
