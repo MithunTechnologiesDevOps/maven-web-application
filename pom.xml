@@ -103,8 +103,8 @@
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Ganesh Snapshot Nexus Repository </name>
-	      <url>http:/http://18.220.157.84:8081/repository/maven_apps-snaphot////</url>
+	      <name>suneel Snapshot Nexus Repository </name>
+	      <url>http://18.220.157.84:8081/repository/maven_apps-snaphot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
