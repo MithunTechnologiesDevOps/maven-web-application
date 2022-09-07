@@ -7,7 +7,15 @@ echo "Node name is: ${NODE_NAME}"
 echo "Job name is: ${env.JOB_NAME}"
 
 properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * *')])])
+
+
+
+
+
 try{
+
+slacknotification(STARTED)
+
 stage('Checkoutcode'){
 git branch: 'arya', credentialsId: '463455d2-e648-4285-853b-b68c9e78daa0', url: 'https://github.com/athiqathiq/maven-web-application.git'
 }
