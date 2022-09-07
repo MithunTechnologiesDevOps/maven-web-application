@@ -14,7 +14,7 @@ properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKe
 
 try{
 
-slacknotification(STARTED)
+slacknotification('STARTED')
 
 stage('Checkoutcode'){
 git branch: 'arya', credentialsId: '463455d2-e648-4285-853b-b68c9e78daa0', url: 'https://github.com/athiqathiq/maven-web-application.git'
@@ -28,7 +28,6 @@ stage ('ExecuteSonarQubeReport'){
 sh "${mavenHome}/bin/mvn clean sonar:sonar"
 }
 
-/*
 stage ('UploadArtifcatsintoArtifactoryrepo'){
 sh "${mavenHome}/bin/mvn clean deploy"
 }
@@ -38,7 +37,6 @@ sshagent (['54d735c9-5072-466e-a986-3c54b0cae5e2']) {
 sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@65.2.152.187:/opt/apache-tomcat-9.0.65/webapps/"
 }
 }
-*/
 
 }//try block closing
 catch (e){
