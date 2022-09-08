@@ -23,7 +23,7 @@ node ('master')
  sh "${mavenHome}/bin/mvn clean package"
  }
  
-
+/.connect
  stage("ExecuteSonarQubeReport")
  {
  sh "${mavenHome}/bin/mvn sonar:sonar"
