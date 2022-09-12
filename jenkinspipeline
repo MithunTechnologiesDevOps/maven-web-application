@@ -1,5 +1,5 @@
-node{
-
+node('node-jenkins'){
+}
 def mavenHome = tool name:"maven3.8.6"
 
 echo "jenkins url is: ${env.JENKINS_URL}"
