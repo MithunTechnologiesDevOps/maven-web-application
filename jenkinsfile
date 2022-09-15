@@ -1,5 +1,8 @@
 
 node {
+
+properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '5', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: '']])
+    
     def mavenhome = tool name: 'maven3.8.6'
     echo "Job name is : ${env.JOB_NAME}"
     echo "Node name is : ${env.NODE_NAME}"
