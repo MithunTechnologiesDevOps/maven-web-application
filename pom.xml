@@ -99,13 +99,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://44.208.26.201:8081/mithuntechnologies/repository/sivakumar-release/</url>
+	      <url>http://54.163.128.56:8081/mithuntechnologies/repository/sivakumar-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://44.208.26.201:8081/mithuntechnologies/repository/sivakumar-snapshot/</url>
+	      <url>http://54.163.128.56:8081/mithuntechnologies/repository/sivakumar-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
