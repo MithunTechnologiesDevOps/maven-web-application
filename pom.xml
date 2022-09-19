@@ -94,21 +94,21 @@
 		
 	</dependencies>
 	
-	<!-- <distributionManagement>
+	<distributionManagement>
 	
 	    <repository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://172.31.24.174:8081/repository/tech-repo-release/</url>
+	      <name>Eclectic Tech Releases Nexus Repository</name>
+	      <url>http://172.31.25.164:8081/repository/eclectic-tech-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://172.31.24.174:8081/repository/tech-repo-snapshot/</url>
+	      <name>Eclectic Tech Snapshot Nexus Repository </name>
+	      <url>http://172.31.25.164:8081/repository/eclectic-tech-snapshot/</url>
 	    </snapshotRepository>
 	    
-	</distributionManagement> -->
+	</distributionManagement>
 	
 	<build>
 		<finalName>maven-web-application</finalName>
