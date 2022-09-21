@@ -99,14 +99,14 @@
 	
 	    <repository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://172.31.38.5:9980/mithuntechnologies/repository/walmart-releases/</url>
+	      <name>karmatech Releases Nexus Repository</name>
+	      <url>http://35.78.126.110:8081/repository/karmatech-jenkins-release//</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://172.31.38.5:9980/mithuntechnologies/repository/walmart-snapshot/</url>
+	      <name>karmatech Snapshot Nexus Repository </name>
+	      <url>http://35.78.126.110:8081/repository/karmatech-jenkins-snapshot//</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
