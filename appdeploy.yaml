@@ -24,6 +24,6 @@
         enabled: yes
     - name: Confirm that 200 OK response is returned
       uri:
-        url: "http://{{ ansible_host }}:8080/maven-web-appliation/"
+        url: "http://{{ ansible_host }}:8080/maven-web-application/"
         status_code: 200    
 ...
