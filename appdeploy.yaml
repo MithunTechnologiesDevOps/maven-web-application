@@ -22,6 +22,9 @@
         state: started
         daemon_reload: yes
         enabled: yes
+    - name: sleep for 30 seconds and continue with play
+      wait_for:
+       delay: 60
     - name: Confirm that 200 OK response is returned
       uri:
         url: "http://{{ ansible_host }}:8080/maven-web-application/"
