@@ -1,6 +1,8 @@
 pipeline{
 
-agent any
+agent {
+label ansible
+}
 
 environment {
    AWS_EC2_PRIVATE_KEY=credentials('ec2-private-key') 
@@ -11,9 +13,6 @@ maven 'maven3.8.2'
 
 }
 
-triggers{
-pollSCM('* * * * *')
-}
 
 options{
 timestamps()
