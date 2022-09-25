@@ -44,7 +44,11 @@ stages{
   sh  "mvn clean deploy"
   }
   }
-  
+    stage('UploadArtifactsIntojfrog'){
+  steps{
+  sh  "mvn clean deploy"
+  }
+  }
   stage('DeployAppIntoTomcat'){
   steps{
   sshagent(['bfe1b3c1-c29b-4a4d-b97a-c068b7748cd0']) {
