@@ -1,0 +1,61 @@
+pipeline{
+agent any
+triggers{
+pollSCM('* * * * *')
+
+}
+options{
+    timestamps()
+buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5'))
+}
+ tools{
+ maven "maven-3.8.6"
+ }
+
+stages{
+stage('checkoutcode'){
+steps{
+git branch: 'development', credentialsId: 'e4850a33-efba-4d1b-bbfb-0134cb51f139', url: 'https://github.com/balagangadharbestha/maven-web-application.git'
+
+}
+}
+stage('build'){
+steps{
+sh "mvn clean package"
+}
+}
+stage(excutesonarqubeReport){
+steps{
+sh "mvn clean sonar:sonar"
+}
+}
+stage(excuteNexusReport){
+steps{
+sh "mvn clean deploy"
+}
+}
+stage('deployappintoTomcatServer'){
+steps{
+sshagent(['12231c10-64bf-4bd0-aa84-cc5f70b729da']) {
+    sh "scp -o  StrictHostKeyChecking=no target/maven-web-application.war ec2-user@18.182.1.181:/opt/tomcat/webapps/"
+	}
+	}
+}
+}
+post{
+
+success{
+emailext body: '''Build is over!!
+
+Regards,
+bala gangadhar,
+7989460741''', subject: 'Build is over-success !!', to: 'besthagangadhar117@gmail.com'
+}
+failure{emailext body: '''Build is over!!
+
+Regards,
+bala gangadhar,
+7989460741''', subject: 'Build is over-failure !!', to: 'besthagangadhar117@gmail.com'
+}
+}
+}
