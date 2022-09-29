@@ -30,11 +30,11 @@ try{
  }
 }
 catch(e){
-    slackNotifications(${currentBuild.result})
+    sendSlackNotification(${currentBuild.result})
     throw(e)
 }
 finally{
-    slackNotifications(${currentBuild.result})
+    sendSlackNotification(${currentBuild.result})
     
 }
 
