@@ -1,4 +1,4 @@
-@Library('slack-notification' )_
+@Library('slack-notification') _
 
 try{
  node{
