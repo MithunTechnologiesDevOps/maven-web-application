@@ -139,7 +139,7 @@
                                <artifactId>tomcat9-maven-plugin</artifactId>
                                <version>2.0</version>
                                <configuration>
-                                 <url>http://localhost:8080/manager/text</url>
+                                 <url>http://3.80.98.99:8080/manager/text</url>
                                  <path>/rps</path>
                                </configuration>
                         </plugin>
