@@ -55,7 +55,7 @@ failure{emailext body: '''Build is over!!
 
 Regards,
 bala gangadhar,
-7989460741''', subject: 'Build is over-failure !!', to: 'besthagangadhar117@gmail.com'
+7989460741''', subject: 'Build is over-failed !!', to: 'besthagangadhar117@gmail.com'
 }
 }
 }
