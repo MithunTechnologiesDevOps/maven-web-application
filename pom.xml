@@ -140,7 +140,8 @@
                                <version>2.0</version>
                                <configuration>
                                  <url>http://3.80.98.99:8080/manager/text</url>
-                                 <path>/rps</path>
+				 <server>TomcatServer</server>
+                                 <path>/myapp</path>
                                </configuration>
                         </plugin>
 
