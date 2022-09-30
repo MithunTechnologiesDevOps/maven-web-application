@@ -103,7 +103,7 @@
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Flipkart Snapshot Nexus Repository </name>
-	      <url>http:http://13.234.33.197:8085/repository/flipkart-snapshort/</url>
+	      <url>http://13.234.33.197:8085/repository/flipkart-snapshort/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
