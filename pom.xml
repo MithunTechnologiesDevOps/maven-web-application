@@ -104,7 +104,7 @@
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://3.110.32.202:9620/bharat/repository/bharat-snapshot/</url>
+		    <url>http://3.110.32.202:9620/bharat/repository/bharat-snapshot/</url> 
 	    </snapshotRepository>
 	    
 	</distributionManagement>
