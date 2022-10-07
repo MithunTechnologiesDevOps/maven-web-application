@@ -29,9 +29,7 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 <%out.print( "Client Name Host :: "+ request.getRemoteHost() );%><br></h1>
 <hr>
 <div style="text-align: center;">
-	<span>
-		<img src="images/mithunlogo.jpg" alt="" width="100">
-	</span>
+	
 	<span style="font-weight: bold;">
 		Rajesh Kumar, 
 		Door no: 21-2-63/69, Journalist Colony,
