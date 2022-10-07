@@ -40,9 +40,7 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 		<a href="mailto:rajeshvankireddyr@gmail.com">Mail to Rajesh Kumar</a>
 	</span>
 </div>
-<hr>
-	<p> Service : <a href="services/employee/getEmployeeDetails">Get Employee Details </p>
-<hr>
+
 <hr>
 <p align=center>Rajesh Kumar   -     DevOps Engineer.</p>
 <p align=center><small>Copyrights 2022 by <a href="https://github.com/rajeshdevopsprac/aboutme">Rajesh KUmar</a> </small></p>
