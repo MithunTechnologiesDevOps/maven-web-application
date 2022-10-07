@@ -4,30 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>MithunTechnologies- Home Page</title>
+<title>Rajesh Kumar  -  DevOps Engineer</title>
 </head>
 </head>
 <body>
 <h1 align="center"> Hello Everyone. </h1>
 <h1 align="center">This is Rajesh Kumar. I've 4 years of experience as a DevOps Engineer & proficient in Jenkins,Maven,Tomcat,Nexus,Sonarqube,Docker,k8s.</h1>
-<hr>
-<br>
-	<h1><h3> Server Side IP Address </h3><br>
 
-<% 
-String ip = "";
-InetAddress inetAddress = InetAddress.getLocalHost();
-ip = inetAddress.getHostAddress();
-out.println("Server Host Name :: "+inetAddress.getHostName()); 
-%>
-<br>
-<%out.println("Server IP Address :: "+ip);%>
-</h1>
-<br>
-<h1><h3> Client Side IP Address </h3><br>
-<%out.print( "Client IP Address :: " + request.getRemoteAddr() ); %><br>
-<%out.print( "Client Name Host :: "+ request.getRemoteHost() );%><br></h1>
-<hr>
 <div style="text-align: center;">
 	
 	<span style="font-weight: bold;">
