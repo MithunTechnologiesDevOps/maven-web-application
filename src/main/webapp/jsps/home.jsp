@@ -26,7 +26,6 @@
 
 <hr>
 <p align=center>Rajesh Kumar   -     DevOps Engineer.</p>
-<p align=center><small>Copyrights 2022 by <a href="https://github.com/rajeshdevopsprac/aboutme">Rajesh KUmar</a> </small></p>
 
 </body>
 </html>
