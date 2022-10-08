@@ -110,7 +110,7 @@
 	</distributionManagement>
 	
 	<build>
-		<finalName>maven-web-application</finalName>
+		<finalName>rajesh-devops-engineer</finalName>
 		
 		<plugins>
 			<plugin>
@@ -130,7 +130,7 @@
 				<configuration>
 					<scanIntervalSeconds>10</scanIntervalSeconds>
 					<webApp>
-						<contextPath>/maven-web-application</contextPath>
+						<contextPath>/rajesh-devops-engineer</contextPath>
 					</webApp>
 				</configuration>
 			</plugin>
@@ -143,7 +143,7 @@
 					<downloadSources>true</downloadSources>
 					<downloadJavadocs>true</downloadJavadocs>
 					<wtpversion>2.0</wtpversion>
-					<wtpContextName>maven-web-application</wtpContextName>
+					<wtpContextName>rajesh-devops-engineer</wtpContextName>
 				</configuration>
 			</plugin>
 			
