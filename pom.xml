@@ -96,7 +96,7 @@
 		</dependency>
 		
 	</dependencies>
-	-->
+
 	<distributionManagement>
 	
 	    <repository>
