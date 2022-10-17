@@ -47,6 +47,7 @@ try{
   }
 } //Node closing
 
+/*
 //Code Snippet for sending slack notifications.
 
 def slackNotifications(String buildStatus = 'STARTED') {
@@ -76,6 +77,7 @@ def slackNotifications(String buildStatus = 'STARTED') {
   slackSend (color: colorCode, message: summary, channel: "#walmart")
 }
 
+*/
 
 
 
