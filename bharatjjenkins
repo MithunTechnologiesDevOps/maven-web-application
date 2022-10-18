@@ -15,6 +15,7 @@ echo "The build number is: ${env.BUILD_NUMBER}"
 }
 
 /*
+
  stage('ExcuteSonarqubeReport'){
  sh "${mavenhome}/bin/mvn sonar:sonar"
  }
@@ -27,4 +28,5 @@ echo "The build number is: ${env.BUILD_NUMBER}"
 }
 }
 }
+
 */
