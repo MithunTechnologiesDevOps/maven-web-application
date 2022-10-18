@@ -29,6 +29,6 @@ echo "The build number is ${env.BUILD_NUMBER}"
     sh "scp -o StrictHostKeyChecking=no  target/maven-web-application.war ec2-user@172.31.38.48:/opt/apache-tomcat-9.0.65/webapps/" 
 }
 }
-}
+
 
 */
