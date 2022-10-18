@@ -9,13 +9,14 @@ def mavenhome = tool name: 'maven 3.8.6'
 echo "The jobName is: ${env.JOB_NAME}"
 echo "The node name is: ${env.NODE_NAME}"
 echo "The build number is ${env.BUILD_NUMBER}"
+
  stage('Ceheckoutcode'){
  git branch: 'development', credentialsId: '02b07b80-ca38-4181-b674-298b5f9d438f', url: 'https://github.com/Bharath2991/maven-web-application.git'
 }
  stage('Build'){
  sh "${mavenhome}/bin/mvn package"
 }
- stage('ExcuteSonarqubeReport'}{
+ stage('ExcuteSonarqubeReport'){
  sh "${mavenhome}/bin/mvn sonar:sonar"
  }
  stage('ArtifactoryRepo'){
