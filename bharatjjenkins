@@ -21,17 +21,17 @@ try{
   }
   
   /*
-  stage('executeSonarQubeReport')
+  stage('ExcuteSonarqubeReport')
   {
   sh "${mavenHome}/bin/mvn clean sonar:sonar"
   }
   
-  stage(UploadartifactsintoaNexus'')
+  stage('ArtifactoryRepo')
   {
   sh "${mavenHome}/bin/mvn clean deploy"
   }
   
-   stage('deployintotomcatserver'){
+   stage('deploytheAPP'){
   sshagent(['596514ae-5fe7-4085-86e8-db798f867c92']) {
    sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@172.31.38.48:/opt/apache-tomcat-9.0.67/webapps/"   
   }
