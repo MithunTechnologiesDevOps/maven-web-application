@@ -1,43 +1,34 @@
-node{
+node {
 
 try{
+sendSlackNotifications('STARTED')
 
-  sendSlackNotifications('STARTED')
- def mavenHome = tool name: 'maven3.8.6'
- 
- echo "The JobName is: ${env.JOB_NAME}" 
- echo "The node name is: ${env.NODE_NAME}"
- echo "The build number is: ${env.BUILD_NUMBER}"
- 
-  properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * *')])])
-  
 
-  stage('CheckOutCode'){
-   git branch: 'development', credentialsId: '02b07b80-ca38-4181-b674-298b5f9d438f', url: 'https://github.com/Bharath2991/maven-web-application.git'
-  }
-  
-  stage('Build'){
-  sh "${mavenHome}/bin/mvn package"
-  }
-  
-  /*
-  stage('ExcuteSonarqubeReport')
-  {
-  sh "${mavenHome}/bin/mvn clean sonar:sonar"
-  }
-  
-  stage('ArtifactoryRepo')
-  {
-  sh "${mavenHome}/bin/mvn clean deploy"
-  }
-  
-   stage('deploytheAPP'){
-  sshagent(['596514ae-5fe7-4085-86e8-db798f867c92']) {
-   sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@172.31.38.48:/opt/apache-tomcat-9.0.67/webapps/"   
-  }
-  }
-  */
-  }//try closing
+ properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * *')])])
+
+def mavenhome = tool name: 'maven 3.8.6'
+
+echo "The jobName is: ${env.JOB_NAME}"
+echo "The node name is: ${env.NODE_NAME}"
+echo "The build number is ${env.BUILD_NUMBER}"
+ stage('Ceheckoutcode'){
+ git branch: 'development', credentialsId: '02b07b80-ca38-4181-b674-298b5f9d438f', url: 'https://github.com/Bharath2991/maven-web-application.git'
+}
+ stage('Build'){
+ sh "${mavenhome}/bin/mvn package"
+}
+ stage('ExcuteSonarqubeReport'){
+ sh "${mavenhome}/bin/mvn sonar:sonar"
+ }
+ stage('ArtifactoryRepo'){
+ sh "${mavenhome}/bin/mvn deploy"
+}
+ stage('deploytheAPP'){
+ sshagent(['596514ae-5fe7-4085-86e8-db798f867c92']) {
+    sh "scp -o StrictHostKeyChecking=no  target/maven-web-application.war ec2-user@172.31.38.48:/opt/apache-tomcat-9.0.65/webapps/" 
+}
+}
+}//try closing
   catch(e){
   currentBuild.result="FAILURE"
   throw e
@@ -78,4 +69,3 @@ def slackNotifications(String buildStatus = 'STARTED') {
 }
 
 */
-   
