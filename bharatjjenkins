@@ -17,6 +17,7 @@ echo "The build number is ${env.BUILD_NUMBER}"
  stage('Build'){
  sh "${mavenhome}/bin/mvn package"
 }
+/*
  stage('ExcuteSonarqubeReport'){
  sh "${mavenhome}/bin/mvn sonar:sonar"
  }
@@ -28,6 +29,7 @@ echo "The build number is ${env.BUILD_NUMBER}"
     sh "scp -o StrictHostKeyChecking=no  target/maven-web-application.war ec2-user@172.31.38.48:/opt/apache-tomcat-9.0.65/webapps/" 
 }
 }
+*/
 }//try closing
   catch(e){
   currentBuild.result="FAILURE"
@@ -38,7 +40,7 @@ echo "The build number is ${env.BUILD_NUMBER}"
   }
 } //Node closing
 
-/*
+
 //Code Snippet for sending slack notifications.
 
 def slackNotifications(String buildStatus = 'STARTED') {
