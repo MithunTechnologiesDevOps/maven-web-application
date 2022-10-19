@@ -1,7 +1,7 @@
 node {
 
 try{
-
+ sendSlackNotifications('STARTED')
  properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * *')])])
 
 def mavenhome = tool name: 'maven 3.8.6'
@@ -27,16 +27,17 @@ echo "The build number is ${env.BUILD_NUMBER}"
 }
 }
 }//try closing
-catch(e){
+  catch(e){
   currentBuild.result="FAILURE"
   throw e
   }//catch closing
   finally{
   sendSlackNotifications(currentBuild.result)
   }
-  } //Node closing
-  
-  //Code Snippet for sending slack notifications.
+} //Node closing
+
+/*
+//Code Snippet for sending slack notifications.
 
 def slackNotifications(String buildStatus = 'STARTED') {
   // build status of null means successful
@@ -56,7 +57,7 @@ def slackNotifications(String buildStatus = 'STARTED') {
   } else if (buildStatus == 'SUCCESS') {
     colorName = 'GREEN'
     colorCode = '#00FF00'
-   else {
+  } else {
     colorName = 'RED'
     colorCode = '#FF0000'
   }
@@ -64,3 +65,5 @@ def slackNotifications(String buildStatus = 'STARTED') {
   // Send notifications
   slackSend (color: colorCode, message: summary, channel:)  
 }
+
+*/
