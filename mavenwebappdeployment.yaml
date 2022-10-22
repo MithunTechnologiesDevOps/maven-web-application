@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: mavenwebappcontainer
-        image: sumandockeraccount/maven-web-application:TAG
+        image: sumandockeraccount/maven-web-application:${buildNumber}
         ports:
         - containerPort: 8080
         resources: 
