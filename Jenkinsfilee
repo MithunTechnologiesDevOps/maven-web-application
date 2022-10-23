@@ -1,0 +1,40 @@
+node
+{
+def mavenHome = tool name: "maven3.8.4"
+
+properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '4', daysToKeepStr: '', numToKeepStr: '4')), [$class: 'RebuildSettings', autoRebuild: false, rebuildDisabled: false], [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * *')])])
+
+stage('checkoutcode'){
+git credentialsId: '1bd14adc-5a97-4f95-9c81-b8cf6155810e', url: 'https://github.com/techraj2022/maven-web-application.git'
+}
+
+stage ('Build'){
+sh "${mavenHome}/bin/mvn clean package"
+}
+
+stage ('ExexuteSonarQubeReport'){
+sh "${mavenHome}/bin/mvn sonar:sonar"
+}
+
+/*
+stage('UploadArtifactsIntoNexus'){
+sh "${mavenHome}/bin/mvn deploy 
+}
+*/
+
+stage('DeployApplicationtoTomcatServer'){
+sshagent(['12196f48-64f6-4ed1-8573-a4b0f9dbcaa2']) {
+    sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war  
+ec2-user@15.207.221.31:/opt/apache-tomcat-9.0.65/webapps"
+}
+}
+
+stage('SendEmailNotification'){
+emailext body: '''Build Over..
+
+Regards,
+Rajsekhar 
+917832''', subject: 'Build Over-23rd Oct ', to: 'rajsekhar0817@gmail.com'
+}
+
+}
