@@ -12,15 +12,15 @@ stage ('Build'){
 sh "${mavenHome}/bin/mvn clean package"
 }
 
+/*
 stage ('ExexuteSonarQubeReport'){
 sh "${mavenHome}/bin/mvn sonar:sonar"
 }
 
-/*
 stage('UploadArtifactsIntoNexus'){
 sh "${mavenHome}/bin/mvn deploy 
 }
-*/
+
 
 stage('DeployApplicationtoTomcatServer'){
 sshagent(['12196f48-64f6-4ed1-8573-a4b0f9dbcaa2']) {
@@ -28,6 +28,7 @@ sshagent(['12196f48-64f6-4ed1-8573-a4b0f9dbcaa2']) {
 ec2-user@15.207.221.31:/opt/apache-tomcat-9.0.65/webapps"
 }
 }
+*/
 
 stage('SendEmailNotification'){
 emailext body: '''Build Over..
