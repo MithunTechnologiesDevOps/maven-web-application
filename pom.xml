@@ -97,13 +97,13 @@
 	
 	    <repository>
 	      <id>nexus</id>
-	      <name>admin release</name>
+	      <name>suneel release</name>
 	      <url>http://18.117.167.99:8081/repository/maven-releases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>admin Snapshot Nexus Repository </name>
+	      <name>suneel Snapshot Nexus Repository </name>
 	      <url>http://18.117.167.99:8081/repository/maven-snapshots/</url>
 	    </snapshotRepository>
 	    
