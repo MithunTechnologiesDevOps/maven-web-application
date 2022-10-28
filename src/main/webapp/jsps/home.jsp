@@ -9,7 +9,7 @@
 </head>
 </head>
 <body>
-<h1 align="center"> >>  Jenkins project for .... Poll SCM /Build periodically/webhook/slack notication done </h1>
+<h1 align="center"> >>  Jenkins project for .... webhook/slack notication done </h1>
 <h1 align="center"> Mithun technologies </h1>
 <hr>
 <br>
