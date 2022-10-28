@@ -20,7 +20,7 @@ stage('uploadartifacttonexus'){
 
 stage('deployapptotomactat'){
  sshagent(['d104d8d6-6652-495c-9ef4-a5ec635d568b']) {
- sh "scp target/rajesh-devops-engineer.war ec2-user@65.0.131.95:/opt/apache-tomcat-9.0.67/webapps"
+sh "scp -o StrictHostKeyChecking=no target/rajesh-devops-engineer.war ec2-user@65.0.131.95:/opt/apache-tomcat-9.0.67/webapps"
 }
 }
 
