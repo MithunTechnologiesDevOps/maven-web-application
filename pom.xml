@@ -7,7 +7,7 @@
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	
-	<name>maven-web-application</name>
+	<name>rajesh-devops-engineer</name>
 
 	<description>Maven Web Project for Java Project</description>
 
@@ -21,9 +21,9 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<sonar.host.url>http://13.233.216.196:9980/</sonar.host.url>
+		<sonar.host.url>http://13.235.16.142:9000/</sonar.host.url>
 		<sonar.login>admin</sonar.login>
-		<sonar.password>admin</sonar.password> 
+		<sonar.password>passw0rd</sonar.password> 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
@@ -97,20 +97,20 @@
 	
 	    <repository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://54.255.174.111:8081/repository/flipkart-release/</url>
+	      <name>releaserepos</name>
+	      <url>http://15.207.98.135:8081/repository/releaserepos/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://54.255.174.111:8081/repository/flipkart-snapshot/</url>
+	      <name>snapshotrepos </name>
+	      <url>http://15.207.98.135:8081/repository/snapshotrepo/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
 	
 	<build>
-		<finalName>maven-web-application</finalName>
+		<finalName>rajesh-devops-engineer</finalName>
 		
 		<plugins>
 			<plugin>
@@ -130,7 +130,7 @@
 				<configuration>
 					<scanIntervalSeconds>10</scanIntervalSeconds>
 					<webApp>
-						<contextPath>/maven-web-application</contextPath>
+						<contextPath>/rajesh-devops-engineer</contextPath>
 					</webApp>
 				</configuration>
 			</plugin>
@@ -143,7 +143,7 @@
 					<downloadSources>true</downloadSources>
 					<downloadJavadocs>true</downloadJavadocs>
 					<wtpversion>2.0</wtpversion>
-					<wtpContextName>maven-web-application</wtpContextName>
+					<wtpContextName>rajesh-devops-engineer</wtpContextName>
 				</configuration>
 			</plugin>
 			

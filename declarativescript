@@ -1,0 +1,62 @@
+pipeline{
+agent any
+triggers{
+ pollSCM('* * * * *')
+}
+
+options{
+timestamps()
+buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '30', numToKeepStr: '2'))
+}
+
+
+tools{
+    maven "maven 3.8.6"
+}
+
+stages{
+    stage('checkoutcode'){
+        steps{
+             git credentialsId: '2b6e7654-09fb-471e-9630-159987030cf7', url: 'https://github.com/rajeshdevopsprac/rajesh-devops-engineer.git'
+
+        }
+    }
+
+stage('build'){
+    steps{
+        sh "mvn clean package"
+    }
+}
+stage('sonarreport'){
+    steps{
+        sh "mvn clean sonar:sonar"
+    }
+    
+}
+  stage('uploadartifact'){
+      steps{
+          sh "mvn clean deploy"
+      }
+  }  
+
+stage('deployapptotomactat'){ 
+steps{
+sshagent(['d104d8d6-6652-495c-9ef4-a5ec635d568b']){
+sh "scp -o StrictHostKeyChecking=no target/rajesh-devops-engineer.war ec2-user@13.233.129.249:/opt/apache-tomcat-9.0.68/webapps"
+}
+}
+}
+}
+post{
+ 
+success{
+emailext body: '', subject: 'build is over- success', to: 'rkr11391@gmail.com'
+    
+}
+failure{
+emailext body: '', subject: 'build is over- failed', to: 'rkr11391@gmail.com'
+        
+    }
+} 
+    
+}
