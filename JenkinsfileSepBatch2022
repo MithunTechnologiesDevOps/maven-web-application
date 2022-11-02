@@ -16,7 +16,7 @@ git branch: 'development', credentialsId: 'd282f55b-fad5-4318-87d4-7ae8a1bf92b2'
 }
 
 stage('Build'){
-sh "${mavenHome}/bin/mvn clean packag"
+sh "${mavenHome}/bin/mvn clean package"
 }
 
   /*
