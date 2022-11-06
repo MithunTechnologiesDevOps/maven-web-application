@@ -9,8 +9,8 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to Mithun Software Solutions. Bengaluru,Karnataka </h1>
-<h1 align="center"> Mithun Software Solutions- Very Good Training center for DevOps with AWS in Maratha Halli Bangalore India and also for Job Assitance Job Support also...Teaching Real Time scnerios</h1>
+<h1 align="center">Welcome to frankline school of devOps where we make technology come to life</h1>
+<h1 align="center">We will make you understand what DevOps is all about and the best way to go about it </h1>
 <hr>
 <br>
 	<h1><h3> Server Side IP Address </h3><br>
