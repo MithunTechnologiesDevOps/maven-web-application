@@ -10,7 +10,7 @@ node
  {
  sh "${mavenHome}/bin/mvn clean package"
  }
- 
+ /*
  stage('ExecuteSonarQubeReport')
  {
  sh "${mavenHome}/bin/mvn sonar:sonar"
@@ -28,7 +28,7 @@ node
  sh "scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/pipelinescript-project/target/maven-web-application.war ec2-user@3.110.90.181:/opt/apache-tomcat-9.0.65/webapps/"
  }                                                                  
  }
- /*
+ 
  stage('Send E-Mail notivicateion')
  {
  
