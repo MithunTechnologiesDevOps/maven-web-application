@@ -1,6 +1,10 @@
 node
 {
   def mavenHome = tool name: "maven3"
+  
+  properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '1', daysToKeepStr: '', numToKeepStr: '5')), pipelineTriggers([pollSCM('* * * * *')])])
+  
+  
  stage('CheckoutCode') 
  {
   git branch: 'development', credentialsId: 'd32f6fa5-3dd2-449b-8105-0891983517e3', url: 'https://github.com/deepaus/maven-web-application.git'
