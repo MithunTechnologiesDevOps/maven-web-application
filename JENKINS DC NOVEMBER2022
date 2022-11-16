@@ -4,7 +4,15 @@ pipeline{
     tools{
         maven 'maven3.8.6'
     }
-   
+   triggers{
+      pollSCM('* * * * *')
+   }
+   options {
+//Discard Old Build
+  buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')
+  //Adding the timestamos to the console output
+  timestamps()
+}
  
   stages{
     stage('checkout code'){
