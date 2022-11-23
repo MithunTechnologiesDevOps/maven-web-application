@@ -1,0 +1,40 @@
+node{
+    
+    def mavenHome = tool name: 'maven3.8.5'
+    
+    echo "The Job name is: ${env.JOB_NAME}" 
+    echo "The Build numebr is: ${env.BUILD_NUMBER}"
+    echo "The node name is: ${env.NODE_NAME}"
+
+
+//Checkout Code State
+stage('CheckoutCode'){
+git branch: 'development', credentialsId: '7c0bd52e-8700-404b-a704-444a4f556b2f', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git'
+}
+
+//Build
+stage('Build'){
+sh "${mavenHome}/bin/mvn clean package"
+}
+
+  /*
+//Execute SonarQube Report
+stage('ExecuteSonarQubeReport'){
+sh "${mavenHome}/bin/mvn sonar:sonar"
+}
+
+//UploadArtifcats Into Nexus
+stage('UploadArtifcatsIntoNexus'){
+sh "${mavenHome}/bin/mvn deploy"
+}
+
+//Deploy App into Tomcat Server
+stage('DeployApp'){
+sshagent(['e83477fc-0cee-45ee-a412-92e2240a7256']) {
+    sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@172.31.40.1:/opt/apache-tomcat-9.0.68/webapps/"
+}
+}
+
+*/
+
+}//node closing
