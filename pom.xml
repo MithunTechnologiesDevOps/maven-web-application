@@ -40,7 +40,7 @@
 		<dependency>
 			<groupId>com.krs</groupId>
 			<artifactId>mail</artifactId>
-			<version>1.0.0</version>
+			<version>0.0.1</version>
 		</dependency>
 		
 		<!-- test dependencies -->
@@ -112,13 +112,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Walmart Releases Nexus Repository</name>
-	      <url>http://65.2.189.195:9090/pravii/repository/walmart-release/</url>
+	      <url>http://35.154.5.81:9090/pravii/repository/walmart-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Walmart Snapshot Nexus Repository </name>
-	      <url>http://65.2.189.195:9090/pravii/repository/walmart-snapshot/</url>
+	      <url>http://35.154.5.81:9090/pravii/repository/walmart-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
