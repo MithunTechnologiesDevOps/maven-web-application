@@ -37,7 +37,7 @@ stages{
   }
   }
   
-  stage('UploadArtifactsIntoNexus'){
+  stage('UPLOAD ARTIFACTS TO NEXUS'){
   steps{
   sh  "mvn clean deploy"
   }
