@@ -5,7 +5,7 @@
 	<groupId>com.mt</groupId>
 	<artifactId>maven-web-application</artifactId>
 	<packaging>war</packaging>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	
 	<name>maven-web-application</name>
 
@@ -31,7 +31,7 @@
 	<repositories>
 		<repository>
 			<id>nexus</id>
-			<url>http://http://43.205.144.164:9090/pravii/repository/grouprepo-krs/</url>
+			<url>http:http://35.154.5.81:9090/pravii/repository/grouprepo-krs/</url>
 		</repository>
 	</repositories>
 
@@ -40,7 +40,7 @@
 		<dependency>
 			<groupId>com.krs</groupId>
 			<artifactId>mail</artifactId>
-			<version>0.0.1</version>
+			<version>1.0.0</version>
 		</dependency>
 		
 		<!-- test dependencies -->
