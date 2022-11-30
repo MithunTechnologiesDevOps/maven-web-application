@@ -1,4 +1,4 @@
-node{
+node('nodes'){
 
 try{
     
@@ -19,10 +19,10 @@ git branch: 'development', credentialsId: '7c0bd52e-8700-404b-a704-444a4f556b2f'
 
 //Build
 stage('Build'){
-sh "${mavenHome}/bin/mvn clean packag"
+sh "${mavenHome}/bin/mvn clean package"
 }
 
-  /*
+ 
 //Execute SonarQube Report
 stage('ExecuteSonarQubeReport'){
 sh "${mavenHome}/bin/mvn sonar:sonar"
@@ -40,7 +40,7 @@ sshagent(['e83477fc-0cee-45ee-a412-92e2240a7256']) {
 }
 }
 
-*/
+
 }//try closing
 catch(e){
 currentBuild.result = "FAILURE"
