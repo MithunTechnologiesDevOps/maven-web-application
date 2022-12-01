@@ -1,0 +1,52 @@
+node('wallmart-node'){
+
+
+//echo "GitHub BranhName ${env.BRANCH_NAME}"
+  //echo "Jenkins Job Number ${env.BUILD_NUMBER}"
+  echo "Jenkins Node Name ${env.NODE_NAME}"
+  
+  echo "Jenkins Home ${env.JENKINS_HOME}"
+  echo "Jenkins URL ${env.JENKINS_URL}"
+  echo "JOB Name ${env.JOB_NAME}"
+  
+  
+def mavenHome = tool name: "maven3.8.3"
+
+properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * *')])])
+
+
+
+stage('CheckOutCode'){
+git branch: 'development', credentialsId: '9aad10da-e742-413a-a2f6-ce6a8b007f70', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git'
+}
+
+stage('Build'){
+sh "${mavenHome}/bin/mvn clean package"
+}
+/*
+stage('ExecuteSOnarQubeReport'){
+sh "mvn  sonar:sonar"
+}
+
+stage('UploadArtifactsIntoNexusRepo'){
+sh "mvn deploy"
+}
+
+stage('DeployAppintoTomcatServer'){
+sshagent(['dd147e39-1f55-4554-9700-b10dc494211f']) {
+  sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.233.201.155:/opt/apache-tomcat-9.0.54/webapps/"
+}
+}
+
+stage('SendEmailNotification'){
+
+mail bcc: '', body: '''Build Over..
+
+Regards,
+Mithun Software Solutions,
+9980923226''', cc: 'devopstrainingblr@gmail.com', from: '', replyTo: '', subject: 'Build over!...', to: 'devopstrainingblr@gmail.com'
+}
+
+*/
+
+}
