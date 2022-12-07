@@ -30,7 +30,7 @@
 	
 	<repositories>
 		<repository>
-			<groupId>nexus</groupId>
+			<Id>nexus</Id>
 			<url>http://15.206.158.231:9090/pravii/repository/grouprepo-krs/</url>
 		</repository>
 	</repositories>
