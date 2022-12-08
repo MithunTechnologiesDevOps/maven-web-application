@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1 align="center"> Good Morning Guys...</h1>
-<h1 align="center">Welcome to AWS-DevOps Training , This is our 6th batch training class timings 9:30am to 11am,duration:3months Phone: 7842602230 from Rajampet,Kadapa, Andhra Pradesh</h1>
+<h1 align="center">Welcome to AWS-DevOps Training , This is our 6th batch training class timings 9:30am to 11am,duration:3 months Phone: 7842602230 from Rajampet,Kadapa, Andhra Pradesh</h1>
 <hr>
 <br>
 	<h1><h3> Server Side IP Address </h3><br>
