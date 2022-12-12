@@ -3,7 +3,7 @@ pipeline
 {
  
 agent {
-label 'NodeJs_Node'
+label 'Java'
 }
 
 tools{
