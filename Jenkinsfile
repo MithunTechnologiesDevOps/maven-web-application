@@ -1,4 +1,4 @@
-node('Amazon-1'){
+node('Java'){
 
 def MavenHome=tool name: "Maven 3.8.6"
 
