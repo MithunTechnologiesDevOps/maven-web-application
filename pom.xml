@@ -31,7 +31,7 @@
 	<repositories>
 		<repository>
 			<id>nexus</id>
-			<url>http://65.0.130.27:9090/pravii/repository/proxyrepo-krs/</url>
+			<url>http://13.232.26.85:9090/pravii/repository/walmart-snapshot/</url>
 		</repository>
 	</repositories>
 	
