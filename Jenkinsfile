@@ -1,4 +1,4 @@
-node{
+node('Flipkart-2'){
 
 def MavenHome=tool name: "Maven 3.8.6"
 
