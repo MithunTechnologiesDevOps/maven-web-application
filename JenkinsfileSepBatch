@@ -17,7 +17,7 @@ properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKe
 
 
 stage('CheckOutCode'){
-git branch: 'development', credentialsId: '9aad10da-e742-413a-a2f6-ce6a8b007f70', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git'
+git branch: 'development', credentialsId: '9aad10da-e742-413a-a2f6-ce6a8b007f70', url: 'https://github.com/NVTechnologies/maven-web-application.git'
 }
 
 stage('Build'){
@@ -44,7 +44,7 @@ mail bcc: '', body: '''Build Over..
 
 Regards,
 Mithun Software Solutions,
-9980923226''', cc: 'devopstrainingblr@gmail.com', from: '', replyTo: '', subject: 'Build over!...', to: 'devopstrainingblr@gmail.com'
+9980923226''', cc: 'nvdevopslearningzone@gmail.com', from: '', replyTo: '', subject: 'Build over!...', to: 'nvdevopslearningzone@gmail.com'
 }
 
 */
