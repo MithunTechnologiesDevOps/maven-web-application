@@ -14,7 +14,7 @@ try{
   
 
   stage('CheckOutCode'){
-  git branch: 'development', credentialsId: '1ed3c65b-4e6a-46ae-9e15-56aab257dac5', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git'
+  git branch: 'development', credentialsId: '1ed3c65b-4e6a-46ae-9e15-56aab257dac5', url: 'https://github.com/NVTechnologies/maven-web-application.git'
   }
   
   stage('Build'){
