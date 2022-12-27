@@ -1,0 +1,29 @@
+node {
+def mavenHome = tool name “maven3.8.3
+stage(‘checkoutcode’) {
+git credentialsId: '34f8422a-c71c-40f0-8422-43e1240ed2e5', url: 'https://github.com/Amargunge/maven-web-application.git'
+}
+stage(‘build’) {
+sh “${mavenHome}/bin/mvn clean packge”
+}
+/*
+stage(‘sonarreport’) {
+sh “${mavenHome}/bin/mvn sonar:sonar”
+}
+stage(‘uploadingartifactintonexrepo’) {
+sh “${mavenHome}/bin/mvn deploy”
+}
+stage(‘tomcatserver’) {
+sshagent(['d4a19724-b02d-47c2-95a7-24a19ee48228']) {
+sh “scp –o sjsjjs=no target/man.war ec2-user@ip;/opt/ap/weab/”
+}
+sh
+ 
+
+
+stage(‘email’) {
+mail bcc: '', body: 'build succes', cc: '', from: '', replyTo: '', subject: 'build', to: 'amargunge93@gmail.com'
+sh “${mavenHome}/bin/mvn deploy”
+}
+*/
+}
