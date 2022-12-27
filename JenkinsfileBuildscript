@@ -1,0 +1,32 @@
+node {
+def MHD = tool name: "maven3.8.3"
+properties([[$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * * ')])]) (This link for only build peridicaly and all)
+
+        stage('CodeCheckOut') {
+git changelog: false, credentialsId: '34f8422a-c71c-40f0-8422-43e1240ed2e5', poll: false, url: ''
+} 
+     stage('Build') {
+        sh "$MHM/bin/mvn clean package"
+} 
+stage('SonarQubeReport') {
+sh "$MHM/bin/mvn sonar:sonar"
+} 
+stage('UploadArtifactIntoArtifactRepository') {
+git changelog: false, credentialsId: '34f8422a-c71c-40f0-8422-43e1240ed2e5', poll: false, url: ''
+sh “scp –o StrictHostKeyChecking=no target/mwa.war ec2-user@tomcatip:/optlap/web/”
+}
+}
+ 
+
+stage('Send emailnotofication') {
+mail bcc: '', body: 'done with build ', cc: '', from: '', replyTo: '', subject: 'bhuild sucess', to: 'amargunge93@gmail.com'
+}
+/*
+}
+
+
+
+
+} 
+} 
+
