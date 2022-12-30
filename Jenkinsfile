@@ -16,7 +16,7 @@ git branch: 'development', credentialsId: 'd3b6896a-ebbd-4396-8b5c-850f74d96a39'
 stage('Build'){
 sh "${mavenHome}/bin/mvn clean package"
 }
-
+/*
 stage('ExecuteSonarQubeReport'){
 sh "${mavenHome}/bin/mvn sonar:sonar"
 }
@@ -31,5 +31,6 @@ sshagent(['48c992f5-c73e-40ba-b71b-9191b6f93285']) {
 }
 }
 
-
+*/
+  
 }
