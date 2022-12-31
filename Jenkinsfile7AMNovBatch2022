@@ -13,7 +13,7 @@ try{
 sendSlackNotifications("STARTED")
 
 stage('CheckoutCode'){
-git branch: 'developmen', credentialsId: 'd3b6896a-ebbd-4396-8b5c-850f74d96a39', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git'
+git branch: 'development', credentialsId: 'd3b6896a-ebbd-4396-8b5c-850f74d96a39', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git'
 }
 
 stage('Build'){
