@@ -103,7 +103,7 @@
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Mithun Techlogies Snapshot Nexus Repository </name>
+	      <name>Mithun Technologies Snapshot Nexus Repository </name>
 	      <url>http://172.31.24.3:9980/mithuntechnologies/repository/hdfcbank-snapshot/</url>
 	    </snapshotRepository>
 	    
