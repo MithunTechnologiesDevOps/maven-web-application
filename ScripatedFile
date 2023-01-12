@@ -1,0 +1,29 @@
+node { or
+node (‘master’)
+def mvnHome = tool name: “maven3.8.3”
+properties([parameters([choice(choices: ['development', 'stage', 'master'], description: 'added', name: 'BranchName'), string(defaultValue: 'TTT', name: 'NCET')]), [$class: 'JobLocalConfiguration', changeReasonComment: '']])
+//getting code from repo
+stage('code') {
+git credentialsId: '34f8422a-c71c-40f0-8422-43e1240ed2e5', url: 'git@github.com:Amargunge/maven-web-application.git'
+}
+/*
+stage('Build') {
+sh “${mvnHome}/bin/mvn clean package”
+}
+
+stage('sonar') {
+sh “${mvnHome}/bin/mvn sonar:sonar”
+}
+stage('Nexus') {
+sh “${mvnHome}/bin/mvn depploy”
+}
+stage('tomcatNexus') {
+sshagent(['d4a19724-b02d-47c2-95a7-24a19ee48228']) {
+sh “scp –o StrictHostKeyChecking=no tagren/m-w-a.war EC2-USER@Tomcatip:/opt/to/weabss/”
+}
+}
+*/
+stage('Email') {
+mail bcc: '', body: 'done', cc: '', from: '', replyTo: '', subject: 'build sucees', to: 'amargunge93@gmail.com'
+}
+}
