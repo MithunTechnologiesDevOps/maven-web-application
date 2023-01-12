@@ -9,8 +9,8 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to Qhub Software Solutions. Bengaluru,Karnataka </h1>
-<h1 align="center"> Qhub Software Solutions- Very Good Training center for DevOps with AWS in Maratha Halli Bangalore India and also for Job Assitance Job Support also...Teaching Real Time scnerios</h1>
+<h1 align="center">Welcome to Qhub Software Solutions. Noida, UP </h1>
+<h1 align="center"> Qhub Software Solutions - Very Good Training center for DevOps with AWS in Noida India and also for Job Assitance Job Support also...Teaching Real Time scnerios</h1>
 <hr>
 <br>
 	<h1><h3> Server Side IP Address </h3><br>
@@ -38,7 +38,5 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 		Noida
 	</span>
 </div>
-<hr>
-	<p> Service : <a href="services/employee/getEmployeeDetails">Get Employee Details </p>
 </body>
 </html>
