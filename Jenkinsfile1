@@ -3,7 +3,7 @@ pipeline{
 agent any
 
 tools{
-maven 'maven3.8.2'
+maven 'maven3.8.6'
 
 }
 
@@ -20,8 +20,7 @@ stages{
 
   stage('CheckOutCode'){
     steps{
-    git branch: 'development', credentialsId: '957b543e-6f77-4cef-9aec-82e9b0230975', url: 'https://github.com/devopstrainingblr/maven-web-application-1.git'
-	
+    git credentialsId: 'cc2d1bce-d6da-4c9f-9346-97b90ca8d4b3', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git'
 	}
   }
   
@@ -50,7 +49,6 @@ stages{
   }
   }
   }
-  */
 }//Stages Closing
 
 post{
@@ -70,6 +68,6 @@ post{
  }
  
 }
-
+*/
 
 }//Pipeline closing
