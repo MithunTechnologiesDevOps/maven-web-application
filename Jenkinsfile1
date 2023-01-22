@@ -1,6 +1,6 @@
 node{
        
-       echo "current build number is: ${currentBuild.number}
+       
        echo "job name is : ${env.JOB_NAME}"
        echo "build number is : ${env.BUILD_NUMBER}"
        
