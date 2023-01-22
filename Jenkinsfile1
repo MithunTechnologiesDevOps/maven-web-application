@@ -1,7 +1,6 @@
 node{
        
-       buildName 'Dev - ${BUILD_NUMBER}'
-       buildDescription 'Pipeline Script'
+       
        echo "job name is : ${env.JOB_NAME}"
        echo "build number is DEV -  ${BUILD_NUMBER}"
        properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5'))])
