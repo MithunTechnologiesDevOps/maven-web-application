@@ -1,0 +1,25 @@
+Pipeline{
+agent any 
+tools{
+maven"maven3.8.6"
+}
+stages{
+stage('CheckoutCode'){
+steps{
+    git credentialsId: 'a4c28f7a-cfcc-44f7-9a68-ee2e46dee83a', url: 'https://github.com/MVKtechnologies/maven-web-application.git'
+ }  
+}
+stage('build'){
+steps{
+sh "mvn clean package"
+}
+}
+
+stage('SonarQube - Reports'){
+steps{
+sh "mvn sonar:sonar"
+}
+}
+
+}// stages closing
+} // Pipeline closing
