@@ -1,7 +1,5 @@
 pipeline{
-agent{
-label "Slave Jenkins"
-}// if we have any slave node , we can specify 
+agent any //{label "Slave Jenkins"} if we have any slave node , we can specify 
 tools{
 maven"maven3.8.6"
 }
