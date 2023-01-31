@@ -1,6 +1,6 @@
 pipeline{
 agent{
-label "Slave Jenkins"
+label "SonarQube Jenkins Slave"
 }// if we have any slave node , we can specify 
 tools{
 maven"maven3.8.6"
