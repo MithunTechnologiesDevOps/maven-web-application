@@ -41,6 +41,7 @@ stages{
   sh  "mvn clean deploy"
   }
   }
+  */
   
   stage('DeployAppIntoTomcat'){
   steps{
@@ -50,7 +51,7 @@ stages{
   }
   }
 }//Stages Closing
-
+/*
 post{
 
  success{
