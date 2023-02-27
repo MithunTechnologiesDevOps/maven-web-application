@@ -12,12 +12,13 @@ properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKe
 
 def mavenHome = tool name: "maven3.8.7"
 
+try{
 stage('CheckoutCode'){
 git branch: 'development', credentialsId: 'e3321f8e-046d-4558-aa30-ebddcfb80105', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git'
 }
 
 stage('Build'){
-sh "${mavenHome}/bin/mvn clean package"
+sh "${mavenHome}/bin/mvn clean packag"
 }
 /*
 stage('ExecuteSonarQubeReport'){
@@ -34,5 +35,13 @@ sshagent(['714f7e7c-893f-4607-ba72-44a9bfd260de']) {
 }
 }
 */
-  
 }
+catch(e){
+currentBuild.result = "FAILED"
+throw e
+}
+finally{
+sendSlackNotifications(currentBuild.result)
+}
+  
+}//node closing
