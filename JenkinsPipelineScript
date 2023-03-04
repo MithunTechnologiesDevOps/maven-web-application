@@ -1,0 +1,57 @@
+node {
+    def mavenHome = tool name: "maven 3.9.0"
+    
+try{
+sendslacknotifications("STARTED")
+stage('checkout code'){
+    git credentialsId: '67a7a3a7-6fd4-461d-bf21-1662ee3d0017', url: 'https://github.com/udaysaladi1418/uday-maven-web-application.git'
+}
+stage('Build'){
+    sh "${mavenHome}/bin/mvn clean package"
+}
+stage('Execute SonarReport'){
+    sh "${mavenHome}/bin/mvn sonar:sonar"
+}
+stage('upload to Nexus'){
+    sh "${mavenHome}/bin/mvn deploy"
+}
+stage('Deploy to Tomcat'){
+       sshagent(['cabaa041-5226-4f1b-b44a-7ab7855db2bd']) {
+            sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war  ec2-user@172.31.45.191:/opt/apache-tomcat-9.0.71/webapps/"
+                }  
+     }//stage closing
+  }//try block closing
+  catch(e){
+currentBuild.result = "FAILURE"
+}//catch block closing
+finally{
+sendslacknotifications(currentBuild.result)
+}//finally closing
+}//node closing
+
+def sendslacknotifications(String buildStatus = 'STARTED') {
+  // build status of null means successful
+  buildStatus =  buildStatus ?: 'SUCCESSFUL'
+
+  // Default values
+  def colorName = 'RED'
+  def colorCode = '#FF0000'
+  def subject = "${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'"
+  def summary = "${subject} (${env.BUILD_URL})"
+
+  // Override default values based on build status
+  if (buildStatus == 'STARTED') {
+    colorName = 'YELLOW'
+    colorCode = '#FFFF00'
+  } else if (buildStatus == 'SUCCESSFUL') {
+    colorName = 'GREEN'
+    colorCode = '#00FF00'
+  } else {
+    colorName = 'RED'
+    colorCode = '#FF0000'
+  }
+
+  // Send notifications
+  slackSend (color: colorCode, message: summary, channel: "#jenkinsbuildnotification")
+}
+
