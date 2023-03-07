@@ -9,7 +9,7 @@
 </head>
 <body>
 <h1 align="center"> FINALLY DEPLOYED SUCCESFULLY </h1>
-<h1 align="center"> completed..... </h1>
+<h1 align="center"> completed....... </h1>
 <hr>
 <br>
 	<h1><h3> Server Side IP Address </h3><br>
