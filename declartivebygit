@@ -1,0 +1,45 @@
+pipeline{
+
+agent any
+
+tools{
+maven 'maven-3.8.2'
+
+}
+
+triggers{
+pollSCM('* * * * *')
+}
+
+options{
+timestamps()
+buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5'))
+}
+
+stages{
+
+  stage('CheckOutCode'){
+    steps{
+    git credentialsId: '66549094-58fd-4e9c-b3cf-12803125ed5e', url: 'https://github.com/kalyanjyoo/maven-web-application.git'
+	}
+  }
+  
+  stage('Build'){
+  steps{
+  sh  "mvn clean package"
+  }
+  }
+  
+ stage('ExecuteSonarQubeReport'){
+  steps{
+  sh  "mvn clean sonar:sonar"
+  }
+  }
+  
+  stage('UploadArtifactsIntoNexus'){
+  steps{
+  sh  "mvn clean deploy"
+  }
+  }
+  }
+  }
