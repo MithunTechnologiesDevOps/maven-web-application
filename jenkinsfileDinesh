@@ -1,1 +1,38 @@
+pipeline
+{
+    agent {
+        label 'wallmart-node'
+    }
 
+    tools {
+        maven  'maven3.8.6'
+    }
+
+    stages{
+
+        stage ("getting the code") {
+            steps{
+            git branch: 'development', credentialsId: '5788c73c-6e29-4d13-9683-38780f09739f', url: 'https://github.com/Dinesh-ec-project/maven-web-application.git'
+            }
+        }
+
+        stage ("Build") {
+            steps{
+                sh "mvn clean package"
+            }
+        }
+
+        stage ("Create docker image") {
+            steps {
+                sh "docker login -u dinesh0708 -p Dineshsde4@d"
+                sh "docker build -t dinesh0708/maven-web-application:9"
+            }
+        }
+
+        stage ("deploy to kubernetes") {
+            steps {
+                sh "kubectl apply -f mavenwebapplication.yml"
+            }
+        }
+    }
+}
