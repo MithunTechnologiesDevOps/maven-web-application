@@ -1,5 +1,10 @@
 pipeline {
     agent any
+    
+    parameters {
+  choice choices: ['master', 'development', 'qa', 'uat'], description: 'Select Branch Name', name: 'BranchName'
+}
+
     options {
   timestamps()
   buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '3', daysToKeepStr: '', numToKeepStr: '3')
@@ -11,7 +16,7 @@ pipeline {
     stages {
         stage ('CheckoutCode'){
             steps {
-                git branch: 'master', credentialsId: 'b71b1054-4455-4190-b7fc-ce5198836f9d', url: 'https://github.com/sumangithu/maven-web-application.git'
+                git branch: "${params.BranchName}", credentialsId: 'b71b1054-4455-4190-b7fc-ce5198836f9d', url: 'https://github.com/sumangithu/maven-web-application.git'
             }
         }
         
