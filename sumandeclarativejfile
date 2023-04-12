@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+    tools {
+        maven "maven3.8.6"
+    }
+    stages {
+        stage ('CheckoutCode'){
+            steps {
+                git branch: 'master', credentialsId: 'b71b1054-4455-4190-b7fc-ce5198836f9d', url: 'https://github.com/sumangithu/maven-web-application.git'
+            }
+        }
+        
+        stage ('Build'){
+            steps{
+                sh "mvn clean package"
+            }
+        }
+        
+    }//Stages Closing
+}//pipeline Closing
