@@ -1,11 +1,11 @@
 node{
     
-echo "Job name is: ${Ruby.PRODUCTION2}"
+echo "Job name is: ${Ruby.PRODUCTION1}"
 //echo "Build Number is: ${env.BUILD_NUMBER}"
 echo "Node Name is: ${env.NODE_NAME}"
 echo "Jenkins Home dir is: ${env.JENKINS_HOME}"
 
-
+i
 
 properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * *')])])
 
