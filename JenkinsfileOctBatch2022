@@ -4,7 +4,7 @@ try{
     
     def mavenHome = tool name: 'maven3.8.5'
     
-    echo "The Job name is: ${env.JOB_NAME}" 
+    echo "The Job NAME is: ${env.JOB_NAME}" 
     echo "The Build numebr is: ${env.BUILD_NUMBER}"
     echo "The node name is: ${env.NODE_NAME}"
 

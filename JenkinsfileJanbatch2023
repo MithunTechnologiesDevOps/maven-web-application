@@ -1,6 +1,6 @@
 node{
     
-echo "Job name is: ${Ruby.PRODUCTION}"
+echo "Job name is: ${Ruby.PRODUCTION2}"
 //echo "Build Number is: ${env.BUILD_NUMBER}"
 echo "Node Name is: ${env.NODE_NAME}"
 echo "Jenkins Home dir is: ${env.JENKINS_HOME}"
