@@ -1,6 +1,6 @@
 node
 {
-echo 'Jenkins Node Name:-' ${env.NODE_NAME}
+echo 'Jenkins Node Name:-' echo ${env.NODE_NAME}
 
 properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '2', daysToKeepStr: '', numToKeepStr: '2'))])
 
