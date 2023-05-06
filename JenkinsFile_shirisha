@@ -26,12 +26,12 @@ sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@54
 }
 stage('Send Email to user after application deployment')
 {
-emailext attachLog: true, body: '''Hi Shirisha,
+emailext body: '''Hi Shirisha,
 
-Congrats. Build ${env.BUILD_NUMBER} is successful.
+Congrats. Build "${env.BUILD_NUMBER}" is successful.
 
 Thanks,
-Jenkins''', subject: 'Build ${env.BUILD_NUMBER} is Successful with this mail', to: 'shirisha.mitti32@gmail.com'
+Jenkins''', subject: 'Declarative way - Build "${env.BUILD_NUMBER}" is Successful with this mail', to: 'shirisha.mitti32@gmail.com'
 }
 
 }
