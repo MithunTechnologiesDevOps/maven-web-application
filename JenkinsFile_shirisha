@@ -28,10 +28,12 @@ stage('Send Email to user after application deployment')
 {
 emailext body: '''Hi Shirisha,
 
-Congrats. Build "${env.BUILD_NUMBER}" is successful.
+Congrats. Build $BUILD_NUMBER is $BUILD_STATUS. Please check below for more details.
+
+$BUILD_URL
 
 Thanks,
-Jenkins''', subject: 'Declarative way - Build "${env.BUILD_NUMBER}" is Successful with this mail', to: 'shirisha.mitti32@gmail.com'
+Jenkins''', subject: '$PROJECT_NAME ---> Build $BUILD_NUMBER is $BUILD_STATUS', to: 'shirisha.mitti32@gmail.com'
 }
 
 }
