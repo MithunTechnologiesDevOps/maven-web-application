@@ -12,6 +12,7 @@ stage('get code from github')
 git branch: '${Environment_name}', credentialsId: '47285e52-f8e7-47a4-9570-d36eef4acbee', url: 'https://github.com/ShirishaMitti/maven-web-application.git'
 }
 
+//${Environment_name} is choice parameter & ${Executed_by} is string parameter.
 echo "Gihub branch name is ${Environment_name}. Executing Build with parameters by Shirisha." 
 //echo ${Executed_by}
 
