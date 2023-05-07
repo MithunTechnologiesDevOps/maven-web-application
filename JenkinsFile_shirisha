@@ -1,4 +1,4 @@
-node
+node('nodes')
 {
 echo 'Jenkins Node Name:-' 
 echo "${env.NODE_NAME}"
