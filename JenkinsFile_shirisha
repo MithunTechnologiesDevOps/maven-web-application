@@ -9,10 +9,10 @@ def MAVEN_HOME = tool name: "Maven - 3.9.1"
 
 stage('get code from github')
 {
-git branch: '${Enivronment name}', credentialsId: '47285e52-f8e7-47a4-9570-d36eef4acbee', url: 'https://github.com/ShirishaMitti/maven-web-application.git'
+git branch: '${Environment_name}', credentialsId: '47285e52-f8e7-47a4-9570-d36eef4acbee', url: 'https://github.com/ShirishaMitti/maven-web-application.git'
 }
 
-echo "Gihub branch name is ${Enivronment name}. Executing Build with parameters by ${Executed by}."
+echo "Gihub branch name is ${Environment_name}. Executing Build with parameters by shirisha."
 stage('Build')
 {
 sh "${MAVEN_HOME}/bin/mvn clean package"
