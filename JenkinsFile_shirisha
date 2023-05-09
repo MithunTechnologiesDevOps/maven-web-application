@@ -37,7 +37,7 @@ Congrats. Build $BUILD_NUMBER is $BUILD_STATUS. Please check below for more deta
 $BUILD_URL
 
 Thanks,
-Jenkins''', subject: '$PROJECT_NAME ---> Build $BUILD_NUMBER is $BUILD_STATUS', to: 'shirisha.mitti32@gmail.com'
+Jenkins''', subject: '$PROJECT_NAME ---> Build $BUILD_NUMBER is $BUILD_STATUS', to: 'shirisha.mitti32@gmail.com,raghamitti2@gmail.com'
 }
 
 }
