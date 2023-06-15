@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>QhubTechnologies- Home Page</title>
+<title>QhubTechnologies- Home Page 1</title>
 <link href="https://www.qhubtech.com/img/logo.png" rel="icon">
 </head>
 </head>
