@@ -9,7 +9,9 @@ on:
     - master
     - branch-*
   pull_request:
-    branches: [ master ]
+    branches: 
+    - master
+    - branch-*
 
 jobs:
   build:
