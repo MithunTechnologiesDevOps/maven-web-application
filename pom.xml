@@ -88,14 +88,14 @@
 	
 	    <repository>
 	      <id>nexus</id>
-	      <name>Dev Releases Nexus Repository</name>
-	      <url>http://54.213.182.236:8081/repository/Dev-Release/</url>
+	      <name>PIP Releases Nexus Repository</name>
+	      <url>http://54.213.182.236:8081/repository/pipline-Release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Dev Snapshot Nexus Repository </name>
-	      <url>http://54.213.182.236:8081/repository/Dev-Snapshot/</url>
+	      <name>PIP Snapshot Nexus Repository </name>
+	      <url>http://54.213.182.236:8081/repository/pipline-Snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
