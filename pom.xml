@@ -21,7 +21,7 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<sonar.host.url>http://34.221.78.215:9000/</sonar.host.url>
+		<sonar.host.url>http://3.93.13.244OB:9000/</sonar.host.url>
 		<sonar.login>admin</sonar.login>
 		<sonar.password>Location#1</sonar.password> 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -89,13 +89,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>PIP Releases Nexus Repository</name>
-	      <url>http://54.213.182.236:8081/repository/pipline-Release/</url>
+	      <url>http://34.205.19.221:8081/repository/UBA-Release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>PIP Snapshot Nexus Repository </name>
-	      <url>http://54.213.182.236:8081/repository/pipline-Snapshot/</url>
+	      <url>http://34.205.19.221:8081/repository/UBA-Snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
