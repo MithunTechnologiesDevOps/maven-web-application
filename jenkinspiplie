@@ -13,12 +13,15 @@ sh "$mavenHome/bin/mvn clean package"
 		
 }
 
+/*
 
 //Generate sonar reporting
 stage('SonarQubeReport'){
 sh "$mavenHome/bin/mvn sonar:sonar"
 
 }
+
+/*
 
 // Deploy app into Tomcat server
 stage (' Tomcat '){
