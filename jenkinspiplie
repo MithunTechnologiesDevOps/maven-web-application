@@ -2,6 +2,11 @@ node{
 
 def mavenHome = tool name: "maven3.9.2"
 
+echo "The Job name is: ${env.JOB_NAME}"
+echo "The Nod ename is: ${env.NODE_NAME}"
+echo "The Build Number is: ${env.BUILD_NUMBER}"
+echo "The Jenkins Home directory is: ${JENKINS_HOME}"
+
 //checkout code
 stage ("Git checkout"){
 git branch: 'development', credentialsId: 'git-login', url: 'https://github.com/fwoma/maven-web-application.git'
