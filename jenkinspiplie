@@ -13,7 +13,7 @@ sh "$mavenHome/bin/mvn clean package"
 		
 }
 
-
+/*
 
 //Generate sonar reporting
 stage('SonarQubeReport'){
@@ -30,5 +30,6 @@ sshagent(['84d6f3a9-d282-449f-86ae-04ff44250560']) {
 }
 }
 
+*/
 
 } 
