@@ -87,13 +87,13 @@
             <repository>
               <id>nexus</id>
               <name>Mithun Releases Nexus Repository</name>
-              <url>http://34.205.19.221:8081/repository/UBA-Release/</url>
+              <url>http://172.31.80.65:8081/repository/UBA-Release/</url>
             </repository>
 
             <snapshotRepository>
               <id>nexus</id>
               <name>Mithun Snapshot Nexus Repository </name>
-              <url>http://34.205.19.221:8081/repository/UBA-Snapshot/</url>
+              <url>http://172.31.80.65:8081/repository/UBA-Snapshot/</url>
             </snapshotRepository>
 
         </distributionManagement>
