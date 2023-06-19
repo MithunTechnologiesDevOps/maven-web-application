@@ -38,7 +38,7 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 		13112 Silver maple ct Bowie,
 		United State,
 		+1- 2025941611,+1-2409070655
-		womafamilygmail.com@gmail.com
+		womafamily@gmail.com
 		<br>
 		<a href="mailto:womafamily@gmail.com">Mail to Woma Technologies</a>
 	</span>
