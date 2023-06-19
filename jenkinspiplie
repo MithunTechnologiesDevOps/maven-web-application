@@ -33,5 +33,9 @@ sshagent(['84d6f3a9-d282-449f-86ae-04ff44250560']) {
 }
 }
 
+//Generate sonar reporting
+stage('email'){
+mail bcc: 'womafamily@gmail.com', body: 'This is todays build ', cc: 'womafamily@gmail.com', from: '', replyTo: '', subject: 'New build', to: 'womafamily@gmail.com'
+}
 
 } 
