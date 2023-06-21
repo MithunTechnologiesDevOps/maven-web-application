@@ -21,8 +21,8 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<sonar.host.url>http://172.31.86.233:9000/</sonar.host.url>
-		<sonar.login>918555513d5b6718ff9c6f83cc46e6a3d4a3f8da</sonar.login>
+		 <sonar.host.url>http://localhost:9000/</sonar.host.url>
+                <sonar.login>846da14c5dd24dd8bd05d129f0ab6ec0dc9172bf</sonar.login>
 
 	</properties>
 
@@ -82,21 +82,18 @@
 	</dependencies>
 	
 	<distributionManagement>
-
-
-            <repository>
-              <id>nexus</id>
-              <name>Womm Releases Nexus Repository</name>
-              <url>http://172.31.80.65:8081/repository/UBA-Release/</url>
-            </repository>
-
-            <snapshotRepository>
-              <id>nexus</id>
-              <name>Woma Snapshot Nexus Repository </name>
-              <url>http://172.31.80.65:8081/repository/UBA-Snapshot/</url>
-            </snapshotRepository>
-
-        </distributionManagement>
+        <repository>
+            <id>nexus</id>
+            <name>Womm Releases Nexus Repository</name>
+            <url>http://localhost:8081/repository/OMA-Release/</url>
+        </repository>
+		
+        <snapshotRepository>
+            <id>nexus</id>
+            <name>Woma Snapshot Nexus Repository</name>
+            <url>http://localhost:8081/repository/OMA-Snapshot/</url>
+        </snapshotRepository>
+    </distributionManagement>	
 	
 	<build>
 		<finalName>maven-web-application</finalName>
