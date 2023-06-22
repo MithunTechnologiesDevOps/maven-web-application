@@ -26,6 +26,9 @@
 		<sonar.password>Location#1</sonar.password> 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+                <sonar.host.url>http://localhost:9000/</sonar.host.url>
+                <sonar.login>846da14c5dd24dd8bd05d129f0ab6ec0dc9172bf</sonar.login>
+		
 
 	</properties>
 
@@ -94,19 +97,18 @@
 	</dependencies>
 	
 	<distributionManagement>
-	
-	    <repository>
-	       <name>Releases Nexus Repository</name>
-	      <url>http://35.89.63.234:8081/repository/UAT-Release/</url>
-	    </repository>
-	    
-	    <snapshotRepository>
-	      <id>nexus</id>
-	      <name>Snapshot Nexus Repository </name>
-	      <url>http://35.89.63.234:8081/repository/UAT-Snapshot/</url>
-	    </snapshotRepository>
-	    
-	</distributionManagement>
+        <repository>
+            <id>nexus</id>
+            <name>Womm Releases Nexus Repository</name>
+            <url>http://localhost:8081/repository/OMA-Release/</url>
+        </repository>
+		
+        <snapshotRepository>
+            <id>nexus</id>
+            <name>Woma Snapshot Nexus Repository</name>
+            <url>http://localhost:8081/repository/OMA-Snapshot/</url>
+        </snapshotRepository>
+    </distributionManagement>	
 	
 	<build>
 		<finalName>maven-web-application</finalName>
