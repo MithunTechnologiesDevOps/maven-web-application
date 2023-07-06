@@ -10,6 +10,7 @@
 </head>
 <body>
 <h1 align="center">Welcome to Mithun Technologies. Marathahalli,Bengaluru,Karnataka,India </h1>
+<h1 align="center"> New Batch will be start in August 1st week at 7.30 PM IST</h1> 
 <h1 align="center"> Mithun Technologies- Very Good Training center for DevOps with AWS in Bangalore India and also for Job Assitance Job Support also...Teaching Real Time scnerios</h1>
 <hr>
 <br>
