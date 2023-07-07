@@ -6,12 +6,12 @@
     <param-value>/WEB-INF/mt-servlet.xml</param-value>
   </context-param>
   <servlet>
-    <servlet-name>mt</servlet-name>
+    <servlet-name>gt</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet-mapping>
-    <servlet-name>mt</servlet-name>
+    <servlet-name>gt</servlet-name>
     <url-pattern>/services/*</url-pattern>
   </servlet-mapping>
   <listener>
