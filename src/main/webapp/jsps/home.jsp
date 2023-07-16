@@ -9,8 +9,8 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to Selva's project. Ph No: +91-9980923226 ,+91-9980923216 Marathahalli,Bengaluru,Karnataka </h1>
-<h1 align="center">Selva's project- hello guys im building this project for test purpose</h1>
+<h1 align="center">Selva's project. Ph No: +91-9148408964 ,+91-8553621434 Marathahalli,Bengaluru,Karnataka </h1>
+<h1 align="center">Selva's project- Hello guys im building this project for test purpose</h1>
 <hr>
 <br>
 	<h1><h3> Server Side IP Address </h3><br>
@@ -34,11 +34,11 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 		<img src="images/mithunlogo.jpg" alt="" width="100">
 	</span>
 	<span style="font-weight: bold;">
-		Mithun Technologies, 
+		Maarathahalli, 
 		Martha Halli, Above ICICI Bank, Beside Meghana Foods,
 		Bangalore,
-		+91-9980923226,+91-9900012028
-		devopstrainingblr@gmail.com
+		+91-9148408964,+91-8553621434
+		selvamanid281@gmail.com
 		<br>
 		<a href="mailto:devopstrainingblr@gmail.com">Mail to Mithun Technologies</a>
 	</span>
@@ -48,7 +48,7 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 <hr>
 <hr>
 <p align=center>Selva's project - Consultant, Training, Development Center.</p>
-<p align=center><small>Copyrights 2022 by <a href="http://mithuntechnologies.com/">Mithun Technologies,Bengaluru</a> </small></p>
+<p align=center><small>Copyrights 2022 by <a href="http://mithuntechnologies.com/">selva's Technologies,Bengaluru</a> </small></p>
 
 </body>
 </html>
