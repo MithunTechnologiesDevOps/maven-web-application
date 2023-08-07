@@ -1,0 +1,12 @@
+node
+{
+    properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: ''], 
+    pipelineTriggers([pollSCM('* * * * *')])])
+    stage ('checkout code'){
+    git branch: 'development', credentialsId: '71cef7f3-73b4-460d-bcbd-3bf70f5d2055', url: 'https://github.com/srikanth34504/maven-web-application.git'
+    }
+    
+    stage ('Buid the code'){
+    sh "mvn clean package"
+    }
+    }
