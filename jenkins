@@ -1,0 +1,16 @@
+node{
+       
+       
+       echo "job name is : ${env.JOB_NAME}"
+       echo "build number is DEV -  ${BUILD_NUMBER}"
+       properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5'))])
+    def mavenHome = tool name: "maven3.8.7"
+    
+    stage('checkout code'){
+        git branch: 'dev', credentialsId: 'cad60454-b74d-43ee-8897-d2e7bb8ed99a', url: 'https://github.com/sravan7reddy/maven-web-application.git'
+    }
+    stage('build'){
+        sh "$mavenHome/bin/mvn clean package"
+    }
+  
+    }
