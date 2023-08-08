@@ -21,23 +21,37 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<sonar.host.url>http://18.138.81.149:9000/</sonar.host.url>
-		<sonar.login>admin</sonar.login>
-		<sonar.password>passw0rd</sonar.password> 
+		<sonar.host.url>http://3.109.152.228:9000/</sonar.host.url>
+		<sonar.login>squ_953f6c55f50ca8703e4856a63699cbd00c61d971</sonar.login> 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 	</properties>
-
+	
+	<repositories>
+		<repository>
+			<id>nexus</id>
+			<url>http://13.232.26.85:9090/pravii/repository/walmart-snapshot/</url>
+		</repository>
+	</repositories>
+	
 	<dependencies>
 		
 		<dependency>
-			<groupId>org.json</groupId>
-			<artifactId>json</artifactId>
-			<version>20160212</version>
+			<groupId>com.krs</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.0.0</version>
 		</dependency>
 		
 		<!-- test dependencies -->
+		
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+			<scope>test</scope>
+		</dependency>
+		
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -97,14 +111,14 @@
 	
 	    <repository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://54.255.174.111:8081/repository/flipkart-release/</url>
+	      <name>Walmart Releases Nexus Repository</name>
+	      <url>http://65.0.130.27:9090/pravii/repository/walmart-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://54.255.174.111:8081/repository/flipkart-snapshot/</url>
+	      <name>Walmart Snapshot Nexus Repository </name>
+	      <url>http://65.0.130.27:9090/pravii/repository/walmart-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
