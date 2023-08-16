@@ -9,7 +9,7 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to Shivananda Software solutions,Hirgana,Karnataka,India </h1>
+<h1 align="center">Welcome to Shivananda Software solutions,Hirgana, </h1>
 <h1 align="center"> Tendulkar software Technologies- Very Good Training center for DevOps with AWS in India and also for Job Assitance Job Support also...Teaching Real Time scnerios</h1>
 <hr>
 <br>
