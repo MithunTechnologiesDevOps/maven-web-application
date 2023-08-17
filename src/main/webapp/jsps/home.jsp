@@ -9,8 +9,8 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to Mithun Technologies. Marathahalli,Bengaluru,Karnataka,India </h1>
-<h1 align="center"> Mithun Technologies- Very Good Training center for DevOps with AWS in Bangalore India and also for Job Assitance Job Support also...Teaching Real Time scnerios</h1>
+<h1 align="center">Welcome to Woma Technologies, a hub of innovation and excellence. At Mithun Technologies, we offer exceptional DevOps training coupled with AWS expertise right here in USA  </h1>
+<h1 align="center">Our center is renowned for not only providing top-notch training but also offering unparalleled job assistance and support. Our curriculum focuses on real-world scenarios, ensuring you're equipped with the skills needed to excel. Join us on this journey at Woma Technologies, where every step you take is a stride towards successs</h1>
 <hr>
 <br>
 	<h1><h3> Server Side IP Address </h3><br>
