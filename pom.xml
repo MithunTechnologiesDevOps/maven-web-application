@@ -97,13 +97,13 @@
         <repository>
             <id>nexus</id>
             <name>Womm Releases Nexus Repository</name>
-            <url>http://172.31.19.208:8081/repository/UAT-Release/</url>
+            <url>http://172.31.4.227:8081/repository/USAA-Release/</url>
         </repository>
 		
         <snapshotRepository>
             <id>nexus</id>
             <name>Woma Snapshot Nexus Repository</name>
-            <url>http://172.31.19.208:8081/repository/UAT-Snapshot/</url>
+            <url>http://172.31.4.227:8081/repository/USAA-Snapshot/</url>
         </snapshotRepository>
     </distributionManagement>	
 	
