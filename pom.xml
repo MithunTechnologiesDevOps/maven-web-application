@@ -102,7 +102,7 @@
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Snapshot Nexus Repository </name>
+	      <name>Mithun Technologies Snapshot Nexus Repository</name>
 	      <url>http://52.87.223.22:9980/mithuntechnologies/repository/facebook-snapshot/</url>
 	    </snapshotRepository>
 	    
