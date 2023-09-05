@@ -1,0 +1,36 @@
+node{
+    
+ def mavenHome = tool name: "Maven3.9.4"
+    
+    stage('checkoutcode')
+    {
+    git credentialsId: '63036149-d933-4eb9-812d-2befa6969bdc', url: 'https://github.com/openbank1/maven-web-application.git'
+    }
+    
+    
+    stage('Biuld')
+    {
+    sh "${mavenHome}/bin/mvn clean package"
+    }
+    
+    stage('uploadartfactroy')
+    {
+    sh "${mavenHome}/bin/mvn clean deploy"
+    }
+    
+    stage('Deployappintotomcateserver')
+    {
+    sshagent(['3eaf4bb1-1b65-4602-837f-37acc8586625']) {
+     sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@35.154.5.205:/opt/apache-tomcat-9.0.71/webapps/"
+}
+    }
+    
+    stage('send the email notifaction')
+    {
+    emailext body: '''Build is over 
+
+Thanks,
+Nuru''', subject: 'Build over ', to: 'annenuru5@gmail.com'
+    }
+    
+}
