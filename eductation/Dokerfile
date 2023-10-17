@@ -1,0 +1,4 @@
+FROM ubuntu 
+RUN mkdir lio
+EXPOSE 80
+CMD ["catalina.sh" "start"] 
