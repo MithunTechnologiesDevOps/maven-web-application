@@ -104,8 +104,8 @@
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://65.0.91.222:8081/repository/facebook-release/</url>
+	      <name>Mithun Technologies Snapshot Nexus Repository</name>
+	   <url>http://65.0.91.222:8081/repository/facebook-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
