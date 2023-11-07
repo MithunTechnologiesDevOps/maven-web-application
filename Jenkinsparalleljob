@@ -7,7 +7,7 @@ pipeline{
     }
 
 stages{
-//Get the code from GitHub
+//Get the code from GitHub  scm
     stage('CheckoutCode'){
 	steps{
 	   
