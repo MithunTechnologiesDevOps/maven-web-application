@@ -1,0 +1,21 @@
+node
+{
+    def mavenhome = tool name: "maven3.6.3"
+    stage('CheckoutCode')
+    {
+        git branch: 'devlopment', credentialsId: '252e4016-d5ac-43ab-953a-c27abdefa2b3', url: 'https://github.com/krishnatechnologyapp/maven-web-application.git'
+    }
+    stage('Build')
+    {
+        sh "${mavenhome}/bin/mvn clean package"
+        
+    }
+    stage('DeployAppIntoTomcat')
+    {
+        sshagent(['47489c59-9c8c-4574-b8a0-ec614febfd13']) 
+        {
+            sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@3.149.238.128:/opt/apache-tomcat-9.0.82/webapps/"
+    
+}
+    }
+}
