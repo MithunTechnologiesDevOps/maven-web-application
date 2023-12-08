@@ -1,6 +1,7 @@
 node
 {
     def mavenhome = tool name: "maven3.6.3"
+properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '2', daysToKeepStr: '', numToKeepStr: '2')), pipelineTriggers([githubPush()])])
     stage('CheckoutCode')
     {
         git branch: 'devlopment', credentialsId: '252e4016-d5ac-43ab-953a-c27abdefa2b3', url: 'https://github.com/krishnatechnologyapp/maven-web-application.git'
