@@ -3,7 +3,7 @@ pipeline{
 agent any
 
 tools{
-maven 'maven3.8.2'
+maven 'maven'
 
 }
 
@@ -20,7 +20,7 @@ stages{
 
   stage('CheckOutCode'){
     steps{
-    git branch: 'development', credentialsId: '957b543e-6f77-4cef-9aec-82e9b0230975', url: 'https://github.com/devopstrainingblr/maven-web-application-1.git'
+    git branch: 'development', credentialsId: 'git', url: 'https://github.com/fwoma/maven-web-application.git'
 	
 	}
   }
@@ -30,7 +30,7 @@ stages{
   sh  "mvn clean package"
   }
   }
-/*
+
  stage('ExecuteSonarQubeReport'){
   steps{
   sh  "mvn clean sonar:sonar"
@@ -50,8 +50,8 @@ stages{
   }
   }
   }
-  */
-}//Stages Closing
+
+}Stages Closing
 
 post{
 
@@ -72,4 +72,4 @@ post{
 }
 
 
-}//Pipeline closing
+}Pipeline closing
