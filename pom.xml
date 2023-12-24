@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	
-	<groupId>com.mt</groupId>
+	<groupId>in.urk</groupId>
 	<artifactId>maven-web-application</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
@@ -12,8 +12,8 @@
 	<description>Maven Web Project for Java Project</description>
 
 	<organization>
-		<name>Mithun Technologies</name>
-		<url>http://mithuntechnologies.com/</url>
+		<name>URK Technologies</name>
+		<url>http://urktechnologies.in/</url>
 	</organization>
 
 	<properties>
@@ -97,14 +97,14 @@
 	
 	    <repository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://54.255.174.111:8081/repository/flipkart-release/</url>
+	      <name>URK Technologies Releases Nexus Repository</name>
+	      <url>http://192.168.29.13:8081/URKTechnologies/repository/Servers_Mirror_Release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://54.255.174.111:8081/repository/flipkart-snapshot/</url>
+	      <name>URK Technologies Snapshot Nexus Repository </name>
+	      <url>http://192.168.29.13:8081/URKTechnologies/repository/Servers_Mirror_Snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
