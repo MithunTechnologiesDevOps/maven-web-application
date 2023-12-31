@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	
-	<groupId>in.urk</groupId>
+	<groupId>in.urkt</groupId>
 	<artifactId>maven-web-application</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
@@ -89,13 +89,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>URK Technologies Releases Nexus Repository</name>
-	      <url>http://192.168.29.13:8081/URKTechnologies/repository/Servers_Mirror_Release/</url>
+	      <url>http://192.168.30.59:8081/URKTechnologies/repository/URK_Technologies_Release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>URK Technologies Snapshot Nexus Repository </name>
-	      <url>http://192.168.29.13:8081/URKTechnologies/repository/Servers_Mirror_Snapshot/</url>
+	      <url>http://192.168.30.59:8081/URKTechnologies/repository/URK_Technologies_Snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
