@@ -98,13 +98,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://http://52.27.253.17:8081/repository/manish-release//</url>
+	      <url>http://35.87.31.167:8081/repository/manish-release///</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://http://52.27.253.17:8081/repository/manish-snapshot//</url>
+	      <url>http://35.87.31.167:8081/repository/manish-snapshot///</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
