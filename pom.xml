@@ -103,8 +103,8 @@
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://54.201.56.40:8081/repository/m-release/</url>
+	      <name>Mithun Technologies Snapshot Nexus Repository</name>
+	      <url>http://54.201.56.40:8081/repository/m-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
