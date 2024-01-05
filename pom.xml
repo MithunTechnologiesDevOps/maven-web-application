@@ -98,13 +98,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://b1482f12-1c8e-4bd8-a185-a0281afdb79d///</url>
+	      <url>http://54.201.56.40:8081/repository/m-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://b1482f12-1c8e-4bd8-a185-a0281afdb79d///</url>
+	      <url>http://54.201.56.40:8081/repository/m-release/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
