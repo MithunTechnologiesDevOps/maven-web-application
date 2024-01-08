@@ -1,0 +1,26 @@
+node 
+{
+    properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * *')])])
+    
+    stage('checkOutCode')
+    {
+     git branch: 'Development', credentialsId: '64621cad-7f34-40ff-b34d-4e1d52e14922', url: 'https://github.com/URKDevOps/maven-web-application.git'
+    }
+    
+    stage('buildingWarWithCode')
+    {
+        sh "/opt/maven/bin/mvn clean package"
+    }
+
+    stage('UploadingArtifactToNexus')
+    {
+        sh "/opt/maven/bin/mvn clean deploy"
+    }
+    
+    stage('Deploying To Tomcat Server')
+    {
+        deploy adapters: [tomcat9(credentialsId: '2822dcd0-574c-407e-9d89-aea40a2c3d98', path: '', url: 'http://192.168.30.51:8080/')], contextPath: null, war: '**/maven-web-application.war'
+    }
+    
+}
+

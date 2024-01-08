@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	
-	<groupId>com.mt</groupId>
+	<groupId>in.urkt</groupId>
 	<artifactId>maven-web-application</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
@@ -12,8 +12,8 @@
 	<description>Maven Web Project for Java Project</description>
 
 	<organization>
-		<name>Mithun Technologies</name>
-		<url>http://mithuntechnologies.com/</url>
+		<name>URK Technologies</name>
+		<url>http://urktechnologies.in/</url>
 	</organization>
 
 	<properties>
@@ -28,9 +28,18 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 	</properties>
-
+	<repositories>
+		<repository>
+			<id>nexus</id>
+			<url>http://192.168.30.51:8081/URKTechnologies/repository/URK_Technologies_Remote_Repo/</url>
+		</repository>
+	</repositories>
 	<dependencies>
-		
+		<dependency>
+			<groupId>in.urkt</groupId>
+  			<artifactId>mail</artifactId>
+  			<version>1.4</version>
+		</dependency>
 		<dependency>
 			<groupId>org.json</groupId>
 			<artifactId>json</artifactId>
@@ -82,29 +91,20 @@
 			<version>${spring.version}</version>
 		</dependency>
 		
-		<!-- provided dependencies -->
-
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<version>3.1.0</version>
-			<scope>provided</scope>
-		</dependency>
-		
 	</dependencies>
 	
 	<distributionManagement>
 	
 	    <repository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://54.255.174.111:8081/repository/flipkart-release/</url>
+	      <name>URK Technologies Releases Nexus Repository</name>
+	      <url>http://192.168.30.51:8081/URKTechnologies/repository/URK_Technologies_Release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://54.255.174.111:8081/repository/flipkart-snapshot/</url>
+	      <name>URK Technologies Snapshot Nexus Repository </name>
+	      <url>http://192.168.30.51:8081/URKTechnologies/repository/URK_Technologies_Snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
