@@ -31,7 +31,7 @@
 	<repositories>
 		<repository>
 			<id>nexus</id>
-			<url>http://192.168.30.61:8081/URKTechnologies/repository/URK_Technologies_Remote_Repo/</url>
+			<url>http://192.168.30.51:8081/URKTechnologies/repository/URK_Technologies_Remote_Repo/</url>
 		</repository>
 	</repositories>
 	<dependencies>
@@ -98,13 +98,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>URK Technologies Releases Nexus Repository</name>
-	      <url>http://192.168.30.61:8081/URKTechnologies/repository/URK_Technologies_Release/</url>
+	      <url>http://192.168.30.51:8081/URKTechnologies/repository/URK_Technologies_Release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>URK Technologies Snapshot Nexus Repository </name>
-	      <url>http://192.168.30.61:8081/URKTechnologies/repository/URK_Technologies_Snapshot/</url>
+	      <url>http://192.168.30.51:8081/URKTechnologies/repository/URK_Technologies_Snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
