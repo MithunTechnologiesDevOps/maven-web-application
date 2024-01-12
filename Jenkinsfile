@@ -16,7 +16,7 @@ stage('CheckOutCode'){
    sendSlackNotifications("STARTED")
 git branch: 'development', credentialsId: '85bf18b5-e6f6-47cc-a2d4-e3ae89d10dc9', url: 'https://github.com/KapielG/maven-web-application.git'
 }
-
+/*
 stage('Build'){
 sh "${mavenHome}/bin/mvn clean package"
 }
@@ -34,7 +34,7 @@ sshagent(['c11b07a0-dc0a-4aa8-847f-d366a9eac185']) {
    sh "scp -o  StrictHostKeyChecking=no target/maven-web-application.war ec2-user@172.31.43.201:/opt/apache-tomcat-9.0.84/webapps/"
 }
 }
-
+*/
 }
 catch(e){
 currentBuild.result = "FAILURE"
