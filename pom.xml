@@ -97,14 +97,14 @@
 	
 	    <repository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://3.85.209.152:8081/repository/flipkart-release/</url>
+	      <name>shiva Nexus Repository</name>
+	      <url>http://3.90.142.95:8081/repository/shiva-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://3.85.209.152:8081/repository/flipkart-snapshot/</url>
+	      <name>shivanot Nexus Repository </name>
+	      <url>http://3.90.142.95:8081/repository/shiva-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
