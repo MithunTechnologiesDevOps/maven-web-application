@@ -97,13 +97,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://172.31.9.42:9980/kapildevops/repository/flipkart-release/</url>
+	      <url>http://65.0.19.131:9980/kapildevops/repository/flipkart-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://172.31.9.42:9980/kapildevops/repository/flipkart-snapshot/</url>
+	      <url>http://65.0.19.131:9980/kapildevops/repository/flipkart-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
