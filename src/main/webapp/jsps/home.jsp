@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1 align="center">Welcome to Mithun Technologies Pvt Ltd. Sri Satya Sai (Dist),Andhra Pradesh,India </h1>
-<h1 align="center"> Webhook demo...New Devops with AWS Batch will start on Jan 10th 2024 at 8 AM IST - Contact 9980923226/9980923216 or devopstrainingblr@gmail.com</h1> 
+<h1 align="center"> DevOps Demo...Our New AWS Batch will start on Feb 10th 2024 at 8 AM IST - Contact 9980923226/9980923216 or devopstrainingblr@gmail.com</h1> 
 <h1 align="center"> Mithun Technologies- Very Good Training center for DevOps with AWS in Bangalore India and also for Job Assitance Job Support also...Teaching Real Time scnerios</h1>
 <hr>
 <br>
