@@ -23,7 +23,7 @@
 		<log4j.version>1.2.17</log4j.version>
 		<sonar.host.url>https://sonarcloud.io/</sonar.host.url>
 		<sonar.login>44f4bcee8230f695ce50452f14ae7c6856c62219</sonar.login>
-		<sonar.organization>Sameeraprasad</sonar.organization>
+		<sonar.organization>sonarcloudorg</sonar.organization>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
