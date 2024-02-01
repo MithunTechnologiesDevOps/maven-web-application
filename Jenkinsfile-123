@@ -6,11 +6,11 @@ pipeline{
 triggers {
   pollSCM '* * * * *'
 }
-buildDescription 'dev-${env.BUILD_NUMBER}'
-echo "branchname:${env.BRANCH_NAME}"
-echo "buildnumber:${env.BUILD_NUMBER}"
-echo "jobname:${env.JOB_NAME}"
-echo "nodename:${env.NODE_NAME}"
+dev-${BUILD_NUMBER}
+echo "branchname: ${env.BRANCH_NAME}"
+echo "buildnumber: ${env.BUILD_NUMBER}"
+echo "jobname: ${env.JOB_NAME}"
+echo "nodename: ${env.NODE_NAME}"
     options {
   timestamps ()
   buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '3')
