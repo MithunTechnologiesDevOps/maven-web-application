@@ -6,8 +6,6 @@ pipeline{
 triggers{
 pollSCM('* * * * *')
 }
-dev-${BUILD_NUMBER}
-
     options {
   timestamps ()
   buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '3')
