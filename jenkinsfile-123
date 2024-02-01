@@ -1,0 +1,35 @@
+pipeline{
+    agent any
+    tools{
+        maven "maven-3.9.6"
+    }
+    stages{
+        stage('checkoutcode'){
+            steps{
+                git branch: 'dev', credentialsId: 'b22ccc7a-9224-498d-b494-d59924579d1f', url: 'https://github.com/Sameeraprasad/maven-web-application.git'
+            }
+        }
+        stage('build'){
+            steps{
+                sh "mvn clean package"
+            }
+        }
+        stage('sonarqubereport'){
+            steps{
+                sh "mvn sonar:sonar"
+            }
+        }
+        stage("artifactory repo"){
+            steps{
+            sh "mvn deploy"
+        }
+        }
+        stage('deploy'){
+            steps{
+                sshagent(['f42910f9-3f3e-4656-b8e8-a43300e0dbb3']){
+                    sh  "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@43.205.243.71:/opt/tomcat9/webapps/"
+                }
+            }
+        }
+    }
+}
