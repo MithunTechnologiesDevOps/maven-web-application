@@ -3,13 +3,25 @@ pipeline{
     tools{
         maven "maven-3.9.6"
     }
+triggers {
+  pollSCM '* * * * *'
+}
+buildDescription 'dev-${env.BUILD_NUMBER}'
+echo "branchname:${env.BRANCH_NAME}"
+echo "buildnumber:${env.BUILD_NUMBER}"
+echo "jobname:${env.JOB_NAME}"
+echo "nodename:${env.NODE_NAME}"
+    options {
+  timestamps ()
+  buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '3')
+}
     stages{
         stage('checkoutcode'){
             steps{
                 git branch: 'dev', credentialsId: 'b22ccc7a-9224-498d-b494-d59924579d1f', url: 'https://github.com/Sameeraprasad/maven-web-application.git'
             }
         }
-        stage('build'){
+      /*  stage('build'){
             steps{
                 sh "mvn clean package"
             }
@@ -30,6 +42,6 @@ pipeline{
                     sh  "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@43.205.243.71:/opt/tomcat9/webapps/"
                 }
             }
-        }
+        }  */
     }
 }
