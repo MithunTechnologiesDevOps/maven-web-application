@@ -10,10 +10,10 @@ pollSCM('* * * * *')
   timestamps ()
   buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '3')
 }
-echo "branchname: ${env.BRANCH_NAME}"
-echo "buildnumber: ${env.BUILD_NUMBER}"
-echo "jobname: ${env.JOB_NAME}"
-echo "nodename: ${env.NODE_NAME}"
+sh "echo "branchname: ${env.BRANCH_NAME}""
+sh "echo "buildnumber: ${env.BUILD_NUMBER}""
+sh "echo "jobname: ${env.JOB_NAME}""
+sh "echo "nodename: ${env.NODE_NAME}""
     stages{
         stage('checkoutcode'){
             steps{
