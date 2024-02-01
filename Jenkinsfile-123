@@ -3,9 +3,6 @@ pipeline{
     tools{
         maven "maven-3.9.6"
     }
-triggers {
-  pollSCM '* * * * *'
-}
 dev-${BUILD_NUMBER}
 echo "branchname: ${env.BRANCH_NAME}"
 echo "buildnumber: ${env.BUILD_NUMBER}"
