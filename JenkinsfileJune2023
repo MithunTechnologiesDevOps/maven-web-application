@@ -7,31 +7,29 @@ echo "Build number is: ${env.BUILD_NUMBER}"
 
 //properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'RebuildSettings', autoRebuild: false, rebuildDisabled: false], [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * *')])])
 
+    def mavenHome = tool name: "Maven3.9.6"
+    
+    stage('checkoutcode') {
+        git branch: 'development', credentialsId: 'cb270671-197d-4b42-b94f-b539d8da7bf4', url: 'https://github.com/Shivareddy443/maven-web-application.git'
+    }
+    
+    stage('build') {
+        sh "${mavenHome}/bin/mvn clean package"
+    }
+    
+    stage('executesonarqubereport') {
+        sh "${mavenHome}/bin/mvn sonar:sonar"
+    }
 
-def mavenHome=tool name: 'maven3.9.3'
+    stage('uploadartifactIntoNexus') {
+        sh "${mavenHome}/bin/mvn deploy"
+    }
 
-stage('CheckOutCode'){
-git branch: 'development', credentialsId: 'c4900e7a-ccd3-4a5a-8604-b81f52bdc0f2', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git'
+    stage('DeployAppIntoTomcat') {
+        sshagent(['4b91ac8e-d928-4fd4-a77d-3d387b68012c']) {
+            sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@35.182.244.44://opt/apache-tomcat-9.0.85/webapps"
+        }
+    }
+    
 }
 
-stage('Build'){
-sh "${mavenHome}/bin/mvn clean package"
-}
-/*
-stage('ExecuteSonarQubeReport'){
-sh "${mavenHome}/bin/mvn clean sonar:sonar"
-}
-
-stage('UploadArtifactsInotNexus'){
-sh "${mavenHome}/bin/mvn clean  deploy"
-}
-
-
-stage('DeploAppIntoTomcatServer'){
-sshagent(['331ae6af-906c-4d4f-8317-0379a46b437e']) {
-    sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@172.31.2.79:/opt/apache-tomcat-9.0.76/webapps/"
-}
-}
-*/
-
-}
