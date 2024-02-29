@@ -16,7 +16,7 @@
 		<url>http://mithuntechnologies.com/</url>
 	</organization>
 
-	<!-- test dependencies 
+	
 	<properties>
 		<jdk.version>1.8</jdk.version>
 		<spring.version>5.1.2.RELEASE</spring.version>
@@ -28,7 +28,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-	</properties>  -->
+	</properties>  
 
 	<dependencies>
 		
