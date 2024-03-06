@@ -1,0 +1,88 @@
+//Pipeline Declerativeway script
+
+
+pipeline{
+agent any
+tools {
+  maven 'maven 3.9.6'
+}
+triggers {
+  pollSCM('* * * * *')
+//cron('* * * * *')
+}
+
+options {
+//Add timeStamp to the consoleoutput
+  timestamps()
+//discard old bills
+  buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')
+}
+
+stages {
+//get the code from gitgub
+  stage('get the code from gitgub') {
+    steps {
+      git credentialsId: '08e9cecc-a6b1-4bcd-9b61-2c1a0a7b2878', url: 'https://github.com/nagaavula123/maven_web_application.git'
+    }
+  }
+
+//Do the build
+stage(Build') {
+  steps {
+   sh 'mvn clean package'
+  }
+}
+
+//Execute SonarQube Report
+stage('Execute SonarQube Report') {
+  steps {
+    sh "mvn clean sonar:sonar"
+  }
+}
+
+//Upload Artifacet Into NexusServer
+stage('UploadArtifacetIntoNexusServer') {
+  steps {
+    sh "mvn clean deploy"
+  }
+}
+
+//deploy App Into TomcatServer
+stage('deployAppIntoTomcatServer') {
+  steps {
+    sshagent(['2a48a448-11b0-4bae-b2ad-f86f2b1907b2']) {
+    sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.235.243.43:/opt/apache-tomcat-9.0.86/webapps/"
+}
+  }
+}
+
+}//stages closing tag
+
+post {
+  always {
+    emailext body: '''Build over---
+
+
+Regards,
+NagaMallareddy
+8309487242''', subject: 'Build over---', to: 'nagamallareddy2737@gmail.com'
+  }
+  success {
+    emailext body: '''Build over--- success
+
+
+Regards,
+NagaMallareddy
+8309487242''', subject: 'Build over---', to: 'nagamallareddy2737@gmail.com'
+  }
+  failure {
+    emailext body: '''Build over--- failure
+
+
+Regards,
+NagaMallareddy
+8309487242''', subject: 'Build over---', to: 'nagamallareddy2737@gmail.com'
+  }
+}
+
+}//pipelineclosing tag
