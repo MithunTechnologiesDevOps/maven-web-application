@@ -32,7 +32,7 @@ stage(Build') {
    sh 'mvn clean package'
   }
 }
-
+/*
 //Execute SonarQube Report
 stage('Execute SonarQube Report') {
   steps {
@@ -55,7 +55,7 @@ stage('deployAppIntoTomcatServer') {
 }
   }
 }
-
+*/
 }//stages closing tag
 
 post {
