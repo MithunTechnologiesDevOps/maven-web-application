@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1 align="center">Welcome to Mithun Technologies Pvt Ltd. Sri Satya Sai (Dist),Andhra Pradesh,India </h1>
-<h1 align="center"> Poll SCM Demo -  New DevOps with AWS  Batch will start in April Month  2024 at 7.30 PM IST - Contact 9980923226/9980923216 or devopstrainingblr@gmail.com and also Terraform new batch will start on March 27th</h1> 
+<h1 align="center"> GitHub WebHook Demo -  New DevOps with AWS  Batch will start in April Month  2024 at 7.30 PM IST - Contact 9980923226/9980923216 or devopstrainingblr@gmail.com and also Terraform new batch will start on March 27th at 8 AM IST</h1> 
 <h1 align="center"> Mithun Technologies- Very Good Training center for DevOps with AWS in Bangalore India and also for Job Assitance Job Support also...Teaching Real Time scnerios</h1>
 <hr>
 <br>
