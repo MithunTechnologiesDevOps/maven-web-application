@@ -31,7 +31,7 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 <hr>
 <div style="text-align: center;">
 	<span>
-		<img src="https://www.pexels.com/photo/close-up-photo-of-glowing-blue-butterflies-326055/" alt="" width="100">
+		<img src="images/mithunlogo.jpg" alt="" width="100">
 	</span>
 	<span style="font-weight: bold;">
 		Mithun Technologies, 
