@@ -21,9 +21,8 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<sonar.host.url>http://15.207.115.128:9000/</sonar.host.url>
-                <sonar.login>squ_20b322d4dcafd1b98e70a7dd3522f1ac0224ed7d</sonar.login>
-             
+                <sonar.host.url>http://3.110.153.232:9000/</sonar.host.url>
+                <sonar.login>squ_f1a221d6149985741bb984dd0c54c08f25ed8bea</sonar.login>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
@@ -95,17 +94,17 @@
 	
 	<distributionManagement>
 	
-	    <repository>
-	      <id>nexus</id>
-	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://65.0.133.140:9980/adrtech/repository/maven-releases/</url>
-	    </repository>
-	    
-	    <snapshotRepository>
-	      <id>nexus</id>
-	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://65.0.133.140:9980/adrtech/repository/maven-snapshots/</url>
-	    </snapshotRepository>
+            <repository>
+              <id>nexus</id>
+              <name>Mithun Technologies Releases Nexus Repository</name>
+              <url>http://3.6.87.179:9980/adrtech/repository/maven-releases/</url>
+            </repository>
+
+            <snapshotRepository>
+              <id>nexus</id>
+              <name>Mithun Technologies Snapshot Nexus Repository</name>
+              <url>http://3.6.87.179:9980/adrtech/repository/maven-snapshot/</url>
+            </snapshotRepository>
 	    
 	</distributionManagement>
 	
