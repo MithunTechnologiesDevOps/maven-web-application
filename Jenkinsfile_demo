@@ -1,5 +1,5 @@
 node() {
-buildName 'dev - ${BUILD_NUMBER}
+buildName 'dev - ${BUILD_NUMBER}'
 def MavenHome = tool name:"mvn3.9.5"
 echo " The job name is: ${env.JOB_NAME} "
 echo " The Build number is: ${env.BUILD_NUMBER} "
