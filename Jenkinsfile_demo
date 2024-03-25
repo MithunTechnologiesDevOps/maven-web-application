@@ -14,6 +14,7 @@ stage('sonar')
 {
 sh "$MavenHome/bin/mvn sonar:sonar"
 }
+/*
 stage('deploy')
 {
 sh "$MavenHome/bin/mvn deploy"
@@ -25,4 +26,5 @@ sshagent(['66ee914c-2cc2-42de-830f-ea03a9d1bfdb'])
 sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.201.69.23:/opt/apache-tomcat-9.0.87/webapps/"
 }
 }
+*/
 }
