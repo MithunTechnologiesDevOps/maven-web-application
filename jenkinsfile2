@@ -14,3 +14,4 @@ node
     sh "scp -o StrickHostKeyChecking=no target/maven-web-application.war ec2-user@15.207.14.90:/opt/apache-tomcat-9.0.86/webapps" 
    }
  }
+}
