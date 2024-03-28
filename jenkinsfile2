@@ -7,6 +7,6 @@ node
         sh "mvn clean package"
     }
     stage('sonarqube'){
-        sh "sonar:sonar"
+        sh "mvn sonar:sonar"
     }
  }
