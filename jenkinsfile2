@@ -12,6 +12,7 @@ node
    stage('tomcat'){
     sshagent(['59c55a02-ca62-4587-9411-a80bffdb5f5b']) {
     sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@15.207.14.90:/opt/apache-tomcat-9.0.86/webapps" 
+  }
    }
   stage('jacoco'){
      jacoco deltaBranchCoverage: '80', deltaClassCoverage: '80', deltaComplexityCoverage: '80', deltaInstructionCoverage: '80', deltaLineCoverage: '80', deltaMethodCoverage: '80', maximumBranchCoverage: '80', maximumClassCoverage: '80', maximumComplexityCoverage: '80', maximumInstructionCoverage: '80', maximumLineCoverage: '80', maximumMethodCoverage: '80', minimumBranchCoverage: '80', minimumClassCoverage: '80', minimumComplexityCoverage: '80', minimumInstructionCoverage: '80', minimumLineCoverage: '80', minimumMethodCoverage: '80'
