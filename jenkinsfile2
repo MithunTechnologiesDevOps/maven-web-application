@@ -1,0 +1,12 @@
+node 
+{
+    stage('github'){
+        git credentialsId: 'e83465fa-0c52-481d-9768-d205ffa8f41f', url: 'https://github.com/thejeshkum/maven-web-application.git'
+    }
+    stage('maven'){
+        sh "mvn clean package"
+    }
+    stage('sonarqube'){
+        sh "sonar:sonar"
+    }
+ }
