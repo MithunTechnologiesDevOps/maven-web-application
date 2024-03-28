@@ -24,6 +24,5 @@ build and deployment successful,
 88998898876686,
 done.
 
-''', recipientProviders: [shiva()], subject: 'about build and deployment ', to: 'psivakumar3115@gmail.com'
  }
 }
