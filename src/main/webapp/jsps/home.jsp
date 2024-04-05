@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1 align="center">Selva's project. Ph No: +91-9148408964 ,+91-8553621434 Marathahalli,Bengaluru,Karnataka </h1>
-<h1 align="center">Selva's project- Hello guys im building this project for test purpose , HYDER if you seeing this message means whatever the project im doing it its RIGHT , finally i want to convey one message to you is GET WELl SOON & FUCK YOU HYDER</h1>
+<h1 align="center">Selva's project- Hello guys im building this project for test purpose , HYDER if you seeing this message means whatever the project im doing it its RIGHT , finally i want to convey one message to you is GET WELL SOON & FUCK YOU HYDER</h1>
 <hr>
 <br>
 	<h1><h3> Server Side IP Address </h3><br>
