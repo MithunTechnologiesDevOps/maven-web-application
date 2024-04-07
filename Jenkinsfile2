@@ -1,0 +1,33 @@
+pipeline{
+agent any
+
+tools{
+maven 'maven3.9.3'
+}
+stages{
+stage('checkOutCode'){
+steps{
+  git credentialsId: 'b39244e6-7607-4662-bba3-41e7c748f33d', url: 'https://github.com/sharma08153/maven-web-application.git'
+}
+}
+}
+  //Build Stage
+stage('Build stage'){
+steps{
+sh "mvn clean package"  
+}
+}
+//Excute Sonarqube Report
+stage('ExcuteSonarQubeReport'){
+steps{
+sh "mvn clean sonar:sonar"  
+}
+}
+  //Upload Artifacts Into Nexus
+stage('uploadArtifactsIntoNexus'){
+steps{
+sh "mvn clean deploy"
+}  
+}
+  
+}
