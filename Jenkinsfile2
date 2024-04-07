@@ -10,7 +10,6 @@ steps{
   git credentialsId: 'b39244e6-7607-4662-bba3-41e7c748f33d', url: 'https://github.com/sharma08153/maven-web-application.git'
 }
 }
-}
   //Build Stage
 stage('Build stage'){
 steps{
@@ -28,6 +27,5 @@ stage('uploadArtifactsIntoNexus'){
 steps{
 sh "mvn clean deploy"
 }  
-}
-  
+}  
 }
