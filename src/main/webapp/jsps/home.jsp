@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1 align="center">Selva's project. Ph No: +91-9148408964 ,+91-8553621434 Marathahalli,Bengaluru,Karnataka </h1>
-<h1 align="center">Selva's project- Hello guys im building this project for test purpose, i want to convey one message to you is GET WELL SOON Hyder J</h1>
+<h1 align="center">Selva's project- Hello folks im building this project for test purpose, there is no applicatipn code is present here & nothing to do with this app </h1>
 <hr>
 <br>
 	<h1><h3> Server Side IP Address </h3><br>
