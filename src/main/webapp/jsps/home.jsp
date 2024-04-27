@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1 align="center">Selva's project. Ph No: +91-9148408964 ,+91-8553621434 Marathahalli,Bengaluru,Karnataka </h1>
-<h1 align="center">Selva's project- Hello folks im building this project for test purpose, there is no applicatipn code is present here & nothing to do with this app </h1>
+<h1 align="center">Selva's project- Hello folks im building this project for test purpose, there is no application code is present here & nothing to do with this app </h1>
 <hr>
 <br>
 	<h1><h3> Server Side IP Address </h3><br>
@@ -31,15 +31,15 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 <hr>
 <div style="text-align: center;">
 	<span>
-		<img src="images/mithunlogo.jpg" alt="" width="100">
+		<img src="images/mithunlogo.jpg" alt="" width="10">
 	</span>
 	<span style="font-weight: bold;">
 		Maarathahalli, 
-		Martha Halli, Above ICICI Bank, Beside Meghana Foods,
+		Martha Halli, Near Tulasi teatre road,
 		Bangalore,
 		+91-9148408964,+91-8553621434
 		<br>
-		<a href="mailto:devopstrainingblr@gmail.com">Mail to Mithun Technologies</a>
+		<a href="mailto:devopstrainingblr@gmail.com">Mail to selva@gmail.com</a>
 	</span>
 </div>
 <hr>
