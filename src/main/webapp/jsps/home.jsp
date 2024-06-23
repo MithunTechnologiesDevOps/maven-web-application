@@ -9,8 +9,8 @@
 </head>
 </head>
 <body>
-<h1 align="center"> Welcome to Mithun Technologies Private Ltd. Best Place to upskill - New DevOps Batch will start on May 1st at 7.30 PM IST</h1>
-<h1 align="center">Welcome to Mithun Technologies Private Ltd. Ph No: +91-9980923226, +91-9980923216 ,+91-9900012028,Bengaluru,Karnataka,India</h1>
+<h1 align="center"> Welcome to Vishal Lokhande's new practice sessions. Best Place to upskill - I really love to explore new things and concepts of DevOps tools </h1>
+<h1 align="center">Vishal Lokhande, Bengaluru</h1>
 <h1 align="center"> Mithun Technologies- Very Good Training center for DevOps with AWS,Python & AWS Solution Architect & Terraform in Bangalore India.Teaching Real Time scnerios</h1>
 <hr>
 <br>
