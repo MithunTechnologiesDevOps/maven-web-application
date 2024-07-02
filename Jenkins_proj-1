@@ -26,4 +26,4 @@ stage('ExecuteSonarQubeReport')
     sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@172.31.61.242:/opt/apache-tomcat-9.0.90/webapps"
 }
 }
-}
+
