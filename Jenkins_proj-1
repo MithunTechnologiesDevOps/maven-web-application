@@ -15,7 +15,7 @@ git branch: 'development', credentialsId: '46db2c6e-11ae-4a3b-a13a-a85977836537'
 stage('Build'){
 sh "${mavenHome}/bin/mvn clean package"
 }
-stage('ExecuteSonarQubeReport')
+stage('ExecuteSonarQubeReport'){
  sh "${mavenHome}/bin/mvn clean sonar:sonar"
 }
  stage('UploadArtifactIntoNexus'){
@@ -26,4 +26,4 @@ stage('ExecuteSonarQubeReport')
     sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@172.31.61.242:/opt/apache-tomcat-9.0.90/webapps"
 }
 }
-
+}
