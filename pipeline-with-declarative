@@ -1,0 +1,94 @@
+pipeline {
+    agent any
+    
+    tools {
+        maven 'maven3.9.5'
+    }
+    parameters {
+  string defaultValue: 'DevOps Engineer', description: 'my name is', name: 'vishal'
+}
+    options {
+        timestamps()
+        buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '5', numToKeepStr: '5'))
+    }
+    
+    triggers {
+        pollSCM('H/5 * * * *')
+    }
+    
+    stages {
+        stage('CheckOutCode') {
+            steps {
+                script {
+                    try {
+                        sendSlackNotifications("STARTED")
+                        git branch: 'development', credentialsId: '46db2c6e-11ae-4a3b-a13a-a85977836537', url: 'https://github.com/Vishallokhande2024/maven-web-application.git'
+                    } catch (Exception e) {
+                        currentBuild.result = 'FAILURE'
+                        throw e
+                    }
+                }
+            }
+        }
+        
+        stage('Build') {
+            steps {
+                sh "mvn clean package"
+            }
+        }
+        
+        stage('ExecuteSonarQubeReport') {
+            steps {
+                sh "mvn clean sonar:sonar"
+            }
+        }
+        
+        stage('UploadArtifactsIntoNexus') {
+            steps {
+                sh "mvn clean deploy"
+            }
+        }
+        
+        stage('DeployAppIntoTomcat') {
+            steps {
+                sshagent(['6436c6a5-04ed-4913-9aa0-eb65978a4159']) {
+                    sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@172.31.24.190:/opt/apache-tomcat-9.0.90/webapps"
+                }
+            }
+        }
+    }
+    
+    post {
+        success {
+            script {
+                sendSlackNotifications(currentBuild.result)
+            }
+        }
+        failure {
+            script {
+                sendSlackNotifications(currentBuild.result)
+            }
+        }
+    }
+}
+
+def sendSlackNotifications(String buildStatus = 'STARTED') {
+    buildStatus = buildStatus ?: 'SUCCESS'
+    def colorName = 'RED'
+    def colorCode = '#FF0000'
+    def subject = "${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'"
+    def summary = "${subject} (${env.BUILD_URL})"
+    
+    if (buildStatus == 'STARTED') {
+        colorName = 'YELLOW'
+        colorCode = '#FFFF00'
+    } else if (buildStatus == 'SUCCESS') {
+        colorName = 'GREEN'
+        colorCode = '#00FF00'
+    } else {
+        colorName = 'RED'
+        colorCode = '#FF0000'
+    }
+    
+    slackSend(color: colorCode, message: summary, channel: "devops_jenkins-script")
+}
