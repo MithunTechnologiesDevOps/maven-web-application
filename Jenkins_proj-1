@@ -1,29 +1,44 @@
-node{
-properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * *')])])
+node {
+    // Set up job properties including build discarder and SCM polling
+    properties([
+        buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')),
+        [$class: 'JobLocalConfiguration', changeReasonComment: ''],
+        pipelineTriggers([pollSCM('* * * * *')])
+    ])
 
-echo "The Job name is: ${env.JOB_NAME}"
-echo "The Nod ename is: ${env.NODE_NAME}"
-echo "The Build Number is: ${env.BUILD_NUMBER}"
-echo "The Jenkins Home directory is: ${JENKINS_HOME}"
+    // Echo some environment variables
+    echo "The Job name is: ${env.JOB_NAME}"
+    echo "The Node name is: ${env.NODE_NAME}"
+    echo "The Build Number is: ${env.BUILD_NUMBER}"
+    echo "The Jenkins Home directory is: ${JENKINS_HOME}"
     
-    def mavenHome = tool name:  'maven3.9.5'
+    // Set up Maven tool
+    def mavenHome = tool name: 'maven3.9.5'
     
-stage('CheckOutCode'){
-git branch: 'development', credentialsId: '46db2c6e-11ae-4a3b-a13a-a85977836537', url: 'https://github.com/Vishallokhande2024/maven-web-application.git'
-}
+    // Checkout code
+    stage('CheckOutCode') {
+        git branch: 'development', credentialsId: '46db2c6e-11ae-4a3b-a13a-a85977836537', url: 'https://github.com/Vishallokhande2024/maven-web-application.git'
+    }
 
-stage('Build'){
-sh "${mavenHome}/bin/mvn clean package"
-}
-stage('ExecuteSonarQubeReport'){
- sh "${mavenHome}/bin/mvn clean sonar:sonar"
-}
- stage('UploadArtifactIntoNexus'){
- sh "${mavenHome}/bin/mvn clean deploy"
-}
- stage('DeployAppIntoTomcat'){
- sshagent(['6436c6a5-04ed-4913-9aa0-eb65978a4159']) {
-                    sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@172.31.24.190:/opt/apache-tomcat-9.0.90/webapps"
-}
-}
+    // Build the project
+    stage('Build') {
+        sh "${mavenHome}/bin/mvn clean package"
+    }
+
+    // Run SonarQube analysis
+    stage('ExecuteSonarQubeReport') {
+        sh "${mavenHome}/bin/mvn clean sonar:sonar"
+    }
+
+    // Upload artifact to Nexus
+    stage('UploadArtifactIntoNexus') {
+        sh "${mavenHome}/bin/mvn clean deploy"
+    }
+
+    // Deploy to Tomcat
+    stage('DeployAppIntoTomcat') {
+        sshagent(['6436c6a5-04ed-4913-9aa0-eb65978a4159']) {
+            sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@172.31.24.190:/opt/apache-tomcat-9.0.90/webapps"
+        }
+    }
 }
