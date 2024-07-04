@@ -11,12 +11,7 @@ pipeline {
         timestamps()
         buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '5', numToKeepStr: '5'))
     }
-    
-    triggers {
-        pollSCM('H/5 * * * *')
-    }
-    
-    stages {
+     stages {
         stage('CheckOutCode') {
             steps {
                 script {
@@ -52,7 +47,7 @@ pipeline {
         stage('DeployAppIntoTomcat') {
             steps {
                 sshagent(['6436c6a5-04ed-4913-9aa0-eb65978a4159']) {
-                    sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@172.31.24.190:/opt/apache-tomcat-9.0.90/webapps"
+                    sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@54.83.112.234:/opt/apache-tomcat-9.0.90/webapps"
                 }
             }
         }
