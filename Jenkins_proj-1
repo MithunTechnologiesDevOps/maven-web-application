@@ -1,12 +1,5 @@
 node {
-    // Set up job properties including build discarder and SCM polling
-    properties([
-        buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')),
-        [$class: 'JobLocalConfiguration', changeReasonComment: ''],
-        pipelineTriggers([pollSCM('* * * * *')])
-    ])
-
-    // Echo some environment variables
+     // Echo some environment variables
     echo "The Job name is: ${env.JOB_NAME}"
     echo "The Node name is: ${env.NODE_NAME}"
     echo "The Build Number is: ${env.BUILD_NUMBER}"
