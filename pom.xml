@@ -4,7 +4,7 @@
 	
 	<groupId>com.mt</groupId>
 	<artifactId>maven-web-application</artifactId>
-	<version>0.0.1-snapshot</version>
+	<version>0.0.1</version>
 	<packaging>war</packaging>
 	
 	<name>maven-web-application</name>
@@ -18,7 +18,7 @@
 
 	<properties>
 		<jdk.version>1.8</jdk.version>
-		<spring.version>5.1.2.Release</spring.version>
+		<spring.version>5.1.2.release</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
 		<sonar.host.url>http://13.201.71.128/9000/</sonar.host.url>
