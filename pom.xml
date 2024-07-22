@@ -105,7 +105,7 @@
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Aish Technologies Snapshot Nexus Repository </name>
-	      <URL>http://3.108.64.44:8081/repository/snapshot-repo-maven</url>
+	      <url>http://3.108.64.44:8081/repository/snapshot-repo-maven</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
