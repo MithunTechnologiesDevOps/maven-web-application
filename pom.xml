@@ -99,13 +99,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Aish Technologies Releases Nexus Repository</name>
-	      <url>http://3.108.64.44:8081/repository/relaese-repo-maven</url>
+	      <url>http://13.200.215.33:8081/repository/snapshot-repo-maven/<url>
 	      </repository>
 		
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Aish Technologies Snapshot Nexus Repository </name>
-	      <url>http://3.108.64.44:8081/repository/snapshot-repo-maven</url>
+	      <url>http://13.200.215.33:8081/repository/snapshot-repo-maven/<url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
