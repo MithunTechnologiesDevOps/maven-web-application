@@ -105,7 +105,7 @@
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Aish Technologies Snapshot Nexus Repository </name>
-	      <URL>http://13.233.103.1:8081/repository/snapshot-repo-maven</url>
+	      <url>http://13.233.103.1:8081/repository/snapshot-repo-maven</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
