@@ -1,0 +1,25 @@
+pipeline {
+
+tools {
+ maven 'maven'
+}
+
+stages{
+
+   stage ('clone code') 
+   {
+    steps
+    {
+    git branch: 'development', url: 'https://github.com/Aishwarya1703/maven-web-application.git'      
+
+    }
+}
+stage('Build'){
+  steps{
+  sh  "mvn package"
+  }
+  }
+
+
+}
+}
