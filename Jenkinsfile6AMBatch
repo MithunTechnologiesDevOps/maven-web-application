@@ -41,7 +41,7 @@ mail bcc: 'devopstrainingblr@gmail.com', body: '''Build Over...
 
 Regards,
 Mithun Technologies,
-9980923226''', cc: 'devopstrainingblr@gmail.com', from: '', replyTo: '', subject: 'Build Over!!', to: 'devopstrainingblr@gmail.com'
+9980923226''', cc: 'devopstrainingblr@gmail.com', from: '', replyTo: '', subject: 'Build Over!!', to: 'aish94.nair'
 }
 */
 
