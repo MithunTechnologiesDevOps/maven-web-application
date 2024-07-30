@@ -1,7 +1,8 @@
 node
 {
+//
     properties([[$class: 'JiraProjectProperty'], buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), pipelineTriggers([pollSCM('* * * * *')])])
-
+//
 
 def mavenHome = tool name: "mavan3.6.3"
 
