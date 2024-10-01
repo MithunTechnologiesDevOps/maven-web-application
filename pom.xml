@@ -97,13 +97,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Mbr Releases Nexus Repository</name>
-	      <url>http://34.203.40.254:9945/mbr/repository/maven-releases/</url>
+	      <url>http://15.206.169.34:9945/mbr/repository/mbr-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mbr Snapshot Nexus Repository </name>
-	      <url>http:http://34.203.40.254:9945/mbr/repository/mbr-snapshot/</url>
+	      <url>http://15.206.169.34:9945/mbr/repository/mbr-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
