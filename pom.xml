@@ -89,9 +89,20 @@
 			<version>3.1.0</version>
 			<scope>provided</scope>
 		</dependency>
-		
+		<dependency>
+           <groupId>com.mt</groupId>
+              <artifactId>maven-web-application</artifactId>   
+               <version>1.1.0</version>
+           </dependency>
 	</dependencies>
 	
+	             <repositories>
+                   <repository>
+                           <id>nexus</id>
+                           <url>http://13.200.253.168:9945/mbr/repository/mbr-group/</url>
+                      </repository>
+                          </repositories>
+
 	<distributionManagement>
 	
 	    <repository>
