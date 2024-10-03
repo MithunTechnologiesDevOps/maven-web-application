@@ -31,20 +31,20 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 <hr>
 <div style="text-align: center;">
 	<span>
-		<img src="images/mithunlogo.jpg" alt="" width="100">
+		<img src="images/mbr" alt="" width="100">
 	</span>
 	<span style="font-weight: bold;">
 		BHARATHREDDY
 		<br>
-		<a href="mbr@gmail.com">Mail to MBR</a>
+		<a href="mbharathreddy1997@gmail.com">Mail to MBR</a>
 	</span>
 </div>
 <hr>
 	<p> Service : <a href="services/employee/getEmployeeDetails">Get Employee Details </p>
 <hr>
 <hr>
-<p align=center>Mithun Technologies - Consultant, Training, Development Center.</p>
-<p align=center><small>Copyrights 2022 by <a href="http://mithuntechnologies.com/">MBR,Bengaluru</a> </small></p>
+<p align=center>MBR</p>
+<p align=center><small>Copyrights 2022 by <a href="http://bharathreddymbrr@gmail.com/">MBR,Bengaluru</a> </small></p>
 
 </body>
 </html>
