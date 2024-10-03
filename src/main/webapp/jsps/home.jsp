@@ -13,7 +13,7 @@
 <h1 align="center"> MBR</h1>
 <hr>
 <br>
-	<h1><h3> Server Side IP Address </h3><br>
+	<h1><h3>MBR Server Side IP Address </h3><br>
 
 <% 
 String ip = "";
