@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>MBR- Home Page</title>
-<link href="images/mithunlogo.jpg" rel="icon">
+<link href="images/mbr.jpeg" rel="icon">
 </head>
 </head>
 <body>
@@ -31,9 +31,9 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 <hr>
 <div style="text-align: center;">
 	<span>
-		<img src="images/mbr" alt="" width="100">
+		<img src="images/mbr.jpeg" alt="" width="100">
 	</span>
-	<span style="font-weight: bold;">
+	<span style="font-weight: bold; color="red">
 		BHARATHREDDY
 		<br>
 		<a href="mbharathreddy1997@gmail.com">Mail to MBR</a>
