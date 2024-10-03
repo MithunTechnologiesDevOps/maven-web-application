@@ -96,14 +96,14 @@
 	
 	    <repository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://13.212.71.229:9980/mithuntechnologies/repository/canarabank-snapshot/</url>
+	      <name>MBR Releases Nexus Repository</name>
+	      <url>http://3.6.39.211:9945/mbr/repository/MBR-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://13.212.71.229:9980/mithuntechnologies/repository/canarabank-release/</url>
+	      <name>MBR Snapshot Nexus Repository </name>
+	      <url>http://3.6.39.211:9945/mbr/repository/MBR-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
