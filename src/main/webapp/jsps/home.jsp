@@ -4,13 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>MBR- Home Page</title>
+<title>MBR-Home Page</title>
 <link href="images/mbr.jpeg" rel="icon">
 </head>
 </head>
 <body>
 <h1 align="center">BHARATHREDDY_MBR</h1>
-<h1 align="center"> MBR</h1>
+<h1 align="center">MBR</h1>
+<h1>REDDY</h1>
 <hr>
 <br>
 	<h1><h3>MBR Server Side IP Address </h3><br>
