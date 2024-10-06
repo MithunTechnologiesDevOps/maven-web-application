@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>MBR-Home Page</title>
+<title>MBR-Home-Page</title>
 <link href="images/mbr.jpeg" rel="icon">
 </head>
 </head>
