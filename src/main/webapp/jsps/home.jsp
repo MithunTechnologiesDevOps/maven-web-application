@@ -11,7 +11,7 @@
 <body>
 <h1 align="center">BHARATHREDDY_MBR</h1>
 <h1 align="center">MBR</h1>
-<h1>REDDY</h1>
+<h1>BHARATHREDDY</h1>
 <hr>
 <br>
 	<h1><h3>MBR Server Side IP Address </h3><br>
