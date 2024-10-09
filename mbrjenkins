@@ -1,0 +1,12 @@
+node {
+def mavenHome = tool name : 'maven3.9.9'
+stage ('GitHub-Checkout'){
+        git credentialsId: '1945cb57-674d-4973-8473-419a2542640b', url: 'https://github.com/mbr-map/maven-web-application.git'
+    }
+    stage ('Maven-Build'){
+        sh "$mavenHome/bin/mvn clean package"
+    }
+    stage ('Execute SonarQubeReport'){
+    sh "$mavenHome/bin/mvn clean sonar:sonar"
+    }
+}
