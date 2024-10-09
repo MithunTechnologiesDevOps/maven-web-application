@@ -98,13 +98,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>MBR Releases Nexus Repository</name>
-	      <url>http://172.31.36.136:9945/mbr/repository/BMR-RELEASE/</url>
+	      <url>http://172.31.90.152:9945/mbr/repository/bmrrelease/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://172.31.36.136:9945/mbr/repository/BMR-SNAPSHOT/</url>
+	      <name>MBR Snapshot Nexus Repository </name>
+	      <url>http://172.31.90.152:9945/mbr/repository/bmrsnapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
