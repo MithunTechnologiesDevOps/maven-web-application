@@ -8,7 +8,7 @@ pipeline{
         stage ('git-Checkout'){
           //  sendslackNotifications('STARTED')
             steps{
-SendslackNotification(currentBuild.result)
+SendslackNotification('STARTED')
                 git credentialsId: 'e833b465-cf3e-42db-83e7-f123de389769', url: 'https://github.com/mbr-map/maven-web-application.git'
             }
         }
