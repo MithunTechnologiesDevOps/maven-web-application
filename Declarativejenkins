@@ -1,0 +1,38 @@
+pipeline{
+    agent any
+    tools {
+  maven 'maven3.9.9'
+}
+
+    stages{
+        stage ('git-Checkout'){
+          //  sendslackNotifications('STARTED')
+            steps{
+                git credentialsId: 'e833b465-cf3e-42db-83e7-f123de389769', url: 'https://github.com/mbr-map/maven-web-application.git'
+            }
+        }
+        stage ('Maven-Build'){
+            steps{
+                sh "mvn clean package"
+            }
+        }
+        stage ('ExecuteSonarQubeReport'){
+            steps{
+                sh "mvn clean sonar:sonar"
+            }
+        }
+        stage ('UploadArtifactIntoNexus'){
+            steps{
+                sh "mvn clean deploy"
+            }
+        }
+        stage ('UploadAllInotTomcat'){
+            steps{
+                sshagent(['7256638f-4bfa-4d91-a88a-f772aa691169']) {
+                    sh "scp -o  StrictHostKeyChecking=no target/maven-web-application.war ec2-user@34.229.44.73:/opt/apache-tomcat-9.0.96/webapps"
+}
+            }
+        }
+    }//closing-stages
+}
+   
