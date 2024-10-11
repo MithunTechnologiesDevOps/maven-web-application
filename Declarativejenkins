@@ -38,7 +38,7 @@ SendslackNotification('STARTED')
         stage ('UploadAllInotTomcat'){
             steps{
                 sshagent(['7256638f-4bfa-4d91-a88a-f772aa691169']) {
-                    sh "scp -o  StrictHostKeyChecking=no target/maven-web-application.war ec2-user@34.229.44.73:/opt/apache-tomcat-9.0.96/webapps"
+                    sh "scp -o  StrictHostKeyChecking=no target/maven-web-application.war ec2-user@172.31.36.136:/opt/apache-tomcat-9.0.96/webapps"
 }
             }
         }
