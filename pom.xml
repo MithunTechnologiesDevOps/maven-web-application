@@ -1,33 +1,32 @@
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	
-	<groupId>com.mt</groupId>
-	<artifactId>maven-web-application</artifactId>
-	<packaging>war</packaging>
-	<version>1.0.0</version>
-	
-	<name>maven-web-application</name>
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+        <modelVersion>4.0.0</modelVersion>
 
-	<description>Maven Web Project for Java Project</description>
+        <groupId>com.mt</groupId>
+        <artifactId>maven-web-application</artifactId>
+        <packaging>war</packaging>
+        <version>0.0.1-SNAPSHOT</version>
 
-	<organization>
-		<name>Mithun Technologies</name>
-		<url>http://mithuntechnologies.com/</url>
-	</organization>
+        <name>maven-web-application</name>
 
-	<properties>
-		<jdk.version>1.8</jdk.version>
-		<spring.version>5.1.2.RELEASE</spring.version>
-		<junit.version>4.11</junit.version>
-		<log4j.version>1.2.17</log4j.version>
-		<sonar.host.url>http://172.31.82.22:9000/</sonar.host.url>
-		<sonar.login>squ_605f3f9b4664954993404e942490ff94cf3926be</sonar.login>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <description>Maven Web Project for Java Project</description>
 
-	</properties>
+        <organization>
+                <name>Mithun Technologies</name>
+                <url>http://mithuntechnologies.com/</url>
+        </organization>
+
+        <properties>
+                <jdk.version>1.8</jdk.version>
+                <spring.version>5.1.2.RELEASE</spring.version>
+                <junit.version>4.11</junit.version>
+                <log4j.version>1.2.17</log4j.version>
+                <sonar.host.url>http://172.31.82.22:9000/</sonar.host.url>
+                <sonar.login>squ_605f3f9b4664954993404e942490ff94cf3926be</sonar.login>
+                <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+                <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        </properties>
 
 	<dependencies>
 		
