@@ -6,8 +6,12 @@ pipeline{
 options {
   buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')
   timestamps()
+//BranchName
 }
-
+parameters {
+  choice choices: ['master', 'developement', 'stage', 'uat', 'performance'], description: 'select the branch', name: 'BranchName'
+  string defaultValue: 'MBR', description: 'if you want to change the default value...', name: 'StringName'
+}
     stages{
         stage ('git-Checkout'){
           //  sendslackNotifications('STARTED')
