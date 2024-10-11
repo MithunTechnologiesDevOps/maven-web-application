@@ -16,7 +16,7 @@ triggers {
   cron '* * * * *'
 }
 echo "Build name : ${env.BUILD_NAME}"
-echo " Node Number : ${env.NODE_NUMBER}
+echo " Node Number : ${env.NODE_NUMBER}"
     stages{
         stage ('git-Checkout'){
           //  sendslackNotifications('STARTED')
