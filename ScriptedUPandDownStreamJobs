@@ -1,5 +1,5 @@
 node {
-def upstreamStreamJob = 'UpJobA'
+//def upstreamStreamJob = 'UpJobA'
 def downStreamJob = 'UpJobB'
 def mavenhome = tool name :'maven3.9.9'
 properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '2', artifactNumToKeepStr: '2', daysToKeepStr: '2', numToKeepStr: '2'))])
@@ -15,7 +15,9 @@ sh "$mavenhome/bin/mvn clean package"
 stage ('TriggerDownStream'){
 buildJob : 'downStreamJob'
 }
+/*
 stage ('TriggerUpStream'){
 buildJob :'upstreamStreamJob'
 }
+*/
 }
