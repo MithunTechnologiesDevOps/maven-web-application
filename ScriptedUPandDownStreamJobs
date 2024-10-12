@@ -1,0 +1,20 @@
+node {
+def upstreamStreamJob = 'UpJobA'
+def downStreamJob = 'UpJobB'
+def mavenhome = tool name :'maven3.9.9'
+stage ('git-checkout'){
+git branch: 'developement', credentialsId: 'e833b465-cf3e-42db-83e7-f123de389769', url: 'https://github.com/mbr-map/maven-web-application.git'
+}
+stage ('RunTestCases'){
+sh "$mavenhome/bin/mvn clean test"
+}
+stage ('Maven-Build'){
+sh "$mavenhome/bin/mvn clean package"
+}
+stage ('TriggerDownStream'){
+buildJob : 'downStreamJob'
+}
+stage ('TriggerUpStream'){
+buildJob :'upstreamStreamJob'
+}
+}
