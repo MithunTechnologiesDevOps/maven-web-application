@@ -1,8 +1,8 @@
 node{
 def maven_home = tool name: 'maven3.9.9'
 properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '2', artifactNumToKeepStr: '2', daysToKeepStr: '2', numToKeepStr: '2')), pipelineTriggers([githubPush()])])
-echo "Branch name is :"${'env.BRANCH_NAME'} 
-echo "build Number is:"${'env.BUILD_NUMBER'}
+echo "Branch name is :${env.BRANCH_NAME} "
+echo "build Number is:${env.BUILD_NUMBER}"
 try {
 stage ('Git-Clone'){
 SendSlackNotification('STARTED')
