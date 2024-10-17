@@ -1,0 +1,6 @@
+node{
+def maven_home = tool name: 'maven3.9.9'
+stage ('Git-Clone'){
+
+}
+}//nodeClosing
