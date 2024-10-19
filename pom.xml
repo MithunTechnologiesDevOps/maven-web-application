@@ -21,8 +21,8 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<sonar.host.url>http://172.31.31.224:9000/</sonar.host.url>
-		<sonar.login>squ_71817690eef2384cc9378677a0eb06d4c6734578</sonar.login>
+		<sonar.host.url>http://3.110.221.229:9000/</sonar.host.url>
+		<sonar.login>d3abdb1dff0f798db4ca3d08546c3b4114327979</sonar.login>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
@@ -97,13 +97,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://172.31.18.88:9980/mithuntechnologies/repository/canarabank-releases/</url>
+	      <url>http://3.6.93.170:9980/vani/repository/facebook-releases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://172.31.18.88:9980/mithuntechnologies/repository/canarabank-snapshot/</url>
+	      <url>http://3.6.93.170:9980/vani/repository/facebook-snapchat/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
@@ -144,6 +144,11 @@
 					<wtpversion>2.0</wtpversion>
 					<wtpContextName>maven-web-application</wtpContextName>
 				</configuration>
+			</plugin>
+			<plugin>
+  				<groupId>org.sonarsource.scanner.maven</groupId>
+  				<artifactId>sonar-maven-plugin</artifactId>
+  				<version>4.7.0.2747</version> <!-- or the latest version -->
 			</plugin>
 			
 </plugins>
