@@ -9,7 +9,7 @@ echo " The run_displayurl is: ${RUN_DISPLAY_URL}"
 
 try {
 stage ('Git-Clone'){
-SendSlackNotification('STARTED')
+sendSlackNotifications('STARTED')
 git branch: 'developement', credentialsId: 'e833b465-cf3e-42db-83e7-f123de389769', url: 'https://github.com/mbr-map/maven-web-application.git'
 }
 stage ('Maven-Build'){
@@ -34,9 +34,11 @@ catch (e) {
     throw e
   } finally {
     // Success or failure, always send notifications
-    SendSlackNotification(currentBuild.result)
+    sendSlackNotifications(currentBuild.result)
   }
 }//nodeClosing
+
+
 /*
 def SendSlackNotification(String buildStatus = 'STARTED') {
   // build status of null means successful
