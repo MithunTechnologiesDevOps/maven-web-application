@@ -1,4 +1,5 @@
-node ('node'){
+@Library('mbrlib')
+node {
 def maven_home = tool name: 'maven3.9.9'
 properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '2', artifactNumToKeepStr: '2', daysToKeepStr: '2', numToKeepStr: '2')), pipelineTriggers([githubPush()])])
 echo "Branch name is :${env.BRANCH_NAME} "
@@ -36,6 +37,7 @@ catch (e) {
     SendSlackNotification(currentBuild.result)
   }
 }//nodeClosing
+/*
 def SendSlackNotification(String buildStatus = 'STARTED') {
   // build status of null means successful
   buildStatus =  buildStatus ?: 'SUCCESSFUL'
@@ -60,4 +62,4 @@ def SendSlackNotification(String buildStatus = 'STARTED') {
 
   // Send notifications
   slackSend (color: colorCode, message: summary)
-}
+}*/
