@@ -97,13 +97,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://54.169.169.183:8081/repository/maven-releases/</url>
+	      <url>http://54.251.220.193:8081/repository/manish-r/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository</name>
-	      <url>http://54.169.169.183:8081/repository/maven-snapshots/</url>
+	      <url>http://54.251.220.193:8081/repository/manish-s/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
