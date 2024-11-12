@@ -21,8 +21,8 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<sonar.host.url>http://172.31.10.86:9000/</sonar.host.url>
-		<sonar.login>squ_ddd5124a5a1e1e5d8a9e5591475f4db499c2533c</sonar.login>
+		<sonar.host.url>http://172.31.6.126:9000/</sonar.host.url>
+		<sonar.login>squ_7b018778023c15f5e77be88367f797be916ea972</sonar.login>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
@@ -97,13 +97,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>kotakbank release Repository</name>
-	      <url>http://35.165.254.118:8090/ashwath/repository/kotak-bank-release/</url>
+	      <url>http://172.31.10.115:8090/ashwath/repository/kotak-bank-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>kotakbank snapshot repository</name>
-	      <url>http://35.165.254.118:8090/ashwath/repository/kotak-bank-snapshot/</url>
+	      <url>http://172.31.10.115:8090/ashwath/repository/kotak-bank-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
