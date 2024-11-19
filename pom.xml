@@ -21,8 +21,9 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<sonar.host.url>http://172.31.45.98:9000/</sonar.host.url>
-		<sonar.login>squ_8b5bf1e9057b32ea49a542206eadec00089c43cf</sonar.login>
+		<sonar.host.url>http://172.31.6.126:9000/</sonar.host.url>
+		<sonar.login>squ_11307fda10bf34d2aa9b88c682e217bbcb972e4e</sonar.login>
+	       <!-- <sonar.password>catherine</sonar.password> --> 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
@@ -96,14 +97,14 @@
 	
 	    <repository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://172.31.37.134:8081/repository/canarabank-releases/</url>
+	      <name>kotakbank Releases Nexus Repository</name>
+	      <url>http://172.31.10.115:8090/ashwath/repository/kotakbank-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://172.31.37.134:8081/repository/canarabank-snapshot/</url>
+	      <name>kotakbank Snapshot Nexus Repository</name>
+	      <url>http://172.31.10.115:8090/ashwath/repository/kotakbank-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
@@ -112,6 +113,11 @@
 		<finalName>maven-web-application</finalName>
 		
 		<plugins>
+			<plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-war-plugin</artifactId>
+                            <version>3.3.2</version>
+                        </plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
