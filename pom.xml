@@ -98,7 +98,7 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://3.111.187.60:8081/repository/citidev-release/</url>
+	      <url>http://3.111.187.60:8081/repository/citydev-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
