@@ -134,13 +134,12 @@
                     <wtpContextName>maven-web-application</wtpContextName>
                 </configuration>
             </plugin>
-       <plugin>
-    <groupId>org.sonarsource.scanner.maven</groupId>
-    <artifactId>sonar-maven-plugin</artifactId>
-    <version>3.7.0</version>  <!-- Or try another compatible version -->
-</plugin>
-
-
+      
+    <plugin>
+      <groupId>org.sonarsource.scanner.maven</groupId>
+      <artifactId>sonar-maven-plugin</artifactId>
+      <version>4.0.0.4121</version>
+    </plugin>
 
 
         </plugins>
