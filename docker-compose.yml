@@ -1,7 +1,7 @@
 name: mavenwebapp
 services:
   mavenwebapp:
-    image: vkrishna8/maven-web-app:1
+    image: vkrishna8/maven-web-app:${IMAGE_TAG}
     ports:
     - 7070:8080
     networks:
