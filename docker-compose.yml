@@ -1,12 +1,12 @@
 name: mavenwebapp
 services:
   mavenwebapp:
-	  image: vkrishna8/maven-web-app:1
-	  ports:
-	  - 7070:8080
-	  networks:
-	  - mavenwebappbridge
-	  restart: always
+    image: vkrishna8/maven-web-app:1
+    ports:
+    - 7070:8080
+    networks:
+    - mavenwebappbridge
+    restart: always
 networks:
   mavenwebappbridge:
-	  driver: bridge
+    driver: bridge
