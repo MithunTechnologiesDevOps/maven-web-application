@@ -6,7 +6,6 @@ services:
     - 7070:8080
     networks:
     - mavenwebappbridge
-    restart: always
 networks:
   mavenwebappbridge:
     driver: bridge
