@@ -16,7 +16,6 @@
 <hr>
 <br>
 	<h1><h3> Server Side IP Address </h3><br>
-
 <% 
 String ip = "";
 InetAddress inetAddress = InetAddress.getLocalHost();
@@ -51,6 +50,7 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 <hr>
 <p align=center>Mithun Technologies - Consultant, Training, Development Center.</p>
 <p align=center><small>Copyrights 2022 by <a href="http://mithuntechnologies.com/">Mithun Technologies,Bengaluru</a> </small></p>
+
 
 </body>
 </html>
