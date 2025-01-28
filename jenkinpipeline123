@@ -1,0 +1,27 @@
+node{
+
+def mavenHome= tool name: 'maven 3.9.8'
+echo "the job name is: ${env.JOB_NAME}"
+
+stage('checkoutcode'){
+git branch: 'development', credentialsId: '9ed6014f-b353-4539-a033-7a3cadca2d75', url: 'https://github.com/Divyaraj123929/maven-web-application.git'
+}
+stage('build'){
+sh "${mavenHome}/bin/mvn clean package"
+}
+
+stage('sonarqubereport'){
+sh "${mavenHome}/bin/mvn clean sonar:sonar"
+}
+/*
+stage('uploadsrtiactsintonexs'){
+sh "${mavenHome}/bin/mvn clean deploy"
+}
+stage('Deply'){
+sshagent(['7b287172-9ceb-4e2d-a6e3-3a82597adecc']){
+sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@172.31.30.208:/opt/apache-tomcat-9.0.91/webapps"
+}
+}
+/*
+
+}
