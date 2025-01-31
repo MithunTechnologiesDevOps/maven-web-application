@@ -9,10 +9,11 @@
 </head>
 </head>
 <body>
-<h1 align="center" style="color: white; background-color: blue;">MAPR TECHNOLOGIES</h1>
-<h1 align="center">Welcome to MBR Technologies. Ph No: +91-9980923226,+91-9900012028</h1>
+<h1 style="text-align: center; color: white; background-color: blue; padding: 5px;">MAPR TECHNOLOGIES</h1>
+<h1 align="center">Welcome to MBR Technologies.  </h1>
 <h1 align="center"> MBRTechnologies- Very Good Training center for DevOps & Cloud </h1>
-
+<h5 style="text-align: right;">Ph No: +91-9980923226, +91-9900012028</h5>
+<h5 style="text-align: right;">Address: MBR Tech Park banaglore-564321</h5>
 <h2>  Name: Bharathreddy MBR</h2>
 <h2> MAPR TECHNOLOGIES </h2>
 <hr>
