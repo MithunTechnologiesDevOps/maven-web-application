@@ -37,7 +37,7 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 <hr>
 <div style="text-align: center;">
 	<span>
-		<img src="images/mbr.jpeg" alt="" width="100">
+		<img src="images/mbr.jpeg" alt="" width="50">
 	</span>
 	<span style="font-weight: bold;">
 		MBR Technologies, 
