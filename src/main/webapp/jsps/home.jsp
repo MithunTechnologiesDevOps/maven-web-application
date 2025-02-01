@@ -10,11 +10,10 @@
 </head>
 <body>
 <h1 style="text-align: center; color: white; background-color: blue; padding: 5px;">MAPR TECHNOLOGIES</h1>
-<h1 align="center">Welcome to MBR Technologies.  </h1>
-<h1 align="center"> MBR Technologies- Very Good  Leading Company in Bharat ...  </h1>
+<h1 style="text-align: center; color: white; background-color: blue; padding: 5px;">Welcome to MBR Technologies.  </h1>
+<h1 align="center"> MBR Technologies- Very Good  Leading Company in Bharat .... </h1>
 <h5 style="text-align: right;">Ph No: +91-9980923226, +91-9900012028</h5>
-<h5 style="text-align: right; font-weight: bold;">Email:mapr@gmail.com,mbr@gmail.com,bmr@gmail.com</h5>
-<h5 style="text-align: right; font-weight: bold;">Address: MBR Tech Park banaglore-564321</h5>
+
 <h2 style="font-weight: bold;">  Name: Bharathreddy MBR</h2>
 <h2 style="font-weight: bold;"> MAPR TECHNOLOGIES </h2>
 <hr>
@@ -36,6 +35,8 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 <%out.print( "Client Name Host :: "+ request.getRemoteHost() );%><br></h1>
 <hr>
 <div style="text-align: center;">
+<h5 style="text-align: right; font-weight: bold;">Email:mapr@gmail.com,mbr@gmail.com,bmr@gmail.com</h5>
+<h5 style="text-align: right; font-weight: bold;">Address: MBR Tech Park banaglore-564321</h5>
 	<span>
 		<img src="images/mbr.jpeg" alt="" width="50">
 	</span>
