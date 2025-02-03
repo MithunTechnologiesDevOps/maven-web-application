@@ -97,13 +97,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>MBR Technologies Releases Nexus Repository</name>
-	      <url>http://172.31.47.165:9945/repository/Mbr-release/</url>
+	      <url>http://172.31.45.230:9945/repository/Mbr-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>MBR Technologies Snapshot Nexus Repository </name>
-	      <url>http://172.31.47.165:9945/repository/Mbr-snapshot/</url>
+	      <url>http://172.31.45.230:9945/repository/Mbr-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
