@@ -5,7 +5,7 @@
 	<groupId>com.mt</groupId>
 	<artifactId>maven-web-application</artifactId>
 	<packaging>war</packaging>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	
 	<name>maven-web-application</name>
 
@@ -97,13 +97,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>MBR Technologies Releases Nexus Repository</name>
-	      <url>http://13.201.47.236:9945/repository/MBR-Release/</url>
+	      <url>http://172.31.43.85:9945/repository/mbr-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>MBR Technologies Snapshot Nexus Repository </name>
-	      <url>http://13.201.47.236:9945/repository/MBR-snapshot/</url>
+	      <url>http://172.31.43.85:9945/repository/mbr-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
