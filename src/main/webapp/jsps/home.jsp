@@ -4,15 +4,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>MithunTechnologies- Home Page</title>
-<link href="images/mithunlogo.jpg" rel="icon">
+<title>MBRTechnologies- Home Page</title>
+<link href="images/mbr.jpeg" rel="icon">
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to Mithun Technologies. Ph No: +91-9980923226,+91-9900012028</h1>
-<h1 align="center"> Mithun Technologies- Very Good Training center for DevOps & Cloud </h1>
+<h1 style="text-align: center; color: white; background-color: blue; padding: 5px;">MAPR TECHNOLOGIES</h1>
+<h1 style="text-align: center; color: white; background-color: blue; padding: 5px;">Welcome to MBR Technologies.  </h1>
+<h1 align="center"> MBR Technologies- Very Good  Leading Company in Bharat .... </h1>
+<h5 style="text-align: right;">Ph No: +91-9980923226, +91-9900012028</h5>
 
-<h2> Trainer Name: Balaji Reddy Lachhannagari</h2>
+<h2 style="font-weight: bold;">  Name: Bharathreddy MBR</h2>
+<h2 style="font-weight: bold;"> MAPR TECHNOLOGIES </h2>
 <hr>
 <br>
 	<h1><h3> Server Side IP Address </h3><br>
@@ -32,25 +35,27 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 <%out.print( "Client Name Host :: "+ request.getRemoteHost() );%><br></h1>
 <hr>
 <div style="text-align: center;">
+<h5 style="text-align: right; font-weight: bold;">Email:mapr@gmail.com,mbr@gmail.com,bmr@gmail.com</h5>
+<h5 style="text-align: right; font-weight: bold;">Address: MBR Tech Park banaglore-564321</h5>
 	<span>
-		<img src="images/mithunlogo.jpg" alt="" width="100">
+		<img src="images/mbr.jpeg" alt="" width="50">
 	</span>
 	<span style="font-weight: bold;">
-		Mithun Technologies, 
-		Martha Halli, Above ICICI Bank, Beside Meghana Foods,
+		MBR Technologies, 
+		MBR Tech Park,
 		Bangalore,
-		+91-9980923226,+91-9900012028
-		devopstrainingblr@gmail.com
+		+91-990000000,+91-990000000
+		mbr@gmail.com
 		<br>
-		<a href="mailto:devopstrainingblr@gmail.com">Mail to Mithun Technologies</a>
+		<a href="mailto:mbr@gmail.com">Mail to MBR Technologies</a>
 	</span>
 </div>
 <hr>
 	<p> Service : <a href="services/employee/getEmployeeDetails">Get Employee Details </p>
 <hr>
 <hr>
-<p align=center>Mithun Technologies - Consultant, Training, Development Center.</p>
-<p align=center><small>Copyrights 2022 by <a href="http://mithuntechnologies.com/">Mithun Technologies,Bengaluru</a> </small></p>
+<p align=center>MBR Technologies - Consultant, Training, Development Center.</p>
+<p align=center><small>Copyrights 2022 by <a href="http://mbr.com/">MBRTechnologies,Bengaluru</a> </small></p>
 
 </body>
 </html>
