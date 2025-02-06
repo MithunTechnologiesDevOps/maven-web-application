@@ -21,8 +21,8 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<sonar.host.url>http://172.31.39.66:9980/</sonar.host.url>
-		<sonar.login>squ_0eb0ac3258567e81b3d5638ec75531b7da6d7eee</sonar.login>
+		<sonar.host.url>http://3.108.227.45:9980/</sonar.host.url>
+		<sonar.login>squ_04d4c766a851c4f31b0d26d09c7b706a82a6b6b9</sonar.login>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
@@ -83,13 +83,6 @@
 		
 		<!-- provided dependencies -->
 
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<version>3.1.0</version>
-			<scope>provided</scope>
-		</dependency>
-		
 	</dependencies>
 	
 	<distributionManagement>
