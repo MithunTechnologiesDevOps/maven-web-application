@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: mavenwebappcontainer
-          image: vkrishna8/maven-web-app:${IMAGE_TAG}
+          image: vkrishna8/maven-web-app:IMAGE_TAG_PLACEHOLDER
           ports:
             - containerPort: 8080
           resources:
