@@ -97,14 +97,14 @@
 	
 	    <repository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://13.212.71.229:9980/mithuntechnologies/repository/canarabank-snapshot/</url>
+	      <name>sandeep-release</name>
+	      <url>http://http://3.109.200.223:8081/repository/sandeep-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://13.212.71.229:9980/mithuntechnologies/repository/canarabank-release/</url>
+	      <name>sandeep-snapshot</name>
+	      <url>http://3.109.200.223:8081/repository/sandeep-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
