@@ -1,10 +1,11 @@
 
 
 node {
-    
-    echo "Job name is  ${env.JOB_NAME}"
-    echo "Build number is   ${env.BUILD_NUMBER}"
-    echo "Node Name is   ${env.NODE_NAME}"
+
+  properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '2', daysToKeepStr: '2', numToKeepStr: '3')), rateLimitBuilds(), [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * *')])])
+  echo "Job name is  ${env.JOB_NAME}"
+  echo "Build number is   ${env.BUILD_NUMBER}"
+  echo "Node Name is   ${env.NODE_NAME}"
 
   echo "Jenkins Home  is   ${env.JENKINS_HOME}"
 def mavenHome  =  tool  name:'maven3.9.8'
