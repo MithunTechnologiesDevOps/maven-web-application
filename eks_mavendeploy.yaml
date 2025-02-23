@@ -40,3 +40,21 @@ spec:
   ports:
   - port: 80
     targetPort: 8080
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: mavenweabppingressrule
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: mavenwebapp.tech.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: mavenwebappsvc
+            port:
+              number: 80
