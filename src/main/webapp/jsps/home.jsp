@@ -9,7 +9,7 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to Mithun Technologies. Ph No: +91-9980923226,+91-9900012028</h1>
+<h1 align="center">Welcome to Mithun Technologies. Ph No: +91-9980923226,+91-9014996877</h1>
 <h1 align="center"> Mithun Technologies- Very Good Training center for DevOps & Cloud, Python, Java & Node JS </h1>
 
 <h2> Trainer Name: Balaji Reddy Lachhannagari</h2>
@@ -37,9 +37,9 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 	</span>
 	<span style="font-weight: bold;">
 		Mithun Technologies, 
-		Martha Halli, Above ICICI Bank, Beside Meghana Foods,
+		Martha Halli
 		Bangalore,
-		+91-9980923226,+91-9900012028
+		+91-9980923226,+91-9014996877
 		devopstrainingblr@gmail.com
 		<br>
 		<a href="mailto:devopstrainingblr@gmail.com">Mail to Mithun Technologies</a>
@@ -50,7 +50,7 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 <hr>
 <hr>
 <p align=center>Mithun Technologies - Consultant, Training, Development Center.</p>
-<p align=center><small>Copyrights 2022 by <a href="http://mithuntechnologies.com/">Mithun Technologies,Bengaluru</a> </small></p>
+<p align=center><small>Copyrights 2025 by <a href="http://mithuntechnologies.com/">Mithun Technologies,Bengaluru</a> </small></p>
 
 </body>
 </html>
