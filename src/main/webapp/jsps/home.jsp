@@ -12,7 +12,7 @@
 <h1 align="center">Welcome to Mithun Technologies. Ph No: +91-9980923226,+91-9014996877</h1>
 <h1 align="center"> Mithun Technologies- Very Good Training center for DevOps & Cloud, Python, Java & Node JS </h1>
 
-<h2> Trainer Name: Balaji Reddy Lachhannagari</h2>
+<h2> Trainer Name: Bhaskar  Reddy Lacchannagari</h2>
 <hr>
 <br>
 	<h1><h3> Server Side IP Address </h3><br>
