@@ -23,6 +23,5 @@ jobs:
     - name: Build and push to dockerhub
       uses: docker/build-push-action@v5
       with:
-       context:
        push: true
-       tags: kicsipixel/githubaction:latest
+       tags: vignesh13051997/test-app
