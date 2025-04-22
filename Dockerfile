@@ -4,7 +4,7 @@
 #COPY target/maven-web-java-application.war /usr/local/tomcat/webapps/target/maven-web-java-application.war
 
 FROM ubuntu
-
+#line
 RUN apt-get update
 CMD [“echo”,”Image created”]
 
