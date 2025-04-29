@@ -98,13 +98,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>SVS Events Releases Nexus Repository</name>
-	      <url>http://44.223.67.93:8081/repository/jio-release//</url>
+	      <url>http://44.223.67.93:8081/repository/world_rel//</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>SVS Events Snapshot Nexus Repository </name>
-	      <url>http://44.223.67.93:8081/repository/jio-snapshot//</url>
+	      <url>http://44.223.67.93:8081/repository/world//</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
