@@ -2,8 +2,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	
-	<groupId>com.mt</groupId>
-	<artifactId>maven-web-application</artifactId>
+	<groupId>com.kk</groupId>
+	<artifactId>maven-web-application-kkfunda</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	
@@ -12,13 +12,13 @@
 	<description>Maven Web Project for Java Project</description>
 
 	<organization>
-		<name>Mithun Technologies</name>
-		<url>http://mithuntechnologies.com/</url>
+		<name>KK FUNDA</name>
+		<url>http://kkfunda.com</url>
 	</organization>
 
 	<properties>
 		<jdk.version>1.8</jdk.version>
-		<spring.version>5.1.2.RELEASE</spring.version>
+		<spring.version>5.3.34</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
 		<sonar.host.url>http://54.234.215.68:9000/</sonar.host.url>
@@ -34,7 +34,7 @@
 		<dependency>
 			<groupId>org.json</groupId>
 			<artifactId>json</artifactId>
-			<version>20160212</version>
+			<version>20231013</version>
 		</dependency>
 		
 		<!-- test dependencies -->
@@ -97,13 +97,13 @@
 	
 	    <repository>
 	      <id>nexus</id>
-	      <name>SVS Events Releases Nexus Repository</name>
+	      <name>KK FUNDA Releases Nexus Repository</name>
 	      <url>http://44.223.67.93:8081/repository/world_rel/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>SVS Events Snapshot Nexus Repository </name>
+	      <name>KK FUNDA Snapshot Nexus Repository </name>
 	      <url>http://44.223.67.93:8081/repository/world/</url>
 	    </snapshotRepository>
 	    
@@ -113,17 +113,6 @@
 		<finalName>maven-web-application</finalName>
 		
 		<plugins>
-			<plugin>
- 				 <groupId>org.sonarsource.scanner.maven</groupId>
-  				<artifactId>sonar-maven-plugin</artifactId>
-  				<version>4.0.0.4121</version>
-			</plugin>
-			
-			<plugin>
-                            <groupId>org.apache.maven.plugins</groupId>
-                            <artifactId>maven-war-plugin</artifactId>
-                            <version>3.3.2</version>
-                        </plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
