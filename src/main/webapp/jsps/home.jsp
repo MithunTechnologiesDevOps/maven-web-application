@@ -9,11 +9,11 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to Mithun Technologies</h1>
-<h1 align="center">Phone Number: +91 9980923216</h1>
-<h1 align="center">Mithun Technologies is a Very Good Training Center for DevOps, Cloud, Kubernetes and Terraform</h1>
+<h1 align="center">Welcome to DevOPS</h1>
+<h1 align="center">Phone Number: +91 7816263721</h1>
+<h1 align="center"> More Focus on Cloud, Kubernetes and Terraform</h1>
 
-<h1 align="center">Trainer Name: Bhaskar Reddy Lacchannagari</h1>
+<h1 align="center">Trainer Name: Daniel</h1>
 
 <hr>
 <br>
