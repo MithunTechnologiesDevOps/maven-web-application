@@ -13,7 +13,7 @@
 <h1 align="center">Phone Number: +91 7816263721</h1>
 <h1 align="center"> More Focus on Cloud, Kubernetes and Terraform</h1>
 
-<h1 align="center">Trainer Name: Daniel</h1>
+<h1 align="center">Trainer Name: Sai Majji</h1>
 
 <hr>
 <br>
@@ -35,7 +35,7 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 <hr>
 <div style="text-align: center;">
 	<span>
-		<img src="images/mithunlogo.jpg" alt="" width="100">
+		<img src=" " alt="" width="100">
 	</span>
 	<span style="font-weight: bold;">
 		we have Good Trainers in our Institte
