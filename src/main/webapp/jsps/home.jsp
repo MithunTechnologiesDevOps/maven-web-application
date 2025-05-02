@@ -9,7 +9,7 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to DevOPS With Multi Cloud (Aws & Azure) </h1>
+<h1 align="center">Welcome to DevOPS With Multi Cloud (Aws & Azure & GCP) </h1>
 <h1 align="center">Phone Number: +91 7816263721</h1>
 <h1 align="center"> More Focus on Cloud, Kubernetes and Terraform</h1>
 
