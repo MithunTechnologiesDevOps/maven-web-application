@@ -4,8 +4,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>MithunTechnologies- Home Page</title>
-<link href="images/mithunlogo.jpg" rel="icon">
+<title></title>
+
 </head>
 </head>
 <body>
@@ -44,15 +44,15 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 		+91 9980923216 and 
 		Devopstrainingblr@Gmail.com
 		<br>
-		<a href="mailto:Devopstrainingblr@Gmail.com">Mail to Mithun Technologies</a>
+		<a href="mailto:Devopstrainingblr@Gmail.com">Mail to techCloud Technologies</a>
 	</span>
 </div>
 <hr>
 	<p> Service : <a href="services/employee/getEmployeeDetails">Get Employee Details </p>
 <hr>
 <hr>
-<p align=center>Mithun Technologies - Consultant, Training and Development Center.</p>
-<p align=center><small>Copyrights 2025 by <a href="http://mithuntechnologies.com/">Mithun Technologies,Bengaluru</a> </small></p>
+<p align=center>Cloud and DevOps Consultant, Training and Development Center.</p>
+<p align=center><small>Copyrights 2025 by <a href="http://mithuntechnologies.com/">Hyderabad</a> </small></p>
 
 </body>
 </html>
