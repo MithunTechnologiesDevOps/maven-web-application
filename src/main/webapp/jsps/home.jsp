@@ -38,11 +38,7 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 		<img src="images/mithunlogo.jpg" alt="" width="100">
 	</span>
 	<span style="font-weight: bold;">
-		Mithun Technologies, 
-		Marathahalli,
-		Bengaluru,
-		+91 9980923216 and 
-		Devopstrainingblr@Gmail.com
+		we have Good Trainers in our Institte
 		<br>
 		<a href="mailto:Devopstrainingblr@Gmail.com">Mail to techCloud Technologies</a>
 	</span>
