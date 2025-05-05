@@ -21,7 +21,7 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<sonar.host.url>http://13.234.17.238:9980</sonar.host.url>
+		<sonar.host.url>http://172.31.33.172:9980</sonar.host.url>
 		<sonar.login>squ_3506ae490a2fdacb98bb8355b7b2465f9d14c346</sonar.login>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -97,13 +97,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://3.109.184.193:9980/sunny/repository/icicibank-releases/</url>
+	      <url>http://172.31.43.55:9980/sunny/repository/icicibank-releases/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://3.109.184.193:9980/sunny/repository/icicibank-snapshot</url>
+	      <url>http://172.31.43.55:9980/sunny/repository/icicibank-snapshot</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
