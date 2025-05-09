@@ -4,16 +4,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>MithunTechnologies- Home Page</title>
-<link href="images/mithunlogo.jpg" rel="icon">
+<title></title>
+
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to Mithun Technologies</h1>
-<h1 align="center">Phone Number: +91 9980923216</h1>
-<h1 align="center">Mithun Technologies is a Very Good Training Center for DevOps, Cloud, Kubernetes and Terraform</h1>
+<h1 align="center"> Welcome to DevOps With Multi Cloud ( Aws , Azure & GCP ) </h1>
+<h1 align="center">Phone Number: +91 9346736138</h1>
+<h1 align="center"> More Focus on Cloud, Kubernetes and Terraform</h1>
 
-<h1 align="center">Trainer Name: Bhaskar Reddy Lacchannagari</h1>
+<h1 align="center">Trainer Name: Sai Majji</h1>
 
 <hr>
 <br>
@@ -35,24 +35,20 @@ out.println("Server Host Name :: "+inetAddress.getHostName());
 <hr>
 <div style="text-align: center;">
 	<span>
-		<img src="images/mithunlogo.jpg" alt="" width="100">
+		<img src=" " alt="" width="100">
 	</span>
 	<span style="font-weight: bold;">
-		Mithun Technologies, 
-		Marathahalli,
-		Bengaluru,
-		+91 9980923216 and 
-		Devopstrainingblr@Gmail.com
+		we have Good Trainers in our Institte
 		<br>
-		<a href="mailto:Devopstrainingblr@Gmail.com">Mail to Mithun Technologies</a>
+		<a href="mailto:Devopstrainingblr@Gmail.com">Mail to techCloud Technologies</a>
 	</span>
 </div>
 <hr>
 	<p> Service : <a href="services/employee/getEmployeeDetails">Get Employee Details </p>
 <hr>
 <hr>
-<p align=center>Mithun Technologies - Consultant, Training and Development Center.</p>
-<p align=center><small>Copyrights 2025 by <a href="http://mithuntechnologies.com/">Mithun Technologies,Bengaluru</a> </small></p>
+<p align=center>Cloud and DevOps Consultant, Training and Development Center.</p>
+<p align=center><small>Copyrights 2025 by <a href="http://mithuntechnologies.com/">Hyderabad</a> </small></p>
 
 </body>
 </html>
