@@ -24,4 +24,4 @@ jobs:
       uses: docker/build-push-action@v5
       with:
        push: true
-       tags: vignesh13051997/test-app
+       tags: vignesh13051997/test-application
