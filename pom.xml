@@ -96,14 +96,14 @@
 	
 	    <repository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://172.31.42.154:9980/mithuntechnologies/repository/canarabank-snapshot/</url>
+	      <name>hdfc-bank release</name>
+	      <url>http://3.110.88.212:8081/repository/hdfc-bank-release/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://172.31.42.154:9980/mithuntechnologies/repository/canarabank-release/</url>
+	      <name>hdfc-bank snapshot</name>
+	      <url>http://3.110.88.212:8081/repository/hdfc-bank-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
