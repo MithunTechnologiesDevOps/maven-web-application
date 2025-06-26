@@ -103,7 +103,7 @@
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://13.40.122.251:9980/mithuntechnologies/repository/axisbank-snapshot/</url>
+	      <url>http://172.31.29.224:9980/mithuntechnologies/repository/axisbank-snapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
