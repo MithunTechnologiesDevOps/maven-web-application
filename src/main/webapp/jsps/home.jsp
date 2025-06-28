@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>shivaTechnologies- Home Page</title>
+<title>shiva hari Technologies- Home Page</title>
 <link href="images/mithunlogo.jpg" rel="icon">
 </head>
 </head>
