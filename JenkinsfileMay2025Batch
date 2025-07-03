@@ -7,6 +7,8 @@ echo "Node name is: ${env.NODE_NAME} "
 echo "Jenkins Home dir  is: ${env.JENKINS_HOME}"
 echo "Jenkins URL is: ${env.JENKINS_URL}"
 
+properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), pipelineTriggers([pollSCM('* * * * *')])])
+
 
 stage('CheckOutCode'){
 git branch: 'development', credentialsId: 'c3b748b8-2f4c-4889-a563-6ecdbc0d0fd5', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git'
