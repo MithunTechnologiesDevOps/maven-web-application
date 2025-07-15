@@ -34,7 +34,7 @@ pipeline
         {
             steps()
             {
-                sh 'docker build -t mithuntechnologies/logindockerjenkins:${buildNumber} .'
+                sh 'docker build -t mithuntechnologies/maven-web-application:${buildNumber} .'
             }
         }
 
@@ -46,7 +46,7 @@ pipeline
                 {
                     sh 'docker login -u mithuntechnologies -p ${Docker_Hub_Password}'
                 }
-                sh 'docker push mithuntechnologies/logindockerjenkins:${buildNumber}'
+                sh 'docker push mithuntechnologies/maven-web-application:${buildNumber}'
             }
         }
 
@@ -54,7 +54,7 @@ pipeline
         {
             steps()
             {
-                sh 'docker rmi -f mithuntechnologies/logindockerjenkins:${buildNumber}'
+                sh 'docker rmi -f mithuntechnologies/maven-web-application:${buildNumber}'
             }
         }
 
@@ -65,7 +65,7 @@ pipeline
                 sshagent(['DeploymentServer_SSH'])
                 {
                     sh "ssh -o StrictHostKeyChecking=no ubuntu@3.108.196.56 docker rm -f mavenwebapplication || true"
-                    sh "ssh -o StrictHostKeyChecking=no ubuntu@3.108.196.56 docker run -d --name mavenwebapplication -p 8080:8080 mithuntechnologies/logindockerjenkins:$Build_Number"
+                    sh "ssh -o StrictHostKeyChecking=no ubuntu@3.108.196.56 docker run -d --name mavenwebapplication -p 8080:8080 mithuntechnologies/maven-web-application:$Build_Number"
                 }
             }
         }
