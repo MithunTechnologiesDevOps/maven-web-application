@@ -37,5 +37,17 @@ pipeline
                 sh 'docker build -t mithuntechnologies/logindockerjenkins:${buildNumber} .'
             }
         }
+
+        stage("Authenticate and Push Docker Image to Docker Hub")
+        {
+            steps()
+            {
+                withCredentials([string(credentialsId: 'Docker_Hub_Password', variable: 'Docker_Hub_Password')])
+                {
+                    sh 'docker login -u mithuntechnologies -p ${Docker_Hub_Password}'
+                }
+                sh 'docker push mithuntechnologies/logindockerjenkins:${buildNumber}'
+            }
+        }
     }
 }
