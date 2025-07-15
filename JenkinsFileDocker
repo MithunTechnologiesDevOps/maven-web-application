@@ -1,0 +1,15 @@
+pipeline
+{
+    agent any
+
+    stages
+    {
+        stage('Checkout Code to Jenkins from GitHub')
+        {
+            steps()
+            {
+                git branch: 'master', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git'
+            }
+        }
+    }
+}
