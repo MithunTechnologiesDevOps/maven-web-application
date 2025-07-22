@@ -3,18 +3,12 @@ pipeline{
 agent any
 
 tools{
-maven 'maven3.8.2'
+maven 'maven'
 
 }
 
-triggers{
-pollSCM('* * * * *')
 }
 
-options{
-timestamps()
-buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5'))
-}
 
 stages{
 
@@ -30,7 +24,7 @@ stages{
   sh  "mvn clean package"
   }
   }
-/*
+/***
  stage('ExecuteSonarQubeReport'){
   steps{
   sh  "mvn clean sonar:sonar"
