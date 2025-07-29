@@ -35,5 +35,16 @@ pipeline
                 sh 'docker build -t itspranavdubey/logindockerjenkins:${buildNumber} .'
             }
         }
-     }
+        stage("Authenticate and Push Docker Image To Docker Hub")
+        {
+            steps()
+            {
+                withCredentials ([string(credentialsId: 'Docker_Hub_Password', variable: 'Docker_Hub_Password ')])
+                {
+                    sh 'docker login -u itspranavdubey -p ${Docker_Hub_Password}'
+                }
+                sh 'docker push itspranavdubey/logindockerjenkins:${buildNumber}'
+            }
+        }
+     } 
 }
