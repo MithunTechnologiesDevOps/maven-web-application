@@ -19,7 +19,9 @@ pipeline
         stage('Build Artifact Using Maven')
         {
             steps()
+            {
             sh 'mvn clean package'
+            }
         }
      }
 }
