@@ -46,5 +46,12 @@ pipeline
                 sh 'docker push itspranavdubey/logindockerjenkins:${buildNumber}'
             }
         }
+        stage('Remove Docker Images From Jenkins Locally')
+        {
+            steps()
+            {
+                sh 'docker rmi -f itspranavdubey/logindockerjenkins:${buildNumber}'
+            }
+        }
      } 
 }
