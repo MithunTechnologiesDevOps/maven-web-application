@@ -53,5 +53,16 @@ pipeline
                 sh 'docker rmi -f itspranavdubey/logindockerjenkins:${buildNumber}'
             }
         }
+        stage('Deploy App to Deployement Server')
+        {
+            steps()
+            {
+                sshagent(['DeploymentServer_SSH']) 
+                {
+                    sh "ssh -o StrictHostKeyChecking=no ubuntu@13.233.206.123 docker rm -f mavenwebapplication || true"
+                    sh "ssh -o StrictHostKeyChecking=no ubuntu@13.233.206.123 docker run -d --name mavenwebapplication -p 8080:8080 itspranavdubey/maven-web-application:$Build_Number"
+                }
+            }
+        }
      } 
 }
