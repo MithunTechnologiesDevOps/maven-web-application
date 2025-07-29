@@ -39,9 +39,9 @@ pipeline
         {
             steps()
             {
-                withCredentials([string(credentialsId: 'Docker_Hub_Password', variable: 'Docker_Hub_Password')])
+                withCredentials([string(credentialsId: 'Dockerhubpassword', variable: 'Dockerhubpassword')])
                 {
-                    sh 'docker login -u itspranavdubey -p ${Docker_Hub_Password}'
+                    sh 'docker login -u itspranavdubey -p ${Dockerhubpassword}'
                 }
                 sh 'docker push itspranavdubey/logindockerjenkins:${buildNumber}'
             }
