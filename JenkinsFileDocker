@@ -16,6 +16,10 @@ pipeline
                 git branch: 'master', url: 'https://github.com/itspranavdubey/maven-web-application.git'
             }
         }
-        stage()
+        stage('Build Artifact Using Maven')
+        {
+            steps()
+            sh 'mvn clean package'
+        }
      }
 }
