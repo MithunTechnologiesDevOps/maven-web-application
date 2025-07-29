@@ -1,7 +1,12 @@
 pipeline
 {
     agent any
-     
+
+    tools
+    {
+        maven 'Maven_3.9.7'
+    }
+
      stages
      {
         stage('Checkout code to Jenkins from GitHub')
@@ -11,5 +16,6 @@ pipeline
                 git branch: 'master', url: 'https://github.com/itspranavdubey/maven-web-application.git'
             }
         }
+        stage()
      }
 }
