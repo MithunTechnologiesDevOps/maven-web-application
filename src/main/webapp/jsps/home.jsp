@@ -11,7 +11,7 @@
 <body>
 <h1 align="center">Welcome to Mithun Technologies</h1>
 <h1 align="center">Phone Number: +91 9390265050</h1>
-<h1 align="center">WELCOME TO MY WORLD</h1>
+<h1 align="center">WELCOME TO MY KIGDOM</h1>
 
 <h1 align="center">Trainer Name: Bhaskar Reddy Lacchannagari</h1>
 
