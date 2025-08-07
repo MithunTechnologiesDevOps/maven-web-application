@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Swamy's Kingdom | Home</title>
+  <title>🍰🍪🧁🍬🍨 𝓼𝔀𝓪𝓶𝔂 𝓲𝓼 𝓪 𝓰𝓸𝓸𝓭 𝓫𝓸𝔂 🥧🎂🍦🍭🍩 | Home</title>
   <link rel="icon" href="images/mithunlogo.jpg">
   <style>
     body {
