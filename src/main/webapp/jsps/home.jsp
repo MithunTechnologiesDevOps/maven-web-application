@@ -12,6 +12,8 @@
 <h1 align="center">¸¸♬·¯·♪·¯·♫¸¸ 𝓼𝔀𝓪𝓶𝔂 𝓲𝓼 𝓪 𝓰𝓸𝓸𝓭 𝓫𝓸𝔂¸¸♫·¯·♪¸♩·¯·♬¸¸</h1>
 <h1 align="center">Phone Number: +91 9390265050</h1>
 <h1 align="center">WELCOME TO MY KIGDOM</h1>
+<h1>Happy Birthday</h1>
+<canvas id="birthday"></canvas>
 
 <h1 align="center">Trainer Name: Bhaskar Reddy Lacchannagari</h1>
 
