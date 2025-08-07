@@ -35,6 +35,13 @@
       font-size: 1.2rem;
       margin-top: 1rem;
     }
+    .birthday-quote {
+      font-size: 1.3rem;
+      font-style: italic;
+      color: #660066;
+      margin-top: -1rem;
+      margin-bottom: 2rem;
+    }
     footer {
       background-color: #222;
       color: #ccc;
@@ -60,7 +67,10 @@
   </header>
 
   <section>
-    <h2>Happy Birthday 🎉</h2>
+    <h2>🎂 Happy Birthday 🎉</h2>
+
+    <p class="birthday-quote">"Count your life by smiles, not tears. Count your age by friends, not years. Happy Birthday!"</p>
+
     <canvas id="birthday" width="400" height="200"></canvas>
     
     <h3>Trainer Name: Bhaskar Reddy Lacchannagari</h3>
