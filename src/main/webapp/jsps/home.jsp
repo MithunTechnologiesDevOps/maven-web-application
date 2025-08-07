@@ -1,158 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
-  <title>Happy Birthday!!! :)</title>
-  <!-- Google Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
-  <!-- My Style -->
-  <link rel="stylesheet" href="./style/main.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Swamy's Kingdom | Home</title>
+  <link rel="icon" href="images/mithunlogo.jpg">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: linear-gradient(to right, #f0f2f0, #000c40);
+      color: #222;
+      text-align: center;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 2rem 1rem;
+    }
+    header h1 {
+      margin: 0;
+      font-family: 'Segoe UI', cursive;
+      font-size: 2em;
+    }
+    section {
+      padding: 2rem 1rem;
+    }
+    canvas {
+      display: block;
+      margin: 2rem auto;
+      border: 1px solid #ccc;
+    }
+    .info {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+    footer {
+      background-color: #222;
+      color: #ccc;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: #aaa;
+      text-decoration: none;
+    }
+    img.logo {
+      width: 100px;
+      margin-top: 1rem;
+    }
+  </style>
 </head>
-
 <body>
 
-    <audio class="song" loop autoplay>
-        <source src="./music/hbd.mpeg">
-        </source>
-        Your browser isn't invited for super fun audio time.
-    </audio>
+  <header>
+    <h1>¸¸♬·¯·♪·¯·♫¸¸ 𝓼𝔀𝓪𝓶𝔂 𝓲𝓼 𝓪 𝓰𝓸𝓸𝓭 𝓫𝓸𝔂 ¸¸♫·¯·♪¸♩·¯·♬¸¸</h1>
+    <p>Phone: +91 9390265050</p>
+    <h2>WELCOME TO MY KINGDOM</h2>
+  </header>
 
-    <div class="container">
-        <div class="one">
-            <h1 class="one">
-                Hi
-                <span id="name">Irene</span>
-            </h1>
-            <p class="two" id="greetingText">I really like your name btw!</p>
-        </div>
+  <section>
+    <h2>Happy Birthday 🎉</h2>
+    <canvas id="birthday" width="400" height="200"></canvas>
+    
+    <h3>Trainer Name: Bhaskar Reddy Lacchannagari</h3>
 
-        <div class="three">
-            <p>It's your birthday!! :D</p>
-        </div>
-
-        <div class="four">
-            <div class="text-box">
-                <p class="hbd-chatbox">
-                Happy birthday to youu!! Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur quisquam amet ipsam vitae, voluptatum architecto aliquid id quo error tempora quos aperiam magni necessitatibus quas ut, possimus nesciunt nam ad.
-                </p>
-                <p class="fake-btn">Send</p>
-            </div>
-        </div>
-
-        <div class="five">
-            <p class="idea-1">That's what I was going to do.</p>
-            <p class="idea-2">But then I stopped.</p>
-            <p class="idea-3">
-                I realised, I wanted to do something<br>
-                <strong>special</strong>
-                .
-            </p>
-            <p class="idea-4">Because,</p>
-            <p class="idea-5">
-                You are Special
-                <span>:)</span>
-            </p>
-            <p class="idea-6">
-                <span>S</span>
-                <span>O</span>
-            </p>
-        </div>
-
-        <div class="six">
-            <img src="./img/irene.jpg" alt="profile" class="profile-picture" id="imagePath"/>
-            <img src="img/hat.svg" alt="hat" class="hat" />
-            <div class="wish">
-                <h3 class="wish-hbd">Happy Birthday!</h3>
-                <h5 id="wishText">May the js.prototypes always be with you! ;)</h5>
-            </div>
-        </div>
-
-        <div class="seven">
-            <div class="baloons">
-                <img src="img/ballon2.svg" alt="" />
-                <img src="img/ballon1.svg" alt="" />
-                <img src="img/ballon3.svg" alt="" />
-                <img src="img/ballon1.svg" alt="" />
-                <img src="img/ballon2.svg" alt="" />
-                <img src="img/ballon3.svg" alt="" />
-                <img src="img/ballon2.svg" alt="" />
-                <img src="img/ballon3.svg" alt="" />
-                <img src="img/ballon1.svg" alt="" />
-                <img src="img/ballon2.svg" alt="" />
-                <img src="img/ballon3.svg" alt="" />
-                <img src="img/ballon2.svg" alt="" />
-                <img src="img/ballon1.svg" alt="" />
-                <img src="img/ballon3.svg" alt="" />
-                <img src="img/ballon2.svg" alt="" />
-                <img src="img/ballon3.svg" alt="" />
-                <img src="img/ballon1.svg" alt="" />
-                <img src="img/ballon2.svg" alt="" />
-                <img src="img/ballon1.svg" alt="" />
-                <img src="img/ballon3.svg" alt="" />
-                <img src="img/ballon3.svg" alt="" />
-                <img src="img/ballon1.svg" alt="" />
-                <img src="img/ballon2.svg" alt="" />
-                <img src="img/ballon3.svg" alt="" />
-                <img src="img/ballon2.svg" alt="" />
-                <img src="img/ballon1.svg" alt="" />
-                <img src="img/ballon3.svg" alt="" />
-                <img src="img/ballon2.svg" alt="" />
-                <img src="img/ballon3.svg" alt="" />
-                <img src="img/ballon1.svg" alt="" />
-                <img src="img/ballon2.svg" alt="" />
-                <img src="img/ballon1.svg" alt="" />
-                <img src="img/ballon3.svg" alt="" />
-            </div>
-        </div>
-
-        <div class="eight">
-            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="20" cy="20" r="20" />
-            </svg>
-            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="20" cy="20" r="20" />
-            </svg>
-            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="20" cy="20" r="20" />
-            </svg>
-            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="20" cy="20" r="20" />
-            </svg>
-            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="20" cy="20" r="20" />
-            </svg>
-            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="20" cy="20" r="20" />
-            </svg>
-            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="20" cy="20" r="20" />
-            </svg>
-            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="20" cy="20" r="20" />
-            </svg>
-            <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="20" cy="20" r="20" />
-            </svg>
-        </div>
-
-        <div class="nine">
-            <p>Okay, now come back and tell me if you liked it.</p>
-            <p id="replay">Or click, if you want to watch it again.</p>
-            <p class="last-smile">:)</p>
-        </div>
+    <div class="info">
+      <p><strong>Server IP Address:</strong> Shown from backend</p>
+      <p><strong>Client IP Address:</strong> Shown from backend</p>
     </div>
 
-</body>
-    <!-- Greensock -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-    <!-- Sweetalert -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script type="application/javascript" src="./script/main.js"></script>
+    <div>
+      <img class="logo" src="images/mithunlogo.jpg" alt="Logo">
+      <p><strong>Mithun Technologies</strong><br>Marathahalli, Bengaluru<br>
+      +91 9980923216<br>
+      <a href="mailto:Devopstrainingblr@gmail.com">Devopstrainingblr@gmail.com</a></p>
+    </div>
 
+    <p>Service: <a href="services/employee/getEmployeeDetails">Get Employee Details</a></p>
+  </section>
+
+  <footer>
+    <p>Mithun Technologies - Consultant, Training and Development Center.</p>
+    <p><small>© 2025 by <a href="http://mithuntechnologies.com/">Mithun Technologies, Bengaluru</a></small></p>
+  </footer>
+
+  <!-- Optional Birthday Animation -->
+  <script>
+    const canvas = document.getElementById("birthday");
+    const ctx = canvas.getContext("2d");
+
+    ctx.font = "20px Comic Sans MS";
+    ctx.fillStyle = "purple";
+    ctx.fillText("🎂 Happy Birthday! 🎉", 80, 100);
+  </script>
+
+</body>
 </html>
