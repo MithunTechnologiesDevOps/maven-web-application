@@ -12,7 +12,7 @@ stage('BUILD') {
 
 sh "$mavenHome/bin/mvn clean package"
 }
-
+/*
 //SonarQube report generation
 
 stage('SonarQubeReport'){
@@ -27,7 +27,7 @@ stage('NexusRepository'){
 
 sh "$mavenHome/bin/mvn deploy"   
 }
-
+*/
 //Deploy App into Tomcat Server
 
 stage('DeplyAppintoTomcat'){
