@@ -1,0 +1,42 @@
+node{
+
+def mavenHome = tool name:"maven3.9.9"
+
+//    stage to take code from github 
+stage('CheckoutCode'){
+    git branch: 'development', credentialsId: 'b1b4a924-5ad2-483b-8f62-720d0cdc861e', url: 'https://github.com/swamymaverick/maven-web-application.git'
+}
+
+//BUILD STAGE
+stage('BUILD') {
+
+sh "$mavenHome/bin/mvn clean package"
+}
+
+//SonarQube report generation
+
+stage('SonarQubeReport'){
+
+sh "$mavenHome/bin/mvn sonar:sonar"
+    
+}
+
+//upload into artifactory repository
+
+stage('NexusRepository'){
+
+sh "$mavenHome/bin/mvn deploy"   
+}
+
+//Deploy App into Tomcat Server
+
+stage('DeplyAppintoTomcat'){
+
+sshagent(['b2492a4a-a777-4170-8566-faa39c3f35c7']) {
+    sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@54.147.49.100:/opt/apache-tomcat-9.0.107/webapps"
+    }
+}
+
+
+
+}
