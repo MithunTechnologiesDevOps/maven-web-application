@@ -42,7 +42,7 @@ pipeline
         {
             steps()
             {
-                ss 'aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 149536451818.dkr.ecr.ap-south-1.amazonaws.com'
+                sh 'aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 149536451818.dkr.ecr.ap-south-1.amazonaws.com'
                 sh 'docker push 149536451818.dkr.ecr.ap-south-1.amazonaws.com/maven-web-application:${buildNumber}'
             }
         }
