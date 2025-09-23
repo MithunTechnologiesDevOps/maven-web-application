@@ -30,7 +30,7 @@ pipeline
             }
         }
 
-        stage("Build Docker Image")
+        stage('Build Docker Image')
         {
             steps()
             {
@@ -38,7 +38,7 @@ pipeline
             }
         }
 
-        stage("Authenticate and Push Docker Image to AWS ECR")
+        stage('Authenticate and Push Docker Image to AWS ECR')
         {
             steps()
             {
@@ -52,6 +52,14 @@ pipeline
             steps()
             {
                 sh 'docker rmi -f 149536451818.dkr.ecr.ap-south-1.amazonaws.com/maven-web-application:${buildNumber}'
+            }
+        }
+
+        stage('Update Image Tag in Kubernetes Manifest')
+        {
+            steps()
+            {
+                sh "sed -i 's/Build_Tag/${buildNumber}/g' MavenWebApplication.yaml"
             }
         }
     }
