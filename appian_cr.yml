@@ -10,7 +10,7 @@
    imagePullSecrets: [] # []string
      # - regcred
    # USER ACTION REQUIRED - Update to the full version of Low code platform that Appian runs on
-   version: 25.3.x.x
+   version: 25.3.2.1
    k3LicSecretName: k3lic
    k4LicSecretName: k4lic
    appianLicConfigMapName: appian-lic
@@ -216,10 +216,10 @@
      resources: # corev1.ResourceRequirements
        requests:
          cpu: 100m
-         memory: 4.5Gi
+         memory: 2.5Gi
        limits:
          cpu: 1000m
-         memory: 6Gi
+         memory: 5Gi
    httpd:
      # USER ACTION REQUIRED - Update to match the coordinates of the Appian httpd
      # container image as you pushed it to your registry
@@ -244,10 +244,10 @@
      # https://docs.appian.com/suite/help/latest/k8s/resource-requests-and-limits.html#httpd
      resources: # corev1.ResourceRequirements
        requests:
-         cpu: 100m
+         cpu: 300m
          memory: 32Mi
        limits:
-         cpu: 300m
+         cpu: 600m
          memory: 48Mi
      # USER ACTION REQUIRED - Uncomment the rpa section below if you are deploying Appian RPA
    # rpa:
