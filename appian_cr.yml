@@ -1,0 +1,308 @@
+ apiVersion: crd.k8s.appian.com/v1beta1
+ kind: Appian
+ metadata:
+   # USER ACTION REQUIRED - If using long-term licenses, update to match the
+   # wildcard pattern of the licenses you were provided
+   # https://docs.appian.com/suite/help/latest/k8s/install-appian-on-k8s.html#request-licenses
+   name: appian
+ spec:
+   # https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
+   imagePullSecrets: [] # []string
+     # - regcred
+   # USER ACTION REQUIRED - Update to the full version of Low code platform that Appian runs on
+   version: 25.3.x.x
+   k3LicSecretName: k3lic
+   k4LicSecretName: k4lic
+   appianLicConfigMapName: appian-lic
+   # USER ACTION REQUIRED - Update to match the scheme, host, and, optionally,
+   # port of your site
+   # https://docs.appian.com/suite/help/latest/Post-Install_Configurations.html#configure-your-site-url
+   url: http://myappiansite.com
+   # https://docs.appian.com/suite/help/latest/Custom_Configurations.html#custom-properties
+   customProperties: # map[string]string
+     # https://docs.appian.com/suite/help/latest/resource-requests-and-limits.html#webapp
+     conf.appserver.maxHeapSize: 3072m
+   zookeeper:
+     # USER ACTION REQUIRED - Update to match the coordinates of the Appian
+     # Zookeeper container image as you pushed it to your registry
+     image:
+       repository: registry.example.com/appian/zookeeper
+     replicas: 3
+     volumeClaimTemplateSpec: # corev1.PersistentVolumeClaimSpec
+       # storageClassName: ""
+       accessModes:
+         - ReadWriteOnce
+       resources:
+         requests:
+           # Configure based on your expected Zookeeper storage needs
+           storage: 5Gi
+     env: # []corev1.EnvVar
+       # https://docs.appian.com/suite/help/latest/k8s/resource-requests-and-limits.html#zookeeper
+       - name: ZK_HEAP_MIN
+         value: 128m
+       - name: ZK_HEAP_MAX
+         value: 256m
+     # https://docs.appian.com/suite/help/latest/k8s/resource-requests-and-limits.html#zookeeper
+     resources: # corev1.ResourceRequirements
+       requests:
+         cpu: 100m
+         memory: 307Mi # ZK_HEAP_MAX * 1.2 to account for non-heap memory
+       limits:
+         cpu: 200m
+         memory: 448Mi # ZK_HEAP_MAX * 1.75 to account for non-heap memory
+   kafka:
+     # USER ACTION REQUIRED - Update to match the coordinates of the Appian Kafka
+     # container image as you pushed it to your registry
+     image:
+       repository: registry.example.com/appian/kafka
+     replicas: 3
+     volumeClaimTemplateSpec: # corev1.PersistentVolumeClaimSpec
+       # storageClassName: ""
+       accessModes:
+         - ReadWriteOnce
+       resources:
+         requests:
+           # Configure based on your expected Kafka storage needs
+           storage: 5Gi
+     env: # []corev1.EnvVar
+       # https://docs.appian.com/suite/help/latest/k8s/resource-requests-and-limits.html#kafka
+       - name: KAFKA_HEAP_MIN
+         value: 512m
+       - name: KAFKA_HEAP_MAX
+         value: 1024m
+     # https://docs.appian.com/suite/help/latest/k8s/resource-requests-and-limits.html#kafka
+     resources: # corev1.ResourceRequirements
+       requests:
+         cpu: 500m
+         memory: 1229Mi # KAFKA_HEAP_MAX * 1.2 to account for non-heap memory
+       limits:
+         cpu: 2000m
+         memory: 1792Mi # KAFKA_HEAP_MAX * 1.75 to account for non-heap memory
+   searchServer:
+     # USER ACTION REQUIRED - Update to match the coordinates of the Appian
+     # Search Server container image as you pushed it to your registry
+     image:
+       repository: registry.example.com/appian/search-server
+     replicas: 1
+     volumeClaimTemplateSpec: # corev1.PersistentVolumeClaimSpec
+       # storageClassName: ""
+       accessModes:
+         - ReadWriteOnce
+       resources:
+         requests:
+           # Configure based on your expected Search Server storage needs
+           storage: 5Gi
+     env: # []corev1.EnvVar
+       # https://docs.appian.com/suite/help/latest/k8s/resource-requests-and-limits.html#search-server
+       - name: SS_HEAP
+         value: 1280m
+     # https://docs.appian.com/suite/help/latest/k8s/resource-requests-and-limits.html#search-server
+     resources: # corev1.ResourceRequirements
+       requests:
+         cpu: 200m
+         memory: 1.5Gi # SS_HEAP + 256Mi to account for non-heap memory
+       limits:
+         cpu: 300m
+         memory: 3Gi # Double requests.memory
+   dataServer:
+     # USER ACTION REQUIRED - Update to match the coordinates of the Appian Data
+     # Server container image as you pushed it to your registry
+     image:
+       repository: registry.example.com/appian/data-server
+     replicas: 1
+     topology:
+       rtsCount: 2
+     volumeClaimTemplateSpec: # corev1.PersistentVolumeClaimSpec
+       # storageClassName: ""
+       accessModes:
+         - ReadWriteOnce
+       resources:
+         requests:
+           # Configure based on your expected Data Server storage needs
+           storage: 5Gi
+     # https://docs.appian.com/suite/help/latest/k8s/resource-requests-and-limits.html#data-server
+     resources: # corev1.ResourceRequirements
+       requests:
+         cpu: 100m
+         memory: 512Mi
+       limits:
+         cpu: 200m
+         memory: 1Gi
+   serviceManager:
+     # USER ACTION REQUIRED - Update to match the coordinates of the Appian
+     # Service Manager container image as you pushed it to your registry
+     image:
+       repository: registry.example.com/appian/service-manager
+     replicas: 1
+     topology:
+       analyticsExecShardCount: 3
+     volumeClaimTemplateSpec: # corev1.PersistentVolumeClaimSpec
+       # storageClassName: ""
+       accessModes:
+         - ReadWriteOnce
+       resources:
+         requests:
+           # Configure based on your expected Service Manager storage needs
+           storage: 5Gi
+     # https://docs.appian.com/suite/help/latest/k8s/high-availability.html
+     # haExistingClaim: ""
+     env: # []corev1.EnvVar
+       # https://docs.appian.com/suite/help/latest/k8s/resource-requests-and-limits.html#service-manager
+       - name: KOMODO_DIRECT_MEM_MAX
+         value: 512m
+       - name: KOMODO_HEAP_MAX
+         value: 1g
+     # https://docs.appian.com/suite/help/latest/k8s/resource-requests-and-limits.html#service-manager
+     resources: # corev1.ResourceRequirements
+       requests:
+         cpu: 200m
+         memory: 2.5Gi
+       limits:
+         cpu: 2000m
+         memory: 32Gi
+   webapp:
+     # USER ACTION REQUIRED - Update to match the coordinates of the Appian
+     # Webapp container image as you pushed it to your registry
+     image:
+       repository: registry.example.com/appian/webapp
+     replicas: 1
+     # https://docs.appian.com/suite/help/latest/Post-Install_Configurations.html#configure-your-static-and-dynamic-content-urls
+     # staticUrl: http://myappiansite-static.com
+     # dynamicUrl: http://myappiansite-dynamic.com
+     # Configuration for connecting to the Appian and business data sources. If
+     # connecting to MySQL or IBM Db2, use an init container to add the
+     # appropriate RDBMS/JDBC driver JAR to Tomcat's classpath
+     # https://docs.appian.com/suite/help/latest/Configuring_Relational_Databases.html#provide-data-source-connection-information
+     # https://docs.appian.com/suite/help/latest/k8s/init-and-sidecar-containers.html#using-init-containers-to-add-jars-to-tomcat's-classpath
+     dataSources:
+       primary:
+         name: jdbc/AppianDS
+         type: javax.sql.DataSource
+         factory: org.apache.tomcat.jdbc.pool.DataSourceFactory
+         driverClassName: org.mariadb.jdbc.Driver
+         url: "jdbc:mariadb://mariadb-appian.<MY_SITE_NAMESPACE>.svc.cluster.local:3306/AppianDS?useOldAliasMetadataBehavior=true"
+         username: username
+         # USER ACTION REQUIRED - Create a secret containing the password used to
+         # connect to the data source and reference it here
+         passwordSecretKeyRef:
+           name: ""
+           key: ""
+         attributes:
+           initialSize: "5"
+           maxActive: "200"
+           defaultTransactionIsolation: "READ_COMMITTED"
+           maxWait: "30000"
+           minIdle: "5"
+           minEvictableIdleTimeMillis: "90000"
+           timeBetweenEvictionRunsMillis: "450000"
+           validationQuery: "SELECT 1"
+           testOnBorrow: "true"
+       business: []
+     # https://docs.appian.com/suite/help/latest/k8s/email.html
+     # passwordsPropertiesSecretName: ""
+     volumeClaimTemplateSpec: # corev1.PersistentVolumeClaimSpec
+       # storageClassName: ""
+       accessModes:
+         - ReadWriteOnce
+       resources:
+         requests:
+           # Configure based on your expected Webapp storage needs
+           storage: 5Gi
+     # https://docs.appian.com/suite/help/latest/k8s/high-availability.html
+     # haExistingClaim: ""
+     # https://docs.appian.com/suite/help/latest/k8s/health-check-k8s.html
+     # healthCheckExistingClaim: ""
+     # https://docs.appian.com/suite/help/latest/k8s/resource-requests-and-limits.html#webapp
+     resources: # corev1.ResourceRequirements
+       requests:
+         cpu: 100m
+         memory: 4.5Gi
+       limits:
+         cpu: 1000m
+         memory: 6Gi
+   httpd:
+     # USER ACTION REQUIRED - Update to match the coordinates of the Appian httpd
+     # container image as you pushed it to your registry
+     image:
+       repository: registry.example.com/appian/httpd
+     replicas: 2
+   # https://docs.appian.com/suite/help/latest/k8s/exposing-appian-on-k8s.html
+   service:
+     annotations: {} # map[string]string
+     # https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types
+     type: ClusterIP
+   # https://docs.appian.com/suite/help/latest/k8s/exposing-appian-on-k8s.html#ingress
+   ingress:
+     enabled: true
+     # USER ACTION REQUIRED - Use either the ingressClassName field or the
+     # deprecated kubernetes.io/ingress.class annotation to refer to your desired
+     # ingress class
+     # https://kubernetes.io/docs/concepts/services-networking/ingress/#ingress-class
+     annotations: {} # map[string]string
+       # kubernetes.io/ingress.class: ""
+     # ingressClassName: ""
+     # https://docs.appian.com/suite/help/latest/k8s/resource-requests-and-limits.html#httpd
+     resources: # corev1.ResourceRequirements
+       requests:
+         cpu: 100m
+         memory: 32Mi
+       limits:
+         cpu: 300m
+         memory: 48Mi
+     # USER ACTION REQUIRED - Uncomment the rpa section below if you are deploying Appian RPA
+   # rpa:
+   #   # USER ACTION REQUIRED - Update to match the version of the Appian RPA image
+   #   # that you pulled for deployment
+   #   version: 9.9.0
+   #   # USER ACTION REQUIRED - Update to match the coordinates of the Appian
+   #   # RPA container image as you pushed it to your registry
+   #   # that you pulled for deployment
+   #   image:
+   #     repository: registry.example.com/appian/rpa
+   #   volumeClaimTemplateSpec:
+   #     accessModes:
+   #       - "ReadWriteOnce"
+   #     resources:
+   #       requests:
+   #         storage: "5Gi"
+   #   # USER ACTION REQUIRED - Update to match the hostname and port for your Appian RPA MariaDB
+   #   database:
+   #     hostname: my-rpa-mariadb
+   #     port: 3306
+   #     schema: Rpa
+   #     # USER ACTION REQUIRED - Create a secret containing the password used to
+   #     # connect to the rpa data source and reference it here
+   #     # https://docs.appian.com/suite/help/latest/k8s/rpa-setup-on-k8s.html
+   #     credentialsSecretName: rpa-data-source-credentials
+   #   # https://docs.appian.com/suite/help/latest/k8s/resource-requests-and-limits.html#rpa
+   #   properties:
+   #     # [OPTIONAL] This represents the max memory (Xmx) allocated to the JVM.  If omitted, this will default to 2048
+   #     rpa.max.memory: 4096
+   #     # [OPTIONAL] RPA expects to have unrestricted internet access by default, set this to "offline" if that is not the case.
+   #     # If omitted, this will default to "online"
+   #     rpa.artifact.resolution: "online"
+   #   # USER ACTION REQUIRED - Update to match the url and port for your Appian RPA MariaDB
+   #   rtdo:
+   #     dataSource:
+   #       url: jdbc:mariadb://my-rpa-mariadb:3306/Rtdo
+   #       username: my-rpa-mariadb-username
+   #       passwordSecretName: rpa-data-source-credentials
+   #   # USER ACTION REQUIRED - Update to match the url and port for your Appian RPA MariaDB
+   #   rpdo:
+   #     dataSource:
+   #       url: jdbc:mariadb://my-rpa-mariadb:3306/Rpdo
+   #       username: my-rpa-mariadb-username
+   #       passwordSecretName: rpa-data-source-credentials
+   #   # USER ACTION REQUIRED - Update to match the url and port for your Appian RPA MariaDB
+   #   robotRDO:
+   #     dataSource:
+   #       url: jdbc:mariadb://my-rpa-mariadb:3306/RobotRDO
+   #       username: my-rpa-mariadb-username
+   #       passwordSecretName: rpa-data-source-credentials
+   #   # https://docs.appian.com/suite/help/latest/k8s/resource-requests-and-limits.html#rpa
+   #   resources:
+   #     requests:
+   #       cpu: 1000m
+   #       memory: 2.5Gi
+   #     limits:
+   #       cpu: 2000m
