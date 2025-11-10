@@ -10,7 +10,7 @@
    imagePullSecrets: [] # []string
      # - regcred
    # USER ACTION REQUIRED - Update to the full version of Low code platform that Appian runs on
-   version: 25.3.2.1
+   version: 25.3
    k3LicSecretName: k3lic
    k4LicSecretName: k4lic
    appianLicConfigMapName: appian-lic
@@ -45,10 +45,10 @@
      # https://docs.appian.com/suite/help/latest/k8s/resource-requests-and-limits.html#zookeeper
      resources: # corev1.ResourceRequirements
        requests:
-         cpu: 100m
+         cpu: 300m
          memory: 307Mi # ZK_HEAP_MAX * 1.2 to account for non-heap memory
        limits:
-         cpu: 200m
+         cpu: 500m
          memory: 448Mi # ZK_HEAP_MAX * 1.75 to account for non-heap memory
    kafka:
      # USER ACTION REQUIRED - Update to match the coordinates of the Appian Kafka
