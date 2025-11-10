@@ -10,7 +10,7 @@
    imagePullSecrets: [] # []string
      # - regcred
    # USER ACTION REQUIRED - Update to the full version of Low code platform that Appian runs on
-   version: 25.3
+   version: 25.3.0.0
    k3LicSecretName: k3lic
    k4LicSecretName: k4lic
    appianLicConfigMapName: appian-lic
@@ -63,7 +63,7 @@
        resources:
          requests:
            # Configure based on your expected Kafka storage needs
-           storage: 5Gi
+           storage: 4Gi
      env: # []corev1.EnvVar
        # https://docs.appian.com/suite/help/latest/k8s/resource-requests-and-limits.html#kafka
        - name: KAFKA_HEAP_MIN
@@ -76,7 +76,7 @@
          cpu: 500m
          memory: 1229Mi # KAFKA_HEAP_MAX * 1.2 to account for non-heap memory
        limits:
-         cpu: 2000m
+         cpu: 3000m
          memory: 1792Mi # KAFKA_HEAP_MAX * 1.75 to account for non-heap memory
    searchServer:
      # USER ACTION REQUIRED - Update to match the coordinates of the Appian
@@ -127,7 +127,7 @@
          memory: 512Mi
        limits:
          cpu: 200m
-         memory: 1Gi
+         memory: 2Gi
    serviceManager:
      # USER ACTION REQUIRED - Update to match the coordinates of the Appian
      # Service Manager container image as you pushed it to your registry
