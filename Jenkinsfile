@@ -58,6 +58,8 @@ pipeline
             }
         }
 
+        //Deleting Image Locally to Utilise Resources
+
         stage('Deploy Application to Docker Deployment Server')
         {
             steps()
