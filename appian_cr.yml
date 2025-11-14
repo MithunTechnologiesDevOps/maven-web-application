@@ -10,7 +10,7 @@
    imagePullSecrets: [] # []string
      # - regcred
    # USER ACTION REQUIRED - Update to the full version of Low code platform that Appian runs on
-   version: 25.3.0.0
+   version: 25.3.2.1
    k3LicSecretName: k3lic
    k4LicSecretName: k4lic
    appianLicConfigMapName: appian-lic
