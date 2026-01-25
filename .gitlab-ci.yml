@@ -1,3 +1,7 @@
+
+
+
+
 stages:
   - sonar_scan
   - build
@@ -79,4 +83,9 @@ deploy:
   script:
     - docker run -d --name my-container -p 8080:8080 $IMAGE_NAME:$IMAGE_TAG
   only:
-    - main
+    - main  
+
+
+
+
+
