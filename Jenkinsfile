@@ -3,7 +3,7 @@ pipeline
     agent any
 
     tools{
-        maven: 'Maven_3.9.16'
+        maven 'Maven_3.9.16'
     }
 
     environment
