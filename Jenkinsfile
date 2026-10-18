@@ -33,7 +33,7 @@ pipeline
         {
             steps()
             {
-                sh 'docker build -t 210447604094.dkr.ecr.ap-south-1.amazonaws.com/maven-web-application:{buildNumber} .'
+                sh 'docker build -t 210447604094.dkr.ecr.ap-south-1.amazonaws.com/maven-web-application:${buildNumber} .'
             }
         }
 
@@ -42,7 +42,7 @@ pipeline
             steps()
             {
                 sh 'aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin 210447604094.dkr.ecr.ap-south-1.amazonaws.com'
-                sh 'docker push 210447604094.dkr.ecr.ap-south-1.amazonaws.com/maven-web-application:{buildNumber}'
+                sh 'docker push 210447604094.dkr.ecr.ap-south-1.amazonaws.com/maven-web-application:${buildNumber}'
             }
         }
 
@@ -50,7 +50,7 @@ pipeline
         {
             steps()
             {
-                sh 'docker rmi -f 210447604094.dkr.ecr.ap-south-1.amazonaws.com/maven-web-application:{buildNumber}'
+                sh 'docker rmi -f 210447604094.dkr.ecr.ap-south-1.amazonaws.com/maven-web-application:${buildNumber}'
             }
         }
     }
