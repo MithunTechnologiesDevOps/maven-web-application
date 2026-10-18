@@ -53,5 +53,22 @@ pipeline
                 sh 'docker rmi -f 210447604094.dkr.ecr.ap-south-1.amazonaws.com/maven-web-application:${buildNumber}'
             }
         }
+
+        stage('Update Docker Image Version in Kubernetes Manifest')
+        {
+            steps()
+            {
+                sh "sed -i 's/Build_Tag/${buildNumber}/g' MavenWebApplication.yaml"
+            }
+        }
+
+        stage('Deploy Changes to EKS Cluster')
+        {
+            steps()
+            {
+                sh "kubectl delete deployment webpage-deployment -n production || true"
+                sh "kubectl apply -f MavenWebApplication.yaml"
+            }
+        }
     }
 }
