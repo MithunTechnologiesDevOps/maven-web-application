@@ -42,7 +42,7 @@ jobs:
 
       - name: Update Docker Image Tag in Kubernetes Manifest
         run: |
-          sed -i 's/Build_Tag/${buildNumber}/g' MavenWebApplication.yaml
+          sed -i 's/Build_Tag/${{ github.run_number }}/g' MavenWebApplication.yaml
       
       - name: Configure Kubectl
         run: |
