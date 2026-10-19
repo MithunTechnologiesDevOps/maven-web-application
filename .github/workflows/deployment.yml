@@ -1,0 +1,41 @@
+
+name: CICD Pipeline
+
+on:
+  push:
+    branches:
+      - DevOpsMayBatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Build Maven Project
+        run: mvn clean package
+
+      - name: Build Docker Image
+        run: docker build -t 210447604094.dkr.ecr.ap-south-1.amazonaws.com/login:${{github.run_number}} .
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentails@v4
+        with:
+          aws-region: ap-south-1
+          aws-access-key-id: ${{secrets.AWS_ACCESS_KEY}}
+          aws-secret-key-id: ${{secrets.AWS_SECRET_ACCESS}}
+
+      - name: Authenticate With AWS ECR
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Push Docker Image to AWS ECR
+        run: |
+          docker push  210447604094.dkr.ecr.ap-south-1.amazonaws.com/login:${{github.run_number}}
