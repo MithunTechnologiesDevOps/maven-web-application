@@ -27,7 +27,7 @@ jobs:
         run: docker build -t 210447604094.dkr.ecr.ap-south-1.amazonaws.com/login:${{github.run_number}} .
 
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentails@v4
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-region: ap-south-1
           aws-access-key-id: ${{secrets.AWS_ACCESS_KEY}}
